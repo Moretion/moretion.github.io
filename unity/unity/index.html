@@ -1,0 +1,707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../unity_android_glove/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Unity Plugins - Unity Plugins Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unity3d" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Unity Plugins Documentation" class="md-header__button md-logo" aria-label="Unity Plugins Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unity Plugins Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unity Plugins
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Unity Plugins Documentation" class="md-nav__button md-logo" aria-label="Unity Plugins Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Unity Plugins Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unity_android_glove/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Glove
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unity3d">Unity3D插件使用文档</h1>
+<h1 id="_1">简介</h1>
+<p>本文档将帮助你如何使用游戏引擎 Unity 3D 读取魔迅MotionStudio动捕软件的运动捕捉数据。 MotionStudio软件支持实时传输实时和离线动捕数据，实时数据是指连接设备时的数据，离线数据指回放数据。实时传输是指在MotionStudio开启数据广播，在Unity3D中建立和MotionStudio的网络连接，就可接收到MotionStudio中的实时动捕数据。</p>
+<p><strong>unity下载：</strong></p>
+<p><strong>1.下载unityHub</strong></p>
+<p><strong>下载链接:</strong><a href="https://unity.cn/releases/full/2021">https://unity.cn/releases/full/2021</a></p>
+<p>根据提示注册账号、申请许可</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/0a623051-3f7d-4b5c-adf6-9d099a256119.png" /></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/539e57e1-2532-41b6-a49a-2b4908f40029.png" /></p>
+<p><strong>2.下载unity</strong></p>
+<p><strong>下载链接:</strong><a href="https://unity.cn/releases/full/2021">https://unity.cn/releases/full/2021</a></p>
+<p>选择从unityHub下载，根据需要可以下载任意版本</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/c04cbe2a-f8e7-41fa-9e6a-6c10994ad0b5.png" /></p>
+<h1 id="unity">Unity动捕插件包导入项目</h1>
+<p><strong>插件下载</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>模块库文件</strong></th>
+<th><strong>版本</strong></th>
+<th></th>
+<th><strong>更新日志</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://alidocs.dingtalk.com/i/nodes/3xRN9bGQyw4JbxqgjqE5WzXPADKnorv6?iframeQuery=anchorId%3DX02m0en1xc9itnc1zyhmn&amp;utm_scene=team_space">请至钉钉文档查看附件《mostechPlugin2.0.0.unitypackage》</a></td>
+<td>V2.0.0</td>
+<td></td>
+<td>新增：<br>       1.支持手势识别，并提供Demo场景</td>
+</tr>
+<tr>
+<td><a href="https://alidocs.dingtalk.com/i/nodes/3xRN9bGQyw4JbxqgjqE5WzXPADKnorv6?iframeQuery=anchorId%3DX02m3fr9h5xk1rjjnlp9sg&amp;utm_scene=team_space">请至钉钉文档查看附件《mostechPlugin2.1.0.unitypackage》</a></td>
+<td>V2.1.0</td>
+<td></td>
+<td>bug:<br>      1.修复有可能反方向移动问题</td>
+</tr>
+<tr>
+<td><a href="https://alidocs.dingtalk.com/i/nodes/3xRN9bGQyw4JbxqgjqE5WzXPADKnorv6?iframeQuery=anchorId%3DX02m6sx24mdnyn2ypsnbx&amp;utm_scene=team_space">请至钉钉文档查看附件《mostechPlugin2.2.0.unitypackage》</a></td>
+<td>V2.2.0</td>
+<td>2025-02-06</td>
+<td>优化:<br>       1.手势识别可能导致程序崩溃问题</td>
+</tr>
+</tbody>
+</table>
+<p>打开unity工程后点击Asset&gt;Import Package&gt;Custom Package将MostechPlugin.unitypackage添加到unity工程即可</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/748bda20-2003-4bcb-8985-3fedae71da4b.png" /></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/daa0e92a-1403-4762-9cbd-60a2e8512a61.png" /></p>
+<h1 id="_2">插件包介绍</h1>
+<h3 id="21">2.1场景介绍</h3>
+<p>在 Assets &gt;Mostech &gt; Scenes 可以看到示例场景，进行简单的网络配置即可使用</p>
+<ol>
+<li>
+<p>MotionAnimatorScene  模型是Animation Type&gt;Humanoid类型的示例场景</p>
+</li>
+<li>
+<p>MotionTransformsScene 模型是Animation Type&gt;Generic类型的示例场景</p>
+</li>
+<li>
+<p>MotionHandScene 驱动手指示例场景</p>
+</li>
+</ol>
+<h3 id="22">2.2脚本介绍</h3>
+<ol>
+<li>
+<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionSourceManager.cs</p>
+<p>用于管理网络连接，数据驱动实例</p>
+</li>
+<li>
+<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionConnect.cs</p>
+<p>具体的网络连接、数据收发、数据处理</p>
+</li>
+<li>
+<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionData.cs</p>
+<p>动捕数据解析对应的实体类，以及数据转换</p>
+</li>
+<li>
+<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionInstance.cs</p>
+<p>动捕数据驱动模型的基类</p>
+</li>
+<li>
+<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionAnimatorInstance.cs</p>
+<p>将MotionStudio动捕数据应用于Unity的Animator组件并且是人形骨骼的模型上</p>
+</li>
+<li>
+<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionTransformsInstance.cs</p>
+<p>将MotionStudio动捕数据直接应用于transform组件。适用于非人形骨架的模型。</p>
+</li>
+<li>
+<p>在Assets&gt;Mostech&gt;Scripts&gt;DataConvert.cs</p>
+<p>通用数据转换，例如:欧拉角转四元数</p>
+</li>
+<li>
+<p>在Assets&gt;Mostech&gt;Scripts&gt; Loom.cs</p>
+</li>
+</ol>
+<p>子线程向主线程中添加事件,避免子线程直接调用unity主线程中方法报错。每个场景中必须要</p>
+<p>添加Loom.cs脚本。</p>
+<h3 id="23motionsourcemanagercs">2.3脚本MotionSourceManager.cs公共变量说明</h3>
+<ol>
+<li>
+<p>Socket Type：服务端Socket 协议 TCP、UDP</p>
+</li>
+<li>
+<p>Server_ip：MotionStudio中BVH数据广播设置的Ip</p>
+</li>
+<li>
+<p>Server_port：MotionStudio中BVH数据广播设置的Port</p>
+</li>
+<li>
+<p>Client_ip：当MotionStudio协议是UDP时需要将SocketType设置为UDP，并输入本地Ip</p>
+</li>
+<li>
+<p>Client_port：当MotionStudio协议是UDP时,需要将SocketType设置为UDP，并输入本地port</p>
+</li>
+<li>
+<p>AutoConnect:是否自动连接服务端</p>
+</li>
+<li>
+<p>MotionInstances[]:需要被驱动的实例在这里赋值，无论是MotionAnimatorInstance.cs</p>
+</li>
+</ol>
+<p>还是MotionTransformsInstance</p>
+<h3 id="24motionanimatorinstancecs">2.4脚本MotionAnimatorInstance.cs公共变量说明</h3>
+<ol>
+<li>
+<p>ActorID:演员的 ID 号, 默认是 0，代表 MotionStudio 中的一个角色，如果在MotionStudio</p>
+<p>软件中有多个角色，则第一个角色 ID 输入 0，第二个角色 ID 输入 1，依此类推。</p>
+</li>
+<li>
+<p>IsUseHand:是否驱动手指</p>
+</li>
+<li>
+<p>PositionOffset：在模型原始位置上加上这个位置偏差</p>
+</li>
+<li>
+<p>Animator：被驱动模型的Animator组件</p>
+</li>
+</ol>
+<h3 id="25motiontransforminstancecs">2.5脚本MotionTransformInstance.cs公共变量说明</h3>
+<ol>
+<li>
+<p>ActorID:演员的 ID 号, 默认是 0，代表 MotionStudio 中的一个角色，如果在MotionStudio</p>
+<p>软件中有多个角色，则第一个角色 ID 输入 0，第二个角色 ID 输入 1，依此类推。</p>
+</li>
+<li>
+<p>IsUseHand:是否驱动手指</p>
+</li>
+<li>
+<p>PositionOffset：在模型原始位置上加上这个位置偏差</p>
+</li>
+<li>
+<p>51个Transform：需要手动绑定需要驱动的51个骨骼</p>
+</li>
+<li>
+<p>bind：一键绑定模型的各个骨骼，被绑定模型有Animator组件并且Avatar不为空</p>
+</li>
+</ol>
+<h1 id="_3">模型要求</h1>
+<ol>
+<li>
+<p>模型根节点旋转必须为0</p>
+</li>
+<li>
+<p>模型所有骨骼自身坐标系为左手坐标系，x轴向右，y向上，z向前</p>
+</li>
+<li>
+<p>左右手各个手指由三部分组成，手指近端、中端、末端组成</p>
+</li>
+<li>
+<p>模型初始姿态必须为T Pose，且T pose下各个骨骼旋转最好为0</p>
+</li>
+</ol>
+<p>模型T-POSE下姿态示意图</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/c6f532c4-9b52-4d04-8e82-9237fde5c10c.png" /></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/508ed60a-983d-49cc-b841-b0a6629630df.png" /></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/eae05399-01a2-415f-9799-4dfc0e9207c1.png" /></p>
+<p>如果模型初始姿态不是T-POSE，需要手动将模型设置为T-POSE</p>
+<p>模型设置为T pose有两种方式</p>
+<p><strong>方式一</strong></p>
+<p><strong>模型有人形骨骼，确保每个骨骼映射正确</strong></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/63e148cf-ae22-4e87-ac6d-81acf44b7462.png" /><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/0dc1f72e-91ce-422f-bd53-c70ac3d2e38e.png" /></p>
+<p><strong>方式二</strong></p>
+<p><strong>模型没有人形骨骼，手动调整每个关节</strong></p>
+<p><img alt="动画.gif" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/5b09ad5a-071c-4178-9a9c-b090a2f48920.gif" /></p>
+<p>3.模型最好有下方骨骼，满足得越多动作越精细</p>
+<p>全身骨骼驱动，最好有下方骨骼</p>
+<table>
+<thead>
+<tr>
+<th>Head</th>
+<th>Hips</th>
+<th>Spine</th>
+<th>Chest</th>
+<th>UpperChest</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>头</td>
+<td>臀</td>
+<td>臀部向上<br>第一脊椎</td>
+<td>臀部向上<br>第二脊椎</td>
+<td>臀部向上<br>第三脊椎</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Shoulder</th>
+<th>UpperArm</th>
+<th>LowerArm</th>
+<th>Hand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右肩</td>
+<td>左右上臂</td>
+<td>左右下臂</td>
+<td>左右手</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>UpperLeg</th>
+<th>LowerLeg</th>
+<th>Foot</th>
+<th>Toes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右大腿</td>
+<td>左右小腿</td>
+<td>左右脚</td>
+<td>左右脚尖</td>
+</tr>
+</tbody>
+</table>
+<p>手指驱动最好有下方骨骼</p>
+<table>
+<thead>
+<tr>
+<th>ThumbProximal</th>
+<th>ThumbIntermediate</th>
+<th>ThumbDistal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右拇指近端</td>
+<td>左右拇指中端</td>
+<td>左右拇指末端</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>IndexProximal</th>
+<th>IndexIntermediate</th>
+<th>IndexDistal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右食指近端</td>
+<td>左右食指中端</td>
+<td>左右食指末端</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>MiddleProximal</th>
+<th>MiddleIntermediate</th>
+<th>MiddleDistal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右中指近端</td>
+<td>左右中指中端</td>
+<td>左右中指末端</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>RingProximal</th>
+<th>RingIntermediate</th>
+<th>RingDistal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右无名指近端</td>
+<td>左右无名指中端</td>
+<td>左右无名指末端</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>LittleProximal</th>
+<th>LittleIntermediate</th>
+<th>LittleDistal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右小拇指近端</td>
+<td>左右小拇指中端</td>
+<td>左右小拇指末端</td>
+</tr>
+</tbody>
+</table>
+<h1 id="4motionstudiounity">4.如何使用MotionStudio数据流实时驱动Unity模型</h1>
+<h3 id="41motionsourcemanagercs">4.1使用MotionSourceManager.cs进行相关配置</h3>
+<p>场景中创建空物体添加MotionSourceManager.cs脚本</p>
+<p><strong>网络配置，当BVH数据广播协议为TCP时</strong></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/fae0f9bd-80fa-4e43-b02c-9b0693b41f46.png" /></p>
+<p>unity中配置如下</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/15b0542d-00be-495e-9002-d96a40de76cc.png" /></p>
+<p><strong>网络配置，当BVH广播协议为UDP时</strong></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/60e8403d-23e4-4bac-a09a-fdc83981333f.png" /></p>
+<p>unity中配置如下</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/383061f8-a32c-4d16-807a-43afc3d5fd32.png" /></p>
+<h3 id="42motionanimatorinstancecs">4.2使用MotionAnimatorInstance.cs驱动模型</h3>
+<p>将模型拖到Hierarchy面板。模型添加Animator组件，确保Avatar不为空。</p>
+<p>模型添加MotionAnimatorInstance.cs组件</p>
+<p>将模型上的MotionAnimatorInstance.cs脚本赋值给4.1MotionSourceManager.cs中的MotionInstances[]</p>
+<p>unity中配置如下</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/04ea5e54-b494-4e3c-9d71-b04847d6785f.png" /></p>
+<h3 id="43motiontransformsinstancecs">4.3使用MotionTransformsInstance.cs驱动模型</h3>
+<p>将模型拖到Hierarchy面板。模型添加MotionTransformsInstance.cs组件</p>
+<p><strong>需要手动给各个关节赋值包含各个手指</strong></p>
+<p>将模型上的MotionTransformsInstance.cs脚本赋值给4.1MotionSourceManager.cs中的MotionInstances[]</p>
+<p>unity中配置如下</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/4a571fcc-12d5-4b37-9b1f-529c7d1a98c0.png" /></p>
+<h1 id="5motionstudio">5.插件中如何驱动MotionStudio多角色？</h1>
+<ol>
+<li>将MotionSourceManager.cs中变量MotionInstances[]数量设置为MotionStudio中角色数量</li>
+</ol>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/461d1397-f125-4010-8055-8e6dc02ac83b.png" /></p>
+<p>2.为MotionSourceManager.cs中变量MotionInstances赋值</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/c53a912b-b6df-4bcd-8a8e-f61a8482a78d.png" /></p>
+<p>3.设置对应继承MotionInstance.cs实例的ActorID</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/043dc89c-63d9-4370-b859-5e4a21943ed2.png" /></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/5d03c446-ce6b-431b-8882-26f0d6f5dd16.png" /></p>
+<h1 id="6">6.常见问题</h1>
+<h3 id="61">6.1使用手势识别功能打包后程序闪退如何解决?</h3>
+<p>打包后将工程中Motion_RecognizeHG.dll和model文件夹拷贝至xxx.exe同一级目录</p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYaLJN4bdqwZL/img/c255477a-833d-4f59-9f68-dc7b525e9df9.png" /></p>
+<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYaLJN4bdqwZL/img/e9115887-8a8f-4344-a367-3445426678cb.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
