@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔迅科技文档中心</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1a73e8, #6c8ef5);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a73e8;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        
+        .item-list {
+            list-style-type: none;
+        }
+        
+        .item-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .item-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .item-list li a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .item-list li a:hover {
+            color: #1a73e8;
+        }
+        
+        .item-list li a::before {
+            content: "•";
+            color: #1a73e8;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>魔迅科技文档中心</h1>
+            <p class="subtitle">为开发者提供全面的技术文档和资源</p>
+        </header>
+        
+        <div class="content-grid">
+            <div class="category-card">
+                <h2 class="category-title">硬件</h2>
+                <ul class="item-list">
+                    <li><a href="#">Z1/Z1 Pro开发指南</a></li>
+                    <li><a href="#">G1/G1 Pro开发指南</a></li>
+                    <li><a href="#">ML020W开发指南</a></li>
+                    <li><a href="#">G2开发指南</a></li>
+                    <li><a href="#">Z2开发指南</a></li>
+                    <li><a href="#">随身网关</a></li>
+                </ul>
+            </div>
+            
+            <div class="category-card">
+                <h2 class="category-title">动捕软件</h2>
+                <ul class="item-list">
+                    <li><a href="#">Motion Studio</a></li>
+                    <li><a href="#">移动端版本Beta</a></li>
+                </ul>
+            </div>
+            
+            <div class="category-card">
+                <h2 class="category-title">插件</h2>
+                <ul class="item-list">
+                    <li><a href="#">C++SDK</a></li>
+                    <li><a href="#">Unity插件</a></li>
+                    <li><a href="#">Unreal Engine插件</a></li>
+                    <li><a href="#">Motion Builder插件</a></li>
+                    <li><a href="#">Maya插件</a></li>
+                    <li><a href="#">Blender插件</a></li>
+                    <li><a href="#">C4D插件</a></li>
+                    <li><a href="#">iClone8插件</a></li>
+                </ul>
+            </div>
+            
+            <div class="category-card">
+                <h2 class="category-title">行业应用</h2>
+                <ul class="item-list">
+                    <li><a href="#">机器人</a></li>
+                    <li><a href="#">全息屏</a></li>
+                    <li><a href="#">虚拟现实</a></li>
+                    <li><a href="#">虚拟直播</a></li>
+                    <li><a href="#">运动康复</a></li>
+                </ul>
+            </div>
+            
+            <div class="category-card">
+                <h2 class="category-title">其他</h2>
+                <ul class="item-list">
+                    <li><a href="#">示例模型</a></li>
+                    <li><a href="#">3D打印件</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Copyright © 魔迅科技 版权所有</p>
+        </footer>
+    </div>
+</body>
+</html>
