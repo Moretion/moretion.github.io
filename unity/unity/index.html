@@ -61,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#unity3d" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -200,8 +195,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -268,8 +261,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -286,368 +277,191 @@
 
 
 
-<h1 id="unity3d">Unity3D插件使用文档</h1>
-<h1 id="_1">简介</h1>
-<p>本文档将帮助你如何使用游戏引擎 Unity 3D 读取魔迅MotionStudio动捕软件的运动捕捉数据。 MotionStudio软件支持实时传输实时和离线动捕数据，实时数据是指连接设备时的数据，离线数据指回放数据。实时传输是指在MotionStudio开启数据广播，在Unity3D中建立和MotionStudio的网络连接，就可接收到MotionStudio中的实时动捕数据。</p>
-<p><strong>unity下载：</strong></p>
-<p><strong>1.下载unityHub</strong></p>
-<p><strong>下载链接:</strong><a href="https://unity.cn/releases/full/2021">https://unity.cn/releases/full/2021</a></p>
-<p>根据提示注册账号、申请许可</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/0a623051-3f7d-4b5c-adf6-9d099a256119.png" /></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/539e57e1-2532-41b6-a49a-2b4908f40029.png" /></p>
-<p><strong>2.下载unity</strong></p>
-<p><strong>下载链接:</strong><a href="https://unity.cn/releases/full/2021">https://unity.cn/releases/full/2021</a></p>
-<p>选择从unityHub下载，根据需要可以下载任意版本</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/c04cbe2a-f8e7-41fa-9e6a-6c10994ad0b5.png" /></p>
-<h1 id="unity">Unity动捕插件包导入项目</h1>
-<p><strong>插件下载</strong></p>
-<table>
-<thead>
-<tr>
-<th><strong>模块库文件</strong></th>
-<th><strong>版本</strong></th>
-<th></th>
-<th><strong>更新日志</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://alidocs.dingtalk.com/i/nodes/3xRN9bGQyw4JbxqgjqE5WzXPADKnorv6?iframeQuery=anchorId%3DX02m0en1xc9itnc1zyhmn&amp;utm_scene=team_space">请至钉钉文档查看附件《mostechPlugin2.0.0.unitypackage》</a></td>
-<td>V2.0.0</td>
-<td></td>
-<td>新增：<br>       1.支持手势识别，并提供Demo场景</td>
-</tr>
-<tr>
-<td><a href="https://alidocs.dingtalk.com/i/nodes/3xRN9bGQyw4JbxqgjqE5WzXPADKnorv6?iframeQuery=anchorId%3DX02m3fr9h5xk1rjjnlp9sg&amp;utm_scene=team_space">请至钉钉文档查看附件《mostechPlugin2.1.0.unitypackage》</a></td>
-<td>V2.1.0</td>
-<td></td>
-<td>bug:<br>      1.修复有可能反方向移动问题</td>
-</tr>
-<tr>
-<td><a href="https://alidocs.dingtalk.com/i/nodes/3xRN9bGQyw4JbxqgjqE5WzXPADKnorv6?iframeQuery=anchorId%3DX02m6sx24mdnyn2ypsnbx&amp;utm_scene=team_space">请至钉钉文档查看附件《mostechPlugin2.2.0.unitypackage》</a></td>
-<td>V2.2.0</td>
-<td>2025-02-06</td>
-<td>优化:<br>       1.手势识别可能导致程序崩溃问题</td>
-</tr>
-</tbody>
-</table>
-<p>打开unity工程后点击Asset&gt;Import Package&gt;Custom Package将MostechPlugin.unitypackage添加到unity工程即可</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/748bda20-2003-4bcb-8985-3fedae71da4b.png" /></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/daa0e92a-1403-4762-9cbd-60a2e8512a61.png" /></p>
-<h1 id="_2">插件包介绍</h1>
-<h3 id="21">2.1场景介绍</h3>
-<p>在 Assets &gt;Mostech &gt; Scenes 可以看到示例场景，进行简单的网络配置即可使用</p>
-<ol>
-<li>
-<p>MotionAnimatorScene  模型是Animation Type&gt;Humanoid类型的示例场景</p>
-</li>
-<li>
-<p>MotionTransformsScene 模型是Animation Type&gt;Generic类型的示例场景</p>
-</li>
-<li>
-<p>MotionHandScene 驱动手指示例场景</p>
-</li>
-</ol>
-<h3 id="22">2.2脚本介绍</h3>
-<ol>
-<li>
-<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionSourceManager.cs</p>
-<p>用于管理网络连接，数据驱动实例</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionConnect.cs</p>
-<p>具体的网络连接、数据收发、数据处理</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionData.cs</p>
-<p>动捕数据解析对应的实体类，以及数据转换</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionInstance.cs</p>
-<p>动捕数据驱动模型的基类</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionAnimatorInstance.cs</p>
-<p>将MotionStudio动捕数据应用于Unity的Animator组件并且是人形骨骼的模型上</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;Scripts&gt;MotionTransformsInstance.cs</p>
-<p>将MotionStudio动捕数据直接应用于transform组件。适用于非人形骨架的模型。</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;Scripts&gt;DataConvert.cs</p>
-<p>通用数据转换，例如:欧拉角转四元数</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;Scripts&gt; Loom.cs</p>
-</li>
-</ol>
-<p>子线程向主线程中添加事件,避免子线程直接调用unity主线程中方法报错。每个场景中必须要</p>
-<p>添加Loom.cs脚本。</p>
-<h3 id="23motionsourcemanagercs">2.3脚本MotionSourceManager.cs公共变量说明</h3>
-<ol>
-<li>
-<p>Socket Type：服务端Socket 协议 TCP、UDP</p>
-</li>
-<li>
-<p>Server_ip：MotionStudio中BVH数据广播设置的Ip</p>
-</li>
-<li>
-<p>Server_port：MotionStudio中BVH数据广播设置的Port</p>
-</li>
-<li>
-<p>Client_ip：当MotionStudio协议是UDP时需要将SocketType设置为UDP，并输入本地Ip</p>
-</li>
-<li>
-<p>Client_port：当MotionStudio协议是UDP时,需要将SocketType设置为UDP，并输入本地port</p>
-</li>
-<li>
-<p>AutoConnect:是否自动连接服务端</p>
-</li>
-<li>
-<p>MotionInstances[]:需要被驱动的实例在这里赋值，无论是MotionAnimatorInstance.cs</p>
-</li>
-</ol>
-<p>还是MotionTransformsInstance</p>
-<h3 id="24motionanimatorinstancecs">2.4脚本MotionAnimatorInstance.cs公共变量说明</h3>
-<ol>
-<li>
-<p>ActorID:演员的 ID 号, 默认是 0，代表 MotionStudio 中的一个角色，如果在MotionStudio</p>
-<p>软件中有多个角色，则第一个角色 ID 输入 0，第二个角色 ID 输入 1，依此类推。</p>
-</li>
-<li>
-<p>IsUseHand:是否驱动手指</p>
-</li>
-<li>
-<p>PositionOffset：在模型原始位置上加上这个位置偏差</p>
-</li>
-<li>
-<p>Animator：被驱动模型的Animator组件</p>
-</li>
-</ol>
-<h3 id="25motiontransforminstancecs">2.5脚本MotionTransformInstance.cs公共变量说明</h3>
-<ol>
-<li>
-<p>ActorID:演员的 ID 号, 默认是 0，代表 MotionStudio 中的一个角色，如果在MotionStudio</p>
-<p>软件中有多个角色，则第一个角色 ID 输入 0，第二个角色 ID 输入 1，依此类推。</p>
-</li>
-<li>
-<p>IsUseHand:是否驱动手指</p>
-</li>
-<li>
-<p>PositionOffset：在模型原始位置上加上这个位置偏差</p>
-</li>
-<li>
-<p>51个Transform：需要手动绑定需要驱动的51个骨骼</p>
-</li>
-<li>
-<p>bind：一键绑定模型的各个骨骼，被绑定模型有Animator组件并且Avatar不为空</p>
-</li>
-</ol>
-<h1 id="_3">模型要求</h1>
-<ol>
-<li>
-<p>模型根节点旋转必须为0</p>
-</li>
-<li>
-<p>模型所有骨骼自身坐标系为左手坐标系，x轴向右，y向上，z向前</p>
-</li>
-<li>
-<p>左右手各个手指由三部分组成，手指近端、中端、末端组成</p>
-</li>
-<li>
-<p>模型初始姿态必须为T Pose，且T pose下各个骨骼旋转最好为0</p>
-</li>
-</ol>
-<p>模型T-POSE下姿态示意图</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/c6f532c4-9b52-4d04-8e82-9237fde5c10c.png" /></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/508ed60a-983d-49cc-b841-b0a6629630df.png" /></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/eae05399-01a2-415f-9799-4dfc0e9207c1.png" /></p>
-<p>如果模型初始姿态不是T-POSE，需要手动将模型设置为T-POSE</p>
-<p>模型设置为T pose有两种方式</p>
-<p><strong>方式一</strong></p>
-<p><strong>模型有人形骨骼，确保每个骨骼映射正确</strong></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/63e148cf-ae22-4e87-ac6d-81acf44b7462.png" /><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/0dc1f72e-91ce-422f-bd53-c70ac3d2e38e.png" /></p>
-<p><strong>方式二</strong></p>
-<p><strong>模型没有人形骨骼，手动调整每个关节</strong></p>
-<p><img alt="动画.gif" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/5b09ad5a-071c-4178-9a9c-b090a2f48920.gif" /></p>
-<p>3.模型最好有下方骨骼，满足得越多动作越精细</p>
-<p>全身骨骼驱动，最好有下方骨骼</p>
-<table>
-<thead>
-<tr>
-<th>Head</th>
-<th>Hips</th>
-<th>Spine</th>
-<th>Chest</th>
-<th>UpperChest</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>头</td>
-<td>臀</td>
-<td>臀部向上<br>第一脊椎</td>
-<td>臀部向上<br>第二脊椎</td>
-<td>臀部向上<br>第三脊椎</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Shoulder</th>
-<th>UpperArm</th>
-<th>LowerArm</th>
-<th>Hand</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>左右肩</td>
-<td>左右上臂</td>
-<td>左右下臂</td>
-<td>左右手</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>UpperLeg</th>
-<th>LowerLeg</th>
-<th>Foot</th>
-<th>Toes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>左右大腿</td>
-<td>左右小腿</td>
-<td>左右脚</td>
-<td>左右脚尖</td>
-</tr>
-</tbody>
-</table>
-<p>手指驱动最好有下方骨骼</p>
-<table>
-<thead>
-<tr>
-<th>ThumbProximal</th>
-<th>ThumbIntermediate</th>
-<th>ThumbDistal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>左右拇指近端</td>
-<td>左右拇指中端</td>
-<td>左右拇指末端</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>IndexProximal</th>
-<th>IndexIntermediate</th>
-<th>IndexDistal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>左右食指近端</td>
-<td>左右食指中端</td>
-<td>左右食指末端</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>MiddleProximal</th>
-<th>MiddleIntermediate</th>
-<th>MiddleDistal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>左右中指近端</td>
-<td>左右中指中端</td>
-<td>左右中指末端</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>RingProximal</th>
-<th>RingIntermediate</th>
-<th>RingDistal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>左右无名指近端</td>
-<td>左右无名指中端</td>
-<td>左右无名指末端</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>LittleProximal</th>
-<th>LittleIntermediate</th>
-<th>LittleDistal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>左右小拇指近端</td>
-<td>左右小拇指中端</td>
-<td>左右小拇指末端</td>
-</tr>
-</tbody>
-</table>
-<h1 id="4motionstudiounity">4.如何使用MotionStudio数据流实时驱动Unity模型</h1>
-<h3 id="41motionsourcemanagercs">4.1使用MotionSourceManager.cs进行相关配置</h3>
-<p>场景中创建空物体添加MotionSourceManager.cs脚本</p>
-<p><strong>网络配置，当BVH数据广播协议为TCP时</strong></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/fae0f9bd-80fa-4e43-b02c-9b0693b41f46.png" /></p>
-<p>unity中配置如下</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/15b0542d-00be-495e-9002-d96a40de76cc.png" /></p>
-<p><strong>网络配置，当BVH广播协议为UDP时</strong></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/60e8403d-23e4-4bac-a09a-fdc83981333f.png" /></p>
-<p>unity中配置如下</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/383061f8-a32c-4d16-807a-43afc3d5fd32.png" /></p>
-<h3 id="42motionanimatorinstancecs">4.2使用MotionAnimatorInstance.cs驱动模型</h3>
-<p>将模型拖到Hierarchy面板。模型添加Animator组件，确保Avatar不为空。</p>
-<p>模型添加MotionAnimatorInstance.cs组件</p>
-<p>将模型上的MotionAnimatorInstance.cs脚本赋值给4.1MotionSourceManager.cs中的MotionInstances[]</p>
-<p>unity中配置如下</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/04ea5e54-b494-4e3c-9d71-b04847d6785f.png" /></p>
-<h3 id="43motiontransformsinstancecs">4.3使用MotionTransformsInstance.cs驱动模型</h3>
-<p>将模型拖到Hierarchy面板。模型添加MotionTransformsInstance.cs组件</p>
-<p><strong>需要手动给各个关节赋值包含各个手指</strong></p>
-<p>将模型上的MotionTransformsInstance.cs脚本赋值给4.1MotionSourceManager.cs中的MotionInstances[]</p>
-<p>unity中配置如下</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/4a571fcc-12d5-4b37-9b1f-529c7d1a98c0.png" /></p>
-<h1 id="5motionstudio">5.插件中如何驱动MotionStudio多角色？</h1>
-<ol>
-<li>将MotionSourceManager.cs中变量MotionInstances[]数量设置为MotionStudio中角色数量</li>
-</ol>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/461d1397-f125-4010-8055-8e6dc02ac83b.png" /></p>
-<p>2.为MotionSourceManager.cs中变量MotionInstances赋值</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/c53a912b-b6df-4bcd-8a8e-f61a8482a78d.png" /></p>
-<p>3.设置对应继承MotionInstance.cs实例的ActorID</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/043dc89c-63d9-4370-b859-5e4a21943ed2.png" /></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/5d03c446-ce6b-431b-8882-26f0d6f5dd16.png" /></p>
-<h1 id="6">6.常见问题</h1>
-<h3 id="61">6.1使用手势识别功能打包后程序闪退如何解决?</h3>
-<p>打包后将工程中Motion_RecognizeHG.dll和model文件夹拷贝至xxx.exe同一级目录</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYaLJN4bdqwZL/img/c255477a-833d-4f59-9f68-dc7b525e9df9.png" /></p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYaLJN4bdqwZL/img/e9115887-8a8f-4344-a367-3445426678cb.png" /></p>
+  <h1>Unity Plugins</h1>
+
+<p><strong>unity插件使用教程</strong></p>
+<p><strong>一.unity软件使用</strong></p>
+<p><strong>1.打开Unity
+Hub软件(若未下载可官网下载：</strong><a href="https://unity.cn/releases">https://unity.cn/releases</a><strong>)</strong></p>
+<p><img alt="" src="../images/media/image1.png" />{width="7.791666666666667in"
+height="5.697656386701662in"}</p>
+<p><strong>2.检查是否安装编辑器（</strong>最低可用版本2019.1.0<strong>）</strong></p>
+<p><img alt="" src="../images/media/image2.png" />{width="7.791666666666667in"
+height="4.159613954505687in"}</p>
+<p>若未下载可点击安装unit编辑器按钮，按照unity编辑器或者官网下载（地址：<a href="https://unity.cn/releases/full/2019">https://unity.cn/releases/full/2019</a>）</p>
+<p><img alt="" src="../images/media/image3.png" />{width="7.791666666666667in"
+height="4.119032152230971in"}</p>
+<p><strong>3.新建项目或打开已有项目</strong></p>
+<p><img alt="" src="../images/media/image4.png" />{width="7.791666666666667in"
+height="3.8998917322834648in"}</p>
+<p>新建项目</p>
+<p><img alt="" src="../images/media/image5.png" />{width="7.791666666666667in"
+height="4.210504155730534in"}</p>
+<p>创建项目后自动打开新建的项目</p>
+<p><img alt="" src="../images/media/image6.png" />{width="7.791666666666667in"
+height="4.157994313210849in"}</p>
+<p><strong>4.打开后如果存在警告(无警告可跳过此步骤)</strong></p>
+<p><img alt="" src="../images/media/image7.png" />{width="7.791666666666667in"
+height="4.2776979440069995in"}</p>
+<p>点击window-package Manager</p>
+<p><img alt="" src="../images/media/image8.png" />{width="7.791666666666667in"
+height="4.2004079177602796in"}</p>
+<p>点击Visual Studio Editor--Update to 2.0.22</p>
+<p><img alt="" src="../images/media/image9.png" />{width="7.791666666666667in"
+height="4.190203412073491in"}</p>
+<p>更新完成后关闭弹窗</p>
+<p><img alt="" src="../images/media/image10.png" />{width="7.791666666666667in"
+height="4.24334864391951in"}</p>
+<p><strong>5.导入unity插件</strong></p>
+<p>unity插件2.3.0版本下载</p>
+<p><a href="https://alidocs.dingtalk.com/i/nodes/R4GpnMqJzO4YkAwnHvyzQbQR8Ke0xjE3?iframeQuery=anchorId%3DX02mfkukm6dc6ym58pej1">请至钉钉文档查看附件《mostechPlugin2.3.0.unitypackage》</a></p>
+<p>将motionPlugin2.1.0插件文件拖拽至Project-Assets里面</p>
+<p><img alt="" src="../images/media/image11.png" />{width="7.791666666666667in"
+height="4.509662073490814in"}</p>
+<p>点击import按钮</p>
+<p><img alt="" src="../images/media/image12.png" />{width="7.791666666666667in"
+height="4.143897637795275in"}</p>
+<p><strong>6.驱动全身设备</strong></p>
+<p>点击assets---mostech---scenes</p>
+<p><img alt="" src="../images/media/image13.png" />{width="7.791666666666667in"
+height="4.183055555555556in"}</p>
+<p>点击Motion Animator Scene或Motion Transforms Scene</p>
+<p><img alt="" src="../images/media/image14.png" />{width="7.791666666666667in"
+height="4.222010061242345in"} 在Hierarchy点击MotionDriver</p>
+<p><img alt="" src="../images/media/image15.png" />{width="7.791666666666667in"
+height="4.226195319335083in"}</p>
+<p>点击inspector---Motion Source Manager(script)输入motion中对应的ip和端口</p>
+<p><img alt="" src="../images/media/image16.png" />{width="7.791666666666667in"
+height="4.224176509186352in"}</p>
+<p>连接设备后，并做好姿势校准</p>
+<p><img alt="" src="../images/media/image17.png" />{width="7.791666666666667in"
+height="4.202075678040245in"}</p>
+<p>点击运行，可传输实时数据</p>
+<p><img alt="" src="../images/media/image18.png" />{width="7.791666666666667in"
+height="4.27265091863517in"}</p>
+<p><strong>7.驱动手套设备运行</strong></p>
+<p>点击assets---mostech---scenes</p>
+<p><img alt="" src="../images/media/image19.png" />{width="7.791666666666667in"
+height="4.193867016622922in"}</p>
+<p>点击Motion Hand Scene</p>
+<p><img alt="" src="../images/media/image20.png" />{width="7.791666666666667in"
+height="4.219214785651793in"}</p>
+<p>点击inspector---Motion Source Manager(script)输入motion中对应的ip和端口</p>
+<p><img alt="" src="../images/media/image21.png" />{width="7.791666666666667in"
+height="4.214514435695538in"}</p>
+<p>连接设备后，并做好姿势校准</p>
+<p><img alt="" src="../images/media/image22.png" />{width="7.791666666666667in"
+height="4.23420384951881in"}</p>
+<p>点击运行，可传输实时数据</p>
+<p><img alt="" src="../images/media/image23.png" />{width="7.791666666666667in"
+height="4.279886264216973in"}</p>
+<p><strong>8.驱动组合设备运行</strong></p>
+<p>选择的模特与全身设备一样</p>
+<p><img alt="" src="../images/media/image24.png" />{width="7.791666666666667in"
+height="4.209150262467191in"}</p>
+<p>点击inspector---Motion Source Manager(script)输入motion中对应的ip和端口</p>
+<p><img alt="" src="../images/media/image25.png" />{width="7.791666666666667in"
+height="4.21336176727909in"}</p>
+<p>motion上将设备组合起来，并做好姿势校准</p>
+<p><img alt="" src="../images/media/image26.png" />{width="7.791666666666667in"
+height="4.220613517060367in"}</p>
+<p>点击运行，可传输实时数据</p>
+<p><img alt="" src="../images/media/image27.png" />{width="7.791666666666667in"
+height="4.191758530183727in"}</p>
+<p><strong>9.驱动多设备运行</strong></p>
+<p>在Hierarchy选中Mostech-Robot进行粘贴复制</p>
+<p><img alt="" src="../images/media/image28.png" />{width="7.791666666666667in"
+height="4.2447364391951in"}</p>
+<p>点击inspector---Motion Instances输入对应的模特数</p>
+<p><img alt="" src="../images/media/image29.png" />{width="7.791666666666667in"
+height="4.259972659667541in"}</p>
+<p>点击motionDriver再点击inspector---Motion
+Instances---Element0、Element1选择相对应的Mostech-Robot</p>
+<p><img alt="" src="../images/media/image30.png" />{width="7.791666666666667in"
+height="4.12749343832021in"}</p>
+<p>点击Mostech-Robot再点击inspector---Actor ID输入不同的数字</p>
+<p><img alt="" src="../images/media/image31.png" />{width="7.791666666666667in"
+height="4.258912948381452in"}</p>
+<p>点击Mostech-Robot再点击inspector---模特位置调整，修改x,y,z</p>
+<p><img alt="" src="../images/media/image32.png" />{width="7.791666666666667in"
+height="4.23837489063867in"}</p>
+<p><img alt="" src="../images/media/image33.png" />{width="7.791666666666667in"
+height="4.224800962379702in"}</p>
+<p>motion上做好姿势校准后，untiy上点击运行按钮</p>
+<p><img alt="" src="../images/media/image34.png" />{width="7.791666666666667in"
+height="4.382812773403325in"}</p>
+<p><strong>10.一套设备驱动多个模特</strong></p>
+<p>在Hierarchy选中Mostech-Robot进行粘贴复制</p>
+<p><img alt="" src="../images/media/image28.png" />{width="7.791666666666667in"
+height="4.2447364391951in"}</p>
+<p>点击inspector---Motion Instances输入对应的模特数</p>
+<p><img alt="" src="../images/media/image29.png" />{width="7.791666666666667in"
+height="4.259972659667541in"}</p>
+<p>点击motionDriver再点击inspector---Motion
+Instances---Element0、Element1选择相对应的Mostech-Robot</p>
+<p><img alt="" src="../images/media/image30.png" />{width="7.791666666666667in"
+height="4.12749343832021in"}点击Mostech-Robot再点击inspector---Actor
+ID输入相同的数字</p>
+<p><img alt="" src="../images/media/image31.png" />{width="7.791666666666667in"
+height="4.258912948381452in"}</p>
+<p>点击Mostech-Robot再点击inspector---模特位置调整，修改x,y,z</p>
+<p><img alt="" src="../images/media/image32.png" />{width="7.791666666666667in"
+height="4.236719160104987in"}</p>
+<p><img alt="" src="../images/media/image33.png" />{width="7.791666666666667in"
+height="4.224800962379702in"}</p>
+<p>motion上做好姿势校准后，untiy上点击运行按钮</p>
+<p><img alt="" src="../images/media/image35.png" />{width="7.791666666666667in"
+height="4.20279636920385in"}</p>
+<p><strong>二.motion studio软件数据广播使用</strong></p>
+<p><strong>1.打开Motion Studio软件</strong></p>
+<p><img alt="" src="../images/media/image36.png" />{width="5.041666666666667in"
+height="5.635416666666667in"}</p>
+<p>2.进入主页界面，可新建项目或者打开已新建好的项目</p>
+<p><img alt="" src="../images/media/image37.png" />{width="7.791666666666667in"
+height="4.053491907261592in"}</p>
+<p><img alt="" src="../images/media/image38.png" />{width="7.791666666666667in"
+height="4.094137139107612in"}</p>
+<p><strong>3.选中项目后，进入捕捉页面</strong></p>
+<p><img alt="" src="../images/media/image39.png" />{width="7.791666666666667in"
+height="4.207744969378828in"}</p>
+<p><strong>4.开启数据广播</strong></p>
+<p>点击左上角功能-数据广播按钮</p>
+<p><img alt="" src="../images/media/image40.png" />{width="7.791666666666667in"
+height="4.208311461067367in"}</p>
+<p>开启bvh广播（端口号可随意输入）</p>
+<p><img alt="" src="../images/media/image41.png" />{width="7.791666666666667in"
+height="4.198639545056868in"}</p>
+<p><img alt="" src="../images/media/image42.png" />{width="7.791666666666667in"
+height="4.198639545056868in"}</p>
+<p><strong>5.数据广播开启后，未连接设备可播放离线数据</strong></p>
+<p>查看文件列表，双击选择数据文件播放</p>
+<p><img alt="" src="../images/media/image43.png" />{width="7.791666666666667in"
+height="4.200512904636921in"}</p>
+<p>播放文件</p>
+<p><img alt="" src="../images/media/image44.png" />{width="7.791666666666667in"
+height="4.173523622047244in"}</p>
+<p>unity IP和端口配置完成后，点击播放按钮，可播放离线数据</p>
+<p><img alt="" src="../images/media/image45.png" />{width="7.791666666666667in"
+height="4.188937007874015in"}</p>
+<p><strong>6.数据广播开启后，连接设备可播放实时数据</strong></p>
+<p>接收器连接电脑，当设备列表有设备显示时，点击连接按钮进行设备连接</p>
+<p><img alt="" src="../images/media/image46.png" />{width="7.791666666666667in"
+height="4.239583333333333in"}</p>
+<p>连接成功后，可将绑带和设备按照提示依次穿戴在身上</p>
+<p><img alt="" src="../images/media/image47.png" />{width="3.3229166666666665in"
+height="4.322916666666667in"}</p>
+<p>穿戴完成，点击姿势校准，根据提示进行T-Pose、A-Pose、OK-Pose(有手套设备组合时)姿势校准</p>
+<p><img alt="" src="../images/media/image48.png" />{width="7.791666666666667in"
+height="4.2314063867016625in"}</p>
+<p><img alt="" src="../images/media/image49.png" />{width="7.791666666666667in"
+height="4.2217672790901135in"}</p>
+<p><img alt="" src="../images/media/image50.png" />{width="7.791666666666667in"
+height="4.240320428696413in"}</p>
+<p>unity IP和端口配置完成后，点击播放按钮，可播放实时数据</p>
+<p><img alt="" src="../images/media/image51.png" />{width="7.791666666666667in"
+height="4.2230260279965in"}</p>
+<p><img alt="" src="../images/media/image52.png" />{width="7.791666666666667in"
+height="4.186383420822398in"}</p>
 
 
 
