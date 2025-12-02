@@ -1,0 +1,1076 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>串流端口协议</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="串流端口协议" class="md-header__button md-logo" aria-label="串流端口协议" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            串流端口协议
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              串流端口协议
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="串流端口协议" class="md-nav__button md-logo" aria-label="串流端口协议" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    串流端口协议
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    串流端口协议
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    串流端口协议
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        串流数据说明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="串流数据说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据内容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据解析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特定需求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="特定需求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【串流】API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用错误码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询设备列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        有线手套马达震动协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        串流数据说明
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="串流数据说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据格式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据内容
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据解析
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        特定需求
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="特定需求">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        【串流】API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用错误码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        查询设备列表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        有线手套马达震动协议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">串流端口协议</h1>
+<p>以下是基于该JSON数据的说明文档：</p>
+<h2 id="_2">串流数据说明</h2>
+<p>本文档介绍了一个JSON格式的串流数据，其中包含了人体各个关节的姿态信息和根节点的位置信息。客户端通过Socket连接ServerSocket，接收到JSON格式的数据。</p>
+<h3 id="_3">数据格式</h3>
+<p>数据格式为JSON格式，如下所示：</p>
+<pre><code class="language-json">{
+    &quot;deviceList&quot;: [
+      {
+        &quot;leftLittleFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftLowerLeg&quot;: [0.5283327317267245, 0.9699280975299531, 0.05361260659299393],
+        &quot;leftThumbMid&quot;: [0.0, 0.0, 0.0],
+        &quot;actorName&quot;: &quot;36895272192031866103&quot;,
+        &quot;rightMiddleFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;deviceId&quot;: &quot;36895272192031866103&quot;,
+        &quot;leftToe&quot;: [0.0, 0.0, 0.0],
+        &quot;crotch&quot;: [167.57347163011366, -83.40422843226828, 168.32318812755344],
+        &quot;rightForeFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftThumbUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;rightLowerLeg&quot;: [-0.14184703756515651, -0.3411541341866196, 0.11966295623743685],
+        &quot;rightMiddleFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;rightThumbMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightForeFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightMiddleFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;coordinate&quot;: [-0.701085451990366, 0.9399006068706512, 1.7706798166036606],
+        &quot;rightThumbUp&quot;: [0.0, 0.0, 0.0],
+        &quot;leftForeFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;leftLowerArm&quot;: [-4.275193053831556, 6.029475112014665, 0.16694912669166465],
+        &quot;rightRingFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;waistTwo&quot;: [0.29568526455187555, 35.644963830923615, -0.5573244587306913],
+        &quot;leftMiddleFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftMiddleFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightLittleFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightUpperLeg&quot;: [176.6885544428917, 72.91872796381254, -177.95669928739395],
+        &quot;leftForeFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftRingFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftLittleFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;leftForeFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;bvhRotationOrder&quot;: &quot;XYZ&quot;,
+        &quot;rightLowerArm&quot;: [-121.27302739968908, -53.80513365787473, -79.57055095508167],
+        &quot;leftRingFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightForeFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;back&quot;: [0.29551572530026504, 35.6342730205439, -0.5570915211338497],
+        &quot;rightLittleFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;rightRingFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftShoulder&quot;: [-0.18589438315193915, -0.9052612384769648, -0.5738650285131836],
+        &quot;head&quot;: [-0.03851023463838937, 0.7913068784451655, -0.7062768447186851],
+        &quot;leftUpperArm&quot;: [-2.2109214884746184, 0.7886943442852772, -33.677680182697486],
+        &quot;leftMiddleFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;rightHand&quot;: [116.29463249250328, 50.96926853262847, -78.59930404908181],
+        &quot;rightFoot&quot;: [0.2060584982674821, 0.8379528867935927, -0.09795635155078423],
+        &quot;waistOne&quot;: [0.29551572530026504, 35.63427302054393, -0.5570915211338499],
+        &quot;leftUpperLeg&quot;: [178.28257488310416, 73.86704919190285, -179.49772684666087],
+        &quot;leftThumbUp&quot;: [0.0, 0.0, 0.0],
+        &quot;rightUpperArm&quot;: [2.7153986036959346, -0.9532830770749268, 33.639901563359864],
+        &quot;rightRingFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;rightToe&quot;: [0.0, 0.0, 0.0],
+        &quot;leftLittleFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;leftRingFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;leftHand&quot;: [34.30087801348577, -36.18378054306241, 10.29834646689235],
+        &quot;leftFoot&quot;: [-0.3257049210066964, 1.284396122923064, 0.34588575015733],
+        &quot;rightShoulder&quot;: [-0.1527352626370245, 0.7979215521202965, -0.6612408963735164],
+        &quot;rightLittleFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;rightThumbUnder&quot;: [0.0, 0.0, 0.0]
+    }, 
+      {
+        &quot;leftLittleFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftLowerLeg&quot;: [-0.40573345247257264, -18.4634204946525, 0.2511509567285266],
+        &quot;leftThumbMid&quot;: [0.0, 0.0, 0.0],
+        &quot;actorName&quot;: &quot;8780442582114229391&quot;,
+        &quot;rightMiddleFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;deviceId&quot;: &quot;8780442582114229391&quot;,
+        &quot;leftToe&quot;: [0.0, 0.0, 0.0],
+        &quot;crotch&quot;: [-0.2044930858509223, -39.26269365322497, -0.037041743724933796],
+        &quot;rightForeFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftThumbUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;rightLowerLeg&quot;: [-0.1767339587597831, 3.9021207519650063, 0.49314465550116343],
+        &quot;rightMiddleFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;rightThumbMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightForeFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightMiddleFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;coordinate&quot;: [-0.06738789379596713, 0.9254053207114338, 0.06742429733276367],
+        &quot;rightThumbUp&quot;: [0.0, 0.0, 0.0],
+        &quot;leftForeFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;leftLowerArm&quot;: [-0.08699000572472954, 0.6863571788756292, 0.11855827980903816],
+        &quot;rightRingFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;waistTwo&quot;: [-0.015424130073108227, 0.055886741439810775, 0.026696603642111863],
+        &quot;leftMiddleFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftMiddleFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightLittleFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightUpperLeg&quot;: [0.42060291176478676, -2.1037899016837187, -0.1868693436966618],
+        &quot;leftForeFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftRingFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftLittleFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;leftForeFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;bvhRotationOrder&quot;: &quot;XYZ&quot;,
+        &quot;rightLowerArm&quot;: [-0.16399108361481987, -0.11848358762031388, -0.03239584056380892],
+        &quot;leftRingFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;rightForeFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;back&quot;: [-0.015419499853539614, 0.05586997984781864, 0.02668859400377571],
+        &quot;rightLittleFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;rightRingFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;leftShoulder&quot;: [0.5305371373965916, -0.4449699181562023, -0.9358010480478481],
+        &quot;head&quot;: [0.11915716369841646, 0.10442513581288657, -0.11235430434039644],
+        &quot;leftUpperArm&quot;: [-0.5747730532023467, 0.4200904612748533, -32.76454790349389],
+        &quot;leftMiddleFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;rightHand&quot;: [-5.839335306133827, -7.834890734098407, 0.25703843613984406],
+        &quot;rightFoot&quot;: [-0.37335566172713364, -2.4396810057529454, -0.12317384133139211],
+        &quot;waistOne&quot;: [-0.01541949985353954, 0.05586997984781229, 0.02668859400377569],
+        &quot;leftUpperLeg&quot;: [0.07023596070865984, 17.845656318012665, 0.11397519757537351],
+        &quot;leftThumbUp&quot;: [0.0, 0.0, 0.0],
+        &quot;rightUpperArm&quot;: [0.6870520821370538, -2.0975935038200126, 31.78050481691975],
+        &quot;rightRingFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;rightToe&quot;: [0.0, 0.0, 0.0],
+        &quot;leftLittleFingerMid&quot;: [0.0, 0.0, 0.0],
+        &quot;leftRingFingerUp&quot;: [0.0, 0.0, 0.0],
+        &quot;leftHand&quot;: [0.3254735259841174, -0.9885952909200776, -0.1923420038814004],
+        &quot;leftFoot&quot;: [0.329059431216289, 24.35541948578364, 0.029652081491475666],
+        &quot;rightShoulder&quot;: [-0.5753150002783762, 2.0401497415649117, 1.9198983633224964],
+        &quot;rightLittleFingerUnder&quot;: [0.0, 0.0, 0.0],
+        &quot;rightThumbUnder&quot;: [0.0, 0.0, 0.0]
+    }]
+}
+</code></pre>
+<h3 id="_4">数据内容</h3>
+<p>数据中包含了人体的各个关节的位置信息（以三维坐标的形式表示）。以下是关节的名称及对应的坐标：</p>
+<ul>
+<li>
+<p><code>deviceId</code>：设备Id</p>
+</li>
+<li>
+<p><code>actorName</code>：角色名字</p>
+</li>
+<li>
+<p><code>leftLittleFingerUnder</code>：左手小指下方</p>
+</li>
+<li>
+<p><code>leftLittleFingerUnder</code>：左手小指下方</p>
+</li>
+<li>
+<p><code>leftLowerLeg</code>：左小腿</p>
+</li>
+<li>
+<p><code>leftThumbMid</code>：左拇指中间</p>
+</li>
+<li>
+<p><code>rightMiddleFingerMid</code>：右手中指中间</p>
+</li>
+<li>
+<p><code>leftToe</code>：左脚趾头</p>
+</li>
+<li>
+<p><code>crotch</code>：腹股沟</p>
+</li>
+<li>
+<p><code>rightForeFingerUnder</code>：右手食指下方</p>
+</li>
+<li>
+<p><code>leftThumbUnder</code>：左拇指下方</p>
+</li>
+<li>
+<p><code>rightLowerLeg</code>：右小腿</p>
+</li>
+<li>
+<p><code>rightMiddleFingerUnder</code>：右手中指下方</p>
+</li>
+<li>
+<p><code>rightThumbMid</code>：右拇指中间</p>
+</li>
+<li>
+<p><code>rightForeFingerMid</code>：右手食指中间</p>
+</li>
+<li>
+<p><code>rightMiddleFingerUp</code>：右手中指向上</p>
+</li>
+<li>
+<p><code>coordinate</code>：坐标</p>
+</li>
+<li>
+<p><code>rightThumbUp</code>：右拇指向上</p>
+</li>
+<li>
+<p><code>leftForeFingerMid</code>：左手食指中间</p>
+</li>
+<li>
+<p><code>leftLowerArm</code>：左前臂</p>
+</li>
+<li>
+<p><code>rightRingFingerMid</code>：右手无名指中间</p>
+</li>
+<li>
+<p><code>waistTwo</code>：腰二</p>
+</li>
+<li>
+<p><code>leftMiddleFingerUnder</code>：左手中指下方</p>
+</li>
+<li>
+<p><code>leftMiddleFingerMid</code>：左手中指中间</p>
+</li>
+<li>
+<p><code>rightLittleFingerMid</code>：右手小指中间</p>
+</li>
+<li>
+<p><code>rightUpperLeg</code>：右大腿</p>
+</li>
+<li>
+<p><code>leftForeFingerUnder</code>：左手食指下方</p>
+</li>
+<li>
+<p><code>rightToe</code>：右脚趾头</p>
+</li>
+<li>
+<p><code>rightLowerArm</code>：右前臂</p>
+</li>
+<li>
+<p><code>rightRingFingerUnder</code>：右手无名指下方</p>
+</li>
+<li>
+<p><code>leftRingFingerUnder</code>：左手无名指下方</p>
+</li>
+<li>
+<p><code>leftRingFingerMid</code>：左手无名指中间</p>
+</li>
+<li>
+<p><code>rightMiddleFingerDown</code>：右手中指向下</p>
+</li>
+<li>
+<p><code>rightForeFingerUp</code>：右手食指向上</p>
+</li>
+<li>
+<p><code>rightRingFingerUp</code>：右手无名指向上</p>
+</li>
+<li>
+<p><code>leftMiddleFingerDown</code>：左手中指向下</p>
+</li>
+<li>
+<p><code>leftUpperLeg</code>：左大腿</p>
+</li>
+<li>
+<p><code>leftLittleFingerMid</code>：左手小指中间</p>
+</li>
+<li>
+<p><code>head</code>：头部</p>
+</li>
+<li>
+<p><code>leftForeFingerUp</code>：左手食指向上</p>
+</li>
+<li>
+<p><code>rightLittleFingerUp</code>：右手小指向上</p>
+</li>
+<li>
+<p><code>rightThumbUnder</code>：右拇指下方</p>
+</li>
+</ul>
+<p>其中，<code>coordinate</code>表示整个人体的三维坐标，<code>bvhRotationOrder</code>表示旋转顺序 </p>
+<p>模型的坐标系为右手坐标系X轴向右Y轴向上Z轴向后。欧拉角为内旋数据</p>
+<p>需要注意的是，本文档中的数据仅为示例，具体应用中的数据可能会有所不同。</p>
+<p>注意:<code>bvhRotationOrder</code>顺规是XYZ各个关节对应数组中元素顺序也是XYZ。同理顺规是ZXY数组中元素顺序也是ZXY</p>
+<h3 id="_5">数据解析</h3>
+<p>解析数据需要按照JSON格式进行解析，然后根据关节名称提取对应的坐标。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li><a href="https://www.json.org/json-en.html">JSON格式简介</a></li>
+</ul>
+<h2 id="_7">特定需求</h2>
+<h3 id="api">【串流】API</h3>
+<h3 id="_8">通用错误码</h3>
+<table>
+<thead>
+<tr>
+<th><strong>code取值</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1001</td>
+<td>参数错误，此时看msg查看具体错误描述</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">查询设备列表</h3>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数名</strong></th>
+<th><strong>必选</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.control</td>
+<td>是</td>
+<td>string</td>
+<td>deviceList</td>
+</tr>
+<tr>
+<td>$.nodeList</td>
+<td>是</td>
+<td>array</td>
+<td>整型数组，比如：<code>[1,2]</code>，从1开始编号的采集器列表，<code>1-左手套</code>，<code>2-右手套</code></td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数名</strong></th>
+<th><strong>必选</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.control</td>
+<td>是</td>
+<td>string</td>
+<td>onDeviceList</td>
+</tr>
+<tr>
+<td>$.code</td>
+<td>是</td>
+<td>int</td>
+<td>公共错误码，返回1000表示成功；</td>
+</tr>
+<tr>
+<td>$.msg</td>
+<td>是</td>
+<td>string</td>
+<td>公共错误提示，对应<code>code</code>字段的解释，比如返回<code>code</code>为<code>1000</code>时，msg为<code>ok</code></td>
+</tr>
+<tr>
+<td>$.deviceList</td>
+<td>是</td>
+<td>array</td>
+<td>设备列表</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].productID</td>
+<td>是</td>
+<td>string</td>
+<td>设备ID</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].name</td>
+<td>是</td>
+<td>string</td>
+<td>设备名字，目前格式为"设备"+idex</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].channel</td>
+<td>是</td>
+<td>string</td>
+<td>设备频段</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].modeName</td>
+<td>是</td>
+<td>string</td>
+<td>模式名字，比如<code>全身模式</code></td>
+</tr>
+<tr>
+<td>$.deviceList.[i].actorName</td>
+<td>是</td>
+<td>string</td>
+<td>角色名字，未设置获取未打开工程，默认为<code>Motion Robot</code>，打开工程则为工程对应的角色名字；</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].isConnected</td>
+<td>是</td>
+<td>boolean</td>
+<td>该设备是否在连接状态，<code>true</code>表示在连接状态，<code>false</code>表示不在连接状态（比如关机、休眠等）；</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].createTime</td>
+<td>是</td>
+<td>string</td>
+<td>设备创建时间戳，用来进行排序显示等，用string类型避免精度丢失；</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].boneTemplateName</td>
+<td>是</td>
+<td>string</td>
+<td>骨骼模板名字，用于录制接口的时候回传；</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">有线手套马达震动协议</h3>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数名</strong></th>
+<th><strong>必选</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.control</td>
+<td>是</td>
+<td>string</td>
+<td>motorShake</td>
+</tr>
+<tr>
+<td>$.deviceId</td>
+<td>否</td>
+<td>string</td>
+<td>设备ID，第一版没有获取到设备列表可不填，后面有设备列表后必填；</td>
+</tr>
+<tr>
+<td>$.shakePattern</td>
+<td>是</td>
+<td>int</td>
+<td>shakePattern - 马达震动模式<br>                    shakePattern=0  震动0.5s<br>                    shakePattern=1  震动1s<br>                    shakePattern=2  震动1.5<br>                    shakePattern=3  震动2s<br>                    shakePattern=4  震动2.5s<br>以此类推最多支持5秒</td>
+</tr>
+<tr>
+<td>$.nodeList</td>
+<td>是</td>
+<td>array</td>
+<td>整型数组，比如：<code>[1,2]</code>，从1开始编号的采集器列表，<code>1-左手套</code>，<code>2-右手套</code></td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数名</strong></th>
+<th><strong>必选</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.control</td>
+<td>是</td>
+<td>string</td>
+<td>onMotorShake</td>
+</tr>
+<tr>
+<td>$.code</td>
+<td>是</td>
+<td>int</td>
+<td>公共错误码，返回1000表示成功</td>
+</tr>
+<tr>
+<td>$.msg</td>
+<td>是</td>
+<td>string</td>
+<td>公共错误提示，对应<code>code</code>字段的解释，比如返回<code>code</code>为<code>1000</code>时，msg为<code>ok</code></td>
+</tr>
+<tr>
+<td>$.data</td>
+<td>是</td>
+<td>boolean</td>
+<td>操作结果，<code>code=1000</code>时为true</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
