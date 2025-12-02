@@ -1,0 +1,569 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Motion Builder文档 - 魔迅文档中心</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="魔迅文档中心" class="md-header__button md-logo" aria-label="魔迅文档中心" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            魔迅文档中心
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Motion Builder文档
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="魔迅文档中心" class="md-nav__button md-logo" aria-label="魔迅文档中心" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    魔迅文档中心
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motion Builder文档
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Motion Builder文档</h1>
+
+<p><strong>Motion Builder插件使用教程</strong></p>
+<p><strong>一.Motion Builder软件下载</strong></p>
+<p>1.软件安装包：win64版本</p>
+<p><a href="https://alidocs.dingtalk.com/i/nodes/y20BglGWOG9MqAanHwjAy5zpWA7depqY?iframeQuery=anchorId%3DX02lxx576zm3vjzvk3bkla">请至钉钉文档查看附件《MotionBuilder_2025_en-US_setup_webinstall.exe》</a></p>
+<p><strong>二.安装Motion Builder插件</strong></p>
+<p><strong>1.下载地址：</strong></p>
+<p><a href="https://alidocs.dingtalk.com/i/nodes/y20BglGWOG9MqAanHwjAy5zpWA7depqY?iframeQuery=anchorId%3DX02m22llo9plr5fxtlrvl">请至钉钉文档查看附件《MotionStudio_MoBu_22-25_Win64_v0.10.09_MSv1.8.59_Setup.msi》</a></p>
+<p><strong>2.安装步骤说明：</strong></p>
+<ol>
+<li>解压后，双击打开MotionStudio_MoBu_22-25_Win64_v0.10.09_MSv1.8.59_Setup.msi
+    安装包。</li>
+</ol>
+<p><img alt="" src="../images/media/image1.png" />{width="7.791666666666667in"
+height="7.290542432195975in"}</p>
+<p>2.点击下一步</p>
+<p><img alt="" src="../images/media/image2.png" />{width="3.75in"
+height="3.0729166666666665in"}</p>
+<p>3. 选择要安装插件的MotionBuilder 版本，目前支持MotionBuilder
+2022、2023、2024和2025。然后点击下一步。</p>
+<p><img alt="" src="../images/media/image3.png" />{width="3.75in"
+height="3.0729166666666665in"}</p>
+<p>4.选择插件安装位置，请选择MotionBuilder所在的目录。默认会选择Autodesk的默认安装目录。然后点击下一步（插件和软件要安装在相同目录下）</p>
+<p><img alt="" src="../images/media/image4.png" />{width="3.75in"
+height="3.0729166666666665in"}</p>
+<p>5.点击下一步开始安装，在弹出的确认框中选择继续。</p>
+<p><img alt="" src="../images/media/image5.png" />{width="3.75in"
+height="3.0729166666666665in"}</p>
+<p>6.插件安装完成，点击关闭</p>
+<p><img alt="" src="../images/media/image6.png" />{width="3.75in"
+height="3.0729166666666665in"}</p>
+<p><strong>三.Motion Buider插件使用说明</strong></p>
+<p><strong>1.用插件自带的模型驱动数据</strong></p>
+<p><strong>1）.打开Motion
+Buider软件（2022---2025版本均可，此文档演示的版本为2025）</strong></p>
+<p><img alt="" src="../images/media/image7.png" />{width="7.791666666666667in"
+height="4.182606080489939in"}</p>
+<p><strong>2）.导入MS插件</strong></p>
+<p>在页面右下角的Asset Browser
+标签页中，选择左侧Templates→Devices，在右侧列表中找到Motion Studio
+Plug插件。鼠标拖拽该插件到主场景中即可完成导入。</p>
+<p><img alt="" src="../images/media/image8.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p>将Motion
+Studio插件拖到主场景中即可完成导入，点击Navigator---Devices中看到插件的界面。</p>
+<p><img alt="" src="../images/media/image9.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p><strong>注意</strong>：如果在Devices中找不到Motion Studio
+Plug插件，可能是因为安装时选择安装路径有问题。此时需要先找到实际安装的插件路径。</p>
+<p>例如，插件安装路径为D:\Program\MotionBuilder 2025\
+那么可以在该目录下看到如下内容，那么此时在Asset
+Brower左侧边栏空白处右键选择Add favourite
+path，然后选择D:\Program\MotionBuilder 2025\MotionBuilder
+2025\bin\x64\plugins目录即可（确保此目录下有MotionStudioPlug2025.dll,
+版本号根据所需版本号来，如2022，2023，2024等）</p>
+<p><strong>3）.连接Motion studio</strong></p>
+<p>点击查看是否勾选上Use Network
+Stream（若没勾选请手动勾选上）。根据MotionStudio中对应的数据广播设置，选择TCP或者UDP连接。</p>
+<p><img alt="" src="../images/media/image10.png" />{width="7.791666666666667in"
+height="4.215810367454068in"}</p>
+<p><strong>TCP连接：</strong></p>
+<p>使用TCP连接时，只需在Host
+IP中填入MotionStudio中的本地IP（默认为本机IP，若MotionBuilder运行环境与MotionStudio运行环境不在同一台电脑，则此处需根据MotionStudio的本地IP对应修改）及对应端口号。</p>
+<p><img alt="" src="../images/media/image11.png" />{width="7.25in"
+height="3.3020833333333335in"}</p>
+<p><img alt="" src="../images/media/image12.png" />{width="7.229166666666667in"
+height="6.96875in"}</p>
+<p><strong>UDP连接：</strong></p>
+<p>使用UDP连接时，需选择UDP，除以上操作外,还需要填写指定插件对应电脑的IP地址和端口号</p>
+<p><img alt="" src="../images/media/image13.png" />{width="7.791666666666667in"
+height="3.2185181539807526in"}</p>
+<p>在Motion
+Studio中的数据广播设置为UDP连接，并填写与插件相同的端口号（7788)。在目标IP处输入插件中的IP地址，并将端口设置为与插件中一致（默认为8899）</p>
+<p><img alt="" src="../images/media/image14.png" />{width="7.791666666666667in"
+height="7.732935258092739in"}</p>
+<p>在MS<strong>做完姿势校准</strong>或<strong>播放录制文件</strong>后，并在插件中确认ip设置正确，点击插件左上角Online，即可连接Motion
+Studio数据广播(如果遇到MotionBuilder崩溃，请重启MotionBuilder再尝试一下）。Online按钮为绿色则表示连接成功。</p>
+<p><img alt="" src="../images/media/image15.png" />{width="7.791666666666667in"
+height="4.215810367454068in"}</p>
+<p>连接成功后，点击Live按钮，显示如下界面。</p>
+<p><img alt="" src="../images/media/image16.png" />{width="7.791666666666667in"
+height="4.215810367454068in"}</p>
+<p><strong>4）.绑定模型骨骼并创建角色定义</strong></p>
+<p>点击Model binding在下拉框中选择Create...</p>
+<p><img alt="" src="../images/media/image17.png" />{width="7.791666666666667in"
+height="4.163556430446194in"}</p>
+<p>选择框中自动显示Motion studio
+Reference,并在场景中显示角色骨架（多设备：MS连接几套设备，就显示几个角色骨架）</p>
+<p><img alt="" src="../images/media/image18.png" />{width="7.791666666666667in"
+height="4.215810367454068in"}</p>
+<p><strong>5）.绑定并直接驱动角色模型</strong></p>
+<p>插件已经包含了1个示例模型，可以在AssetBrowser→Tutorials中找到MS_Robot这个模型。</p>
+<p><img alt="" src="../images/media/image19.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p>接下来将以这两个模型为示例，选中MS_Robot.fbx这个文件，将此模型拖入到场景中。在拖入的过程中会有FBX
+Open或者FBX Merge的选项（选择FBX Open将创建全新场景，而FBX
+Merge将会新拖入的模型合并到场景）。</p>
+<p>因此，在导入MS_Robot.fbx后，需要选择FBX Merge→\&lt;All
+Takes&gt;选项（如果动捕场景中有多名角色，通常需要导入多个角色模型）。</p>
+<p><img alt="" src="../images/media/image20.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p>此时开启插件的网络连接，并勾选Live，然后创建好Model
+Binding后，可以在角色列表中的Model列看到场景中新导入的角色模型列表，选择对应的角色模型（注意不同角色要选择不同的模型），选中后模型和骨骼绑定在一起。</p>
+<p><img alt="" src="../images/media/image21.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p><strong>6）.直接驱动手部模型</strong></p>
+<p>MotionStudio实时串流手套数据或串流录制数据，MBip和端口填写正确后，点击online，重新勾选live，点击Model
+binding在下拉框中选择Create...，可显示手部骨骼。</p>
+<p><img alt="" src="../images/media/image22.png" />{width="7.791666666666667in"
+height="5.541194225721785in"}</p>
+<p><strong>7）断开连接（切换数据源）</strong></p>
+<p>1当需要在MotionStudio中切换不同的数据源时，点击Online按钮，断开与MotionStudio连接。</p>
+<p><img alt="" src="../images/media/image23.png" />{width="7.791666666666667in"
+height="3.4538254593175854in"}</p>
+<p>2）在MotionStudio中切换数据源（添加、删除设备或切换录制文件）。</p>
+<p>3）回到MotionBuilder中，点击Online开启实时数据，勾选Live选项，在Model
+binding下拉框中选择Create...，即可在MotionBuilder中切换为新的数据源（需要重新绑定模型）。</p>
+<p><img alt="" src="../images/media/image24.png" />{width="7.791666666666667in"
+height="4.189897200349956in"}</p>
+<p><strong>8）功能介绍</strong></p>
+<p><img alt="" src="../images/media/image25.png" />{width="7.6875in"
+height="2.4583333333333335in"}</p>
+<p>界面中区域1为连接设置，包括连接/断开按钮（Online），实时数据按钮（Live），录制（Recording）按钮，以及模型绑定下拉框（Model
+binding)。</p>
+<p>区域2为插件信息，点击Logo图标可以打开官方网站。</p>
+<p>区域3为网络设置，包括是否开启网络数据流（Use Network
+Stream)，网络协议（TCP或UDP），数据流类型（暂时不支持设置），MotionStudio主机IP及端口（TCP及UDP协议均需设置），本机IP地址及端口（仅UDP协议需设置，用于接收MotionStudio的UDP数据）。</p>
+<p>区域4为角色设置，包括暂停/播放（Pause/Resume）按钮，清除角色按钮（Clear
+All Actors），显示部位下拉框(All/Body/Hand)，以及下方的角色列表。</p>
+<p>区域5为数据区，包括每个关节的原始数据。</p>
+<p><strong>2.添加模型并重定向驱动</strong></p>
+<p><strong>1）导入角色模型</strong></p>
+<p>导入任意带有标准人体骨骼的模型。可以使用MB自带的角色模型，例如在AssetBrowser→PrevisMoves中找到任意动作（这里以Dance为例）。在导入时选择FBX
+Merge→\&lt;No Animation&gt;，选择不导入动画。</p>
+<p>在MB预制的动作文件列表PrevisMoves中选择任意动作，以Dance为例。</p>
+<p><img alt="" src="../images/media/image26.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p><strong>2）设置角色模型为T-Pose</strong></p>
+<p>在场景中按下Ctrl+W,可以显示骨骼大纲视图，然后框选Hips根骨骼下的所有骨骼。然后在Hips上右键选择Zero→Rotation，即可重置模型到T-Pose姿态。（仅适用于初始骨骼姿态为T-Pose的模型）。</p>
+<p><img alt="" src="../images/media/image27.png" />{width="7.6875in"
+height="5.208333333333333in"}</p>
+<p><img alt="" src="../images/media/image28.png" />{width="7.6875in" height="5.5in"}</p>
+<p><img alt="" src="../images/media/image29.png" />{width="7.6875in"
+height="7.729166666666667in"}</p>
+<blockquote>
+<p>再次按下Ctrl+W键，返回场景视图，可以看到角色模型已经为Tpose姿态。</p>
+</blockquote>
+<p><strong>3）为角色模型添加角色定义（Characterize）</strong></p>
+<p>一般情况下，刚才导入的角色已经包含了对应的角色定义。可以检查Navigator左侧列表中的Characters中是否已有角色定义。若有已有，则说明创建成功。也可以在Character
+Controls中检查是否创建了正确对应的角色定义。</p>
+<p><img alt="" src="../images/media/image30.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p><strong>创建外部导入进来的模型或者角色定义有误</strong></p>
+<p>可以按照如下步骤创建新的角色定义，并映射到角色模型上。</p>
+<p>1.导入任意带有标准人体骨骼的FBX模型。把外部文件拖进来，选择FBX Open→\&lt;No
+Animation&gt;，选择不导入动画</p>
+<p><img alt="" src="../images/media/image31.png" />{width="7.791666666666667in"
+height="4.200195756780403in"}</p>
+<p>2.在Asset
+Browser面板中，选择左侧Templates→Characters，在右侧选择Character</p>
+<p><img alt="" src="../images/media/image32.png" />{width="5.65625in"
+height="3.2709634733158355in"}</p>
+<p>3.在场景中按下Ctrl+W切换为骨骼大纲视图，使用鼠标左键拖动上一步选择的Character到角色模型的根骨骼Hips上。</p>
+<p><img alt="" src="../images/media/image33.png" />{width="5.65625in"
+height="3.1531616360454944in"}</p>
+<p>4.松开鼠标左键后，会弹出Characterize按钮，点击该按钮，然后在弹出的对话框中点击Biped按钮。</p>
+<p><img alt="" src="../images/media/image34.png" />{width="5.416666666666667in"
+height="1.5208333333333333in"}</p>
+<p><strong>4）导入插件并连接Motion studio</strong></p>
+<p>在页面右下角的Asset Browser
+标签页中，选择左侧Templates→Devices，在右侧列表中找到Motion Studio
+Plug插件。鼠标拖拽该插件到主场景中即可完成导入。</p>
+<p><img alt="" src="../images/media/image8.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p>将Motion
+Studio插件拖到主场景中即可完成导入，点击Navigator---Devices中看到插件的界面。</p>
+<p><img alt="" src="../images/media/image10.png" />{width="7.791666666666667in"
+height="4.2184569116360455in"}</p>
+<p>点击查看是否勾选上Use Network
+Stream（若没勾选请手动勾选上）。根据MotionStudio中对应的数据广播设置，选择TCP或者UDP连接。</p>
+<p><img alt="" src="../images/media/image10.png" />{width="7.791666666666667in"
+height="4.2184569116360455in"}</p>
+<p><strong>TCP连接：</strong></p>
+<p>使用TCP连接时，只需在Host
+IP中填入MotionStudio中的本地IP（默认为本机IP，若MotionBuilder运行环境与MotionStudio运行环境不在同一台电脑，则此处需根据MotionStudio的本地IP对应修改）及对应端口号。</p>
+<p><img alt="" src="../images/media/image11.png" />{width="7.25in"
+height="3.3020833333333335in"}</p>
+<p><img alt="" src="../images/media/image12.png" />{width="7.229166666666667in"
+height="6.96875in"}</p>
+<p><strong>UDP连接：</strong></p>
+<p>使用UDP连接时，需选择UDP，除以上操作外,还需要填写指定插件对应电脑的IP地址和端口号</p>
+<p><img alt="" src="../images/media/image13.png" />{width="7.791666666666667in"
+height="3.2185181539807526in"}</p>
+<p>在Motion
+Studio中的数据广播设置为UDP连接，并填写与插件相同的端口号（7788)。在目标IP处输入插件中的IP地址，并将端口设置为与插件中一致（默认为8899）</p>
+<p><img alt="" src="../images/media/image14.png" />{width="7.791666666666667in"
+height="7.732935258092739in"}</p>
+<p>在MS<strong>做完姿势校准</strong>或<strong>播放录制文件</strong>后，并在插件中确认ip设置正确，点击插件左上角Online，即可连接Motion
+Studio数据广播(如果遇到MotionBuilder崩溃，请重启MotionBuilder再尝试一下）。Online按钮为绿色则表示连接成功</p>
+<p><img alt="" src="../images/media/image15.png" />{width="7.791666666666667in"
+height="4.2184569116360455in"}</p>
+<p>连接成功后，点击Live按钮。</p>
+<p><img alt="" src="../images/media/image16.png" />{width="5.177083333333333in"
+height="2.8020833333333335in"}</p>
+<p><strong>5）.绑定模型骨骼并创建角色定义</strong></p>
+<p>点击Model binding在下拉框中选择Create...</p>
+<p><img alt="" src="../images/media/image17.png" />{width="7.791666666666667in"
+height="4.163556430446194in"}</p>
+<p>选择框中自动显示Motion studio Reference,并在场景中显示角色骨架</p>
+<p><img alt="" src="../images/media/image18.png" />{width="7.791666666666667in"
+height="4.2184569116360455in"}</p>
+<p><strong>6）设置角色骨骼的角色化定义</strong></p>
+<ol>
+<li>在区域4中点击左上角Pause按钮暂停更新骨骼位置，并点击对应角色的Pose列的按钮切换骨骼为TPose姿态。</li>
+</ol>
+<p><img alt="" src="../images/media/image35.png" />{width="7.791666666666667in"
+height="5.697692475940507in"}</p>
+<p>2.在区域4的角色列表中可以点击角色的CHAR按钮创建角色化定义实例(MSCharacter)。</p>
+<p><img alt="" src="../images/media/image36.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p>3.重新设置角色化。在Character
+Control面板中，依次选择新创建的角色定义MSCharacter，点击下方锁定按钮已解锁，然后再此点击该按钮，然后在弹出框中选择Biped。同理，也对导入的角色模型（Character）进行同样的操作。检查每个角色定义下的骨骼映射是否都显示为绿色。如不为绿色，则需要重新将骨骼旋转归零（Zero→Rotation）。</p>
+<p><img alt="" src="../images/media/image37.png" />{width="5.854166666666667in"
+height="4.447916666666667in"}</p>
+<p><img alt="" src="../images/media/image38.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p><strong>7）设置重定向源</strong></p>
+<p>此时可以在Character
+Control面板中，点击character下拉框，选择Character角色定义，然后点击Source下拉框，选择MSCharacter。</p>
+<p><img alt="" src="../images/media/image39.png" />{width="3.0520833333333335in"
+height="4.979166666666667in"}</p>
+<p>至此，我们将插件绑定的骨骼与模型的骨骼完成了映射绑定后，取消T-pose展示和点击Pause按钮，在MS里面播放录制数据或传输实时数据，model会实时显示传播数据。</p>
+<p><img alt="" src="../images/media/image40.png" />{width="7.791666666666667in"
+height="4.189897200349956in"}</p>
+<p><img alt="" src="../images/media/image41.png" />{width="5.135416666666667in"
+height="2.7783409886264216in"}</p>
+<p><img alt="" src="../images/media/image42.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p><strong>3.录制动画并保存</strong></p>
+<p><strong>1）录制动画</strong></p>
+<p>在Online连接数据广播状态下，勾选Recording按钮可以准备开始录制动画。</p>
+<p><img alt="" src="../images/media/image43.png" />{width="7.791666666666667in"
+height="3.098480971128609in"}</p>
+<p>点击左侧录制按钮，根据需求可以覆盖当前动画序列或者创建新的动画序列。</p>
+<p><img alt="" src="../images/media/image44.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p>然后点击中间播放按钮，即可开始录制动画，再次点击播放按钮结束动画录制。</p>
+<p><img alt="" src="../images/media/image45.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p><strong>2）播放录制动画</strong></p>
+<p>断开online连接，点击播放按钮，能播放刚录制的数据。（断开连接后，模型将与骨骼断开连接，需再次重复上面的操作）</p>
+<p><img alt="" src="../images/media/image46.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p><strong>3）保存动画</strong></p>
+<p>在MotionBuilder菜单栏中选择File→Motion File
+Export...，然后选择要保存的目录以及文件名，点击保存按钮。</p>
+<p><img alt="" src="../images/media/image47.png" />{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p>在弹出的导出选项中根据需要设置动画帧率（FrameRate），并勾选需要保存的动画Take，然后点击导出（Export）按钮即可保存录制好的动画到指定文件。保存完成后，可以将该文件再次导入到MotionBuilder中查看。</p>
+<p><img alt="" src="../images/media/image48.png" />{width="7.791666666666667in"
+height="4.362484689413823in"}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
