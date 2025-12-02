@@ -1,0 +1,1575 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>C++ SDK - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#csdk-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C++ SDK
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ SDK
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++ SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        简介
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motiondata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MotionData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motiondatalist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MotionDataList
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数接口
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函数接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连接管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连接管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isrunning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IsRunning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disconnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据获取
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据获取">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetData
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        错误处理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-bvh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附件A-BVH 数据头的样例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-bone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附件B-Bone序列表
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        简介
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motiondata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MotionData
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motiondatalist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MotionDataList
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        函数接口
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="函数接口">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连接管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连接管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isrunning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IsRunning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disconnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据获取
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据获取">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetData
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        使用示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        错误处理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-bvh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附件A-BVH 数据头的样例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-bone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        附件B-Bone序列表
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="csdk-">C++SDK接口说明文档-外发</h1>
+<h2 id="_1">简介</h2>
+<p>MotionReceiver 是一个用于接收动作捕捉数据的 C++ SDK，允许开发者通过网络连接获取实时动作数据。该 SDK 支持 TCP 和 UDP 协议，能够接收并解析动作捕捉设备传输的数据。</p>
+<h2 id="_2">数据结构</h2>
+<p>MotionReceiver通过网络从MotionStudio获取BVH帧数据，每一帧中的 BVH 数据包含了 49 根骨骼的全</p>
+<p>部的动作数据。BVH仅包含人根节点的位移coordinate，不包含每个节点的位移数据。如有需要，联系销售。</p>
+<h3 id="vector3">Vector3</h3>
+<p>表示三维空间中的坐标或旋转。</p>
+<pre><code class="language-c++">struct Vector3
+{
+    double x;  // X 轴坐标/旋转
+    double y;  // Y 轴坐标/旋转
+    double z;  // Z 轴坐标/旋转
+};
+</code></pre>
+<h3 id="motiondata">MotionData</h3>
+<p>单个设备的动作捕捉数据，包含完整的人体骨骼数据。</p>
+<pre><code class="language-c++">struct MotionData
+{
+    // 基本信息
+    std::string actorName;         // 角色名称
+    std::string deviceId;          // 设备ID
+    std::string bvhRotationOrder;  // BVH旋转顺序
+    Vector3 coordinate;            // 人总体位移
+
+    // 躯干数据
+    Vector3 crotch;                // 胯部
+    Vector3 waistTwo;              // 腰部(上)
+    Vector3 waistOne;              // 腰部(下)
+    Vector3 back;                  // 背部
+    Vector3 head;                  // 头部
+
+    // 左肢体数据
+    Vector3 leftShoulder;          // 左肩
+    Vector3 leftUpperArm;          // 左上臂
+    // ... 更多左肢体数据 ...
+
+    // 右肢体数据
+    Vector3 rightShoulder;         // 右肩
+    Vector3 rightUpperArm;         // 右上臂
+    // ... 更多右肢体数据 ...
+
+    // 左手指数据
+    Vector3 leftThumbUnder;        // 左拇指下部
+    // ... 更多左手指数据 ...
+
+    // 右手指数据
+    Vector3 rightThumbUnder;       // 右拇指下部
+    // ... 更多右手指数据 ...
+};
+</code></pre>
+<h3 id="motiondatalist">MotionDataList</h3>
+<p>包含多个设备的动作捕捉数据集合。</p>
+<pre><code class="language-c++">struct MotionDataList {
+    MotionData* devices;  // 设备数据数组
+    int count;            // 设备数量
+};
+</code></pre>
+<h2 id="_3">函数接口</h2>
+<h3 id="_4">连接管理</h3>
+<h4 id="connect">Connect</h4>
+<pre><code class="language-c++">API bool Connect(const char* address, unsigned port, bool useUdp);
+</code></pre>
+<p><strong>功能</strong>: 连接到指定地址和端口的动作捕捉数据服务器。</p>
+<p><strong>参数</strong>:</p>
+<ul>
+<li>
+<p><code>address</code>: 服务器IP地址</p>
+</li>
+<li>
+<p><code>port</code>: 服务器端口号</p>
+</li>
+<li>
+<p><code>useUdp</code>: 是否使用UDP协议（true为UDP，false为TCP）</p>
+</li>
+</ul>
+<p><strong>返回值</strong>:</p>
+<ul>
+<li>
+<p><code>true</code>: 连接成功</p>
+</li>
+<li>
+<p><code>false</code>: 连接失败</p>
+</li>
+</ul>
+<h4 id="isrunning">IsRunning</h4>
+<pre><code class="language-c++">API bool IsRunning();
+</code></pre>
+<p><strong>功能</strong>: 获取当前连接状态。</p>
+<p><strong>返回值</strong>:</p>
+<ul>
+<li>
+<p><code>true</code>: 连接正常运行中</p>
+</li>
+<li>
+<p><code>false</code>: 连接未建立或已断开</p>
+</li>
+</ul>
+<h4 id="disconnect">Disconnect</h4>
+<pre><code class="language-c++">API void Disconnect();
+</code></pre>
+<p><strong>功能</strong>: 断开与服务器的连接。</p>
+<p><strong>返回值</strong>: 无</p>
+<h3 id="_5">数据获取</h3>
+<h4 id="getdata">GetData</h4>
+<pre><code class="language-c++">API MotionDataList GetData();
+</code></pre>
+<p><strong>功能</strong>: 获取当前帧的动作数据。</p>
+<p><strong>返回值</strong>: 包含所有连接设备的动作数据的 <code>MotionDataList</code> 结构体。</p>
+<h2 id="_6">使用示例</h2>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &quot;include/Deserializer.h&quot;
+#include &lt;conio.h&gt; 
+#include &lt;thread&gt;
+
+int main()
+{
+    std::cout &lt;&lt; &quot;程序正在运行，按下Esc键退出程序。&quot; &lt;&lt; std::endl;
+
+    // 循环尝试连接并获取数据
+    while (true) {
+        // 检查连接状态
+        if (!IsRunning()) {
+            // 连接到指定IP和端口，使用UDP协议
+            Connect(&quot;192.168.2.24&quot;, 8888, true);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            std::cout &lt;&lt; &quot;连接中&quot; &lt;&lt; std::endl;
+            continue;
+        }
+
+        // 获取动作数据
+        auto data = GetData();
+        if (data.count != 0) {
+            // 处理获取到的数据
+            // 例如: 遍历设备数据并使用
+            for (int i = 0; i &lt; data.count; i++) {
+                MotionData&amp; device = data.devices[i];
+                // 使用device中的数据...
+            }
+        }
+
+        // 其他处理逻辑...
+    }
+
+    // 断开连接
+    Disconnect();
+    return 0;
+}
+</code></pre>
+<h2 id="_7">注意事项</h2>
+<ol>
+<li>
+<p>在使用前必须先调用 <code>Connect</code> 函数建立连接。</p>
+</li>
+<li>
+<p>建议在每次获取数据前通过 <code>IsRunning</code> 检查连接状态。</p>
+</li>
+<li>
+<p>如遇网络不稳定，可能需要实现自动重连机制。</p>
+</li>
+<li>
+<p>获取到的 <code>MotionDataList</code> 包含多个设备的数据，使用前应检查 <code>count</code> 值确保有效。</p>
+</li>
+<li>
+<p>使用完毕后，应调用 <code>Disconnect</code> 函数释放资源。</p>
+</li>
+</ol>
+<h2 id="_8">错误处理</h2>
+<p>SDK 中的函数会返回布尔值表示操作成功或失败。建议在生产环境中实现完善的错误处理机制，例如：</p>
+<pre><code class="language-c++">if (!Connect(&quot;192.168.2.24&quot;, 8888, true)) {
+    std::cerr &lt;&lt; &quot;连接失败，请检查网络设置和服务器状态&quot; &lt;&lt; std::endl;
+    // 错误处理逻辑...
+}
+</code></pre>
+<h2 id="a-bvh">附件A-BVH 数据头的样例</h2>
+<p>数据广播端口尚未提供对BVH头的查询命令，目前只能录制数据并导出BVH文件来查看。BVH头的骨骼长度会随动捕软件界面上的设置变化。</p>
+<pre><code class="language-c++">HIERARCHY
+ROOT Motion_Hips
+{
+    OFFSET 0.000000 91.430000 0.000000
+    CHANNELS 6 Xposition Yposition Zposition Xrotation Yrotation Zrotation
+    JOINT Motion_RightUpLeg
+    {
+        OFFSET -9.250000 0.000000 0.000000
+        CHANNELS 3 Xrotation Yrotation Zrotation
+        JOINT Motion_RightLeg
+        {
+            OFFSET 0.000000 -41.870000 0.000000
+            CHANNELS 3 Xrotation Yrotation Zrotation
+            JOINT Motion_RightFoot
+            {
+                OFFSET 0.000000 -41.870000 0.000000
+                CHANNELS 3 Xrotation Yrotation Zrotation
+                End Site
+                {
+                    OFFSET 0.000000 -7.690000 14.000000
+                }
+            }
+        }
+    }
+    JOINT Motion_LeftUpLeg
+    {
+        OFFSET 9.250000 0.000000 0.000000
+        CHANNELS 3 Xrotation Yrotation Zrotation
+        JOINT Motion_LeftLeg
+        {
+            OFFSET 0.000000 -41.870000 0.000000
+            CHANNELS 3 Xrotation Yrotation Zrotation
+            JOINT Motion_LeftFoot
+            {
+                OFFSET 0.000000 -41.870000 0.000000
+                CHANNELS 3 Xrotation Yrotation Zrotation
+                End Site
+                {
+                    OFFSET 0.000000 -7.690000 14.000000
+                }
+            }
+        }
+    }
+    JOINT Motion_Spine
+    {
+        OFFSET 0.000000 7.817600 0.000000
+        CHANNELS 3 Xrotation Yrotation Zrotation
+        JOINT Motion_Spine1
+        {
+            OFFSET 0.000000 17.310400 0.000000
+            CHANNELS 3 Xrotation Yrotation Zrotation
+            JOINT Motion_Spine2
+            {
+                OFFSET 0.000000 12.284800 0.000000
+                CHANNELS 3 Xrotation Yrotation Zrotation
+                JOINT Motion_Neck
+                {
+                    OFFSET 0.000000 18.427200 0.000000
+                    CHANNELS 3 Xrotation Yrotation Zrotation
+                    JOINT Motion_Neck1
+                    {
+                        OFFSET 0.000000 4.735000 0.000000
+                        CHANNELS 3 Xrotation Yrotation Zrotation
+                        JOINT Motion_Head
+                        {
+                            OFFSET 0.000000 4.735000 0.000000
+                            CHANNELS 3 Xrotation Yrotation Zrotation
+                            End Site
+                            {
+                                OFFSET 0.000000 15.950000 0.000000
+                            }
+                        }
+                    }
+                }
+                JOINT Motion_RightShoulder
+                {
+                    OFFSET -2.799888 12.843200 0.000000
+                    CHANNELS 3 Xrotation Yrotation Zrotation
+                    JOINT Motion_RightArm
+                    {
+                        OFFSET -13.200112 0.000000 0.000000
+                        CHANNELS 3 Xrotation Yrotation Zrotation
+                        JOINT Motion_RightForeArm
+                        {
+                            OFFSET -26.500000 0.000000 0.000000
+                            CHANNELS 3 Xrotation Yrotation Zrotation
+                            JOINT Motion_RightHand
+                            {
+                                OFFSET -26.000000 0.000000 0.000000
+                                CHANNELS 3 Xrotation Yrotation Zrotation
+                                JOINT Motion_RightHandThumb1
+                                {
+                                    OFFSET -1.841994 -0.460998 2.394992
+                                    CHANNELS 3 Xrotation Yrotation Zrotation
+                                    JOINT Motion_RightHandThumb2
+                                    {
+                                        OFFSET -3.681994 0.000000 0.000000
+                                        CHANNELS 3 Xrotation Yrotation Zrotation
+                                        JOINT Motion_RightHandThumb3
+                                        {
+                                            OFFSET -2.558996 0.000000 0.000000
+                                            CHANNELS 3 Xrotation Yrotation Zrotation
+                                            End Site
+                                            {
+                                                OFFSET -2.412997 0.000000 0.000000
+                                            }
+                                        }
+                                    }
+                                }
+                                JOINT Motion_RightHandIndex
+                                {
+                                    OFFSET -3.224000 0.507999 1.978001
+                                    CHANNELS 3 Xrotation Yrotation Zrotation
+                                    JOINT Motion_RightHandIndex1
+                                    {
+                                        OFFSET -5.216997 -0.091000 0.998951
+                                        CHANNELS 3 Xrotation Yrotation Zrotation
+                                        JOINT Motion_RightHandIndex2
+                                        {
+                                            OFFSET -3.620008 0.000000 0.000000
+                                            CHANNELS 3 Xrotation Yrotation Zrotation
+                                            JOINT Motion_RightHandIndex3
+                                            {
+                                                OFFSET -2.052005 0.000000 0.000000
+                                                CHANNELS 3 Xrotation Yrotation Zrotation
+                                                End Site
+                                                {
+                                                    OFFSET -1.805006 0.000000 0.000000
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                JOINT Motion_RightHandMiddle
+                                {
+                                    OFFSET -3.381992 0.517999 0.756998
+                                    CHANNELS 3 Xrotation Yrotation Zrotation
+                                    JOINT Motion_RightHandMiddle1
+                                    {
+                                        OFFSET -5.174003 -0.084000 0.314000
+                                        CHANNELS 3 Xrotation Yrotation Zrotation
+                                        JOINT Motion_RightHandMiddle2
+                                        {
+                                            OFFSET -3.949000 0.000000 0.000000
+                                            CHANNELS 3 Xrotation Yrotation Zrotation
+                                            JOINT Motion_RightHandMiddle3
+                                            {
+                                                OFFSET -2.475999 0.000000 0.000000
+                                                CHANNELS 3 Xrotation Yrotation Zrotation
+                                                End Site
+                                                {
+                                                    OFFSET -1.975000 0.000000 0.000000
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                JOINT Motion_RightHandRing
+                                {
+                                    OFFSET -3.366001 0.538001 -0.128999
+                                    CHANNELS 3 Xrotation Yrotation Zrotation
+                                    JOINT Motion_RightHandRing1
+                                    {
+                                        OFFSET -4.635003 -0.021998 -0.479000
+                                        CHANNELS 3 Xrotation Yrotation Zrotation
+                                        JOINT Motion_RightHandRing2
+                                        {
+                                            OFFSET -3.441994 0.000000 0.000000
+                                            CHANNELS 3 Xrotation Yrotation Zrotation
+                                            JOINT Motion_RightHandRing3
+                                            {
+                                                OFFSET -2.387996 0.000000 0.000000
+                                                CHANNELS 3 Xrotation Yrotation Zrotation
+                                                End Site
+                                                {
+                                                    OFFSET -1.857004 0.000000 0.000000
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                JOINT Motion_RightHandPinky
+                                {
+                                    OFFSET -3.161007 0.470001 -1.202001
+                                    CHANNELS 3 Xrotation Yrotation Zrotation
+                                    JOINT Motion_RightHandPinky1
+                                    {
+                                        OFFSET -4.141006 -0.022001 -1.090998
+                                        CHANNELS 3 Xrotation Yrotation Zrotation
+                                        JOINT Motion_RightHandPinky2
+                                        {
+                                            OFFSET -2.756995 0.000000 0.000000
+                                            CHANNELS 3 Xrotation Yrotation Zrotation
+                                            JOINT Motion_RightHandPinky3
+                                            {
+                                                OFFSET -1.741997 0.000000 0.000000
+                                                CHANNELS 3 Xrotation Yrotation Zrotation
+                                                End Site
+                                                {
+                                                    OFFSET -1.644997 0.000000 0.000000
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                JOINT Motion_LeftShoulder
+                {
+                    OFFSET 2.799888 12.843200 0.000000
+                    CHANNELS 3 Xrotation Yrotation Zrotation
+                    JOINT Motion_LeftArm
+                    {
+                        OFFSET 13.200112 0.000000 0.000000
+                        CHANNELS 3 Xrotation Yrotation Zrotation
+                        JOINT Motion_LeftForeArm
+                        {
+                           OFFSET 26.500000 0.000000 0.000000
+                           CHANNELS 3 Xrotation Yrotation Zrotation
+                           JOINT Motion_LeftHand
+                           {
+                               OFFSET 26.500000 0.000000 0.000000
+                               CHANNELS 3 Xrotation Yrotation Zrotation
+                               JOINT Motion_LeftHandThumb1
+                               {
+                                   OFFSET 1.841994 -0.460998 2.394992
+                                   CHANNELS 3 Xrotation Yrotation Zrotation
+                                   JOINT Motion_LeftHandThumb2
+                                   {
+                                       OFFSET 3.681994 0.000000 0.000000
+                                       CHANNELS 3 Xrotation Yrotation Zrotation
+                                       JOINT Motion_LeftHandThumb3
+                                       {
+                                           OFFSET 2.558996 0.000000 0.000000
+                                           CHANNELS 3 Xrotation Yrotation Zrotation
+                                           End Site
+                                           {
+                                               OFFSET 2.412997 0.000000 0.000000
+                                           }
+                                       }
+                                   }
+                               }
+                               JOINT Motion_LeftHandIndex
+                               {
+                                   OFFSET 3.224000 0.507999 1.978001
+                                   CHANNELS 3 Xrotation Yrotation Zrotation
+                                   JOINT Motion_LeftHandIndex1
+                                   {
+                                       OFFSET 5.216997 -0.091000 0.998951
+                                       CHANNELS 3 Xrotation Yrotation Zrotation
+                                       JOINT Motion_LeftHandIndex2
+                                       {
+                                           OFFSET 3.620008 0.000000 0.000000
+                                           CHANNELS 3 Xrotation Yrotation Zrotation
+                                           JOINT Motion_LeftHandIndex3
+                                           {
+                                               OFFSET 2.052005 0.000000 0.000000
+                                               CHANNELS 3 Xrotation Yrotation Zrotation
+                                               End Site
+                                               {
+                                                   OFFSET 1.805006 0.000000 0.000000
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                               JOINT Motion_LeftHandMiddle
+                               {
+                                   OFFSET 3.381992 0.517999 0.756998
+                                   CHANNELS 3 Xrotation Yrotation Zrotation
+                                   JOINT Motion_LeftHandMiddle1
+                                   {
+                                       OFFSET 5.174003 -0.084000 0.314000
+                                       CHANNELS 3 Xrotation Yrotation Zrotation
+                                       JOINT Motion_LeftHandMiddle2
+                                       {
+                                           OFFSET 3.949000 0.000000 0.000000
+                                           CHANNELS 3 Xrotation Yrotation Zrotation
+                                           JOINT Motion_LeftHandMiddle3
+                                           {
+                                               OFFSET 2.475999 0.000000 0.000000
+                                               CHANNELS 3 Xrotation Yrotation Zrotation
+                                               End Site
+                                               {
+                                                   OFFSET 1.975000 0.000000 0.000000
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                               JOINT Motion_LeftHandRing
+                               {
+                                   OFFSET 3.366001 0.538001 -0.128999
+                                   CHANNELS 3 Xrotation Yrotation Zrotation
+                                   JOINT Motion_LeftHandRing1
+                                   {
+                                       OFFSET 4.635003 -0.021998 -0.479000
+                                       CHANNELS 3 Xrotation Yrotation Zrotation
+                                       JOINT Motion_LeftHandRing2
+                                       {
+                                           OFFSET 3.441994 0.000000 0.000000
+                                           CHANNELS 3 Xrotation Yrotation Zrotation
+                                           JOINT Motion_LeftHandRing3
+                                           {
+                                               OFFSET 2.387996 0.000000 0.000000
+                                               CHANNELS 3 Xrotation Yrotation Zrotation
+                                               End Site
+                                               {
+                                                   OFFSET 1.857004 0.000000 0.000000
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                               JOINT Motion_LeftHandPinky
+                               {
+                                   OFFSET 3.161007 0.470001 -1.202001
+                                   CHANNELS 3 Xrotation Yrotation Zrotation
+                                   JOINT Motion_LeftHandPinky1
+                                   {
+                                       OFFSET 4.141006 -0.022001 -1.090998
+                                       CHANNELS 3 Xrotation Yrotation Zrotation
+                                       JOINT Motion_LeftHandPinky2
+                                       {
+                                           OFFSET 2.756995 0.000000 0.000000
+                                           CHANNELS 3 Xrotation Yrotation Zrotation
+                                           JOINT Motion_LeftHandPinky3
+                                           {
+                                               OFFSET 1.741997 0.000000 0.000000
+                                               CHANNELS 3 Xrotation Yrotation Zrotation
+                                               End Site
+                                               {
+                                                   OFFSET 1.644997 0.000000 0.000000
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="b-bone">附件B-Bone序列表</h2>
+<table>
+<thead>
+<tr>
+<th>顺序</th>
+<th>MotionStudio骨骼定义</th>
+<th>BVH骨骼定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>head</td>
+<td>Motion_Head</td>
+</tr>
+<tr>
+<td>2</td>
+<td>back</td>
+<td>Motion_Neck</td>
+</tr>
+<tr>
+<td>3</td>
+<td>crotch</td>
+<td>Motion_Hips</td>
+</tr>
+<tr>
+<td>4</td>
+<td>leftShoulder</td>
+<td>Motion_LeftShoulder</td>
+</tr>
+<tr>
+<td>5</td>
+<td>leftUpperArm</td>
+<td>Motion_LeftArm</td>
+</tr>
+<tr>
+<td>6</td>
+<td>leftLowerArm</td>
+<td>Motion_LeftForeArm</td>
+</tr>
+<tr>
+<td>7</td>
+<td>leftHand</td>
+<td>Motion_LeftHand</td>
+</tr>
+<tr>
+<td>8</td>
+<td>leftUpperLeg</td>
+<td>Motion_LeftUpLeg</td>
+</tr>
+<tr>
+<td>9</td>
+<td>leftLowerLeg</td>
+<td>Motion_LeftLeg</td>
+</tr>
+<tr>
+<td>10</td>
+<td>leftFoot</td>
+<td>Motion_LeftFoot</td>
+</tr>
+<tr>
+<td>11</td>
+<td>rightShoulder</td>
+<td>Motion_RightShoulder</td>
+</tr>
+<tr>
+<td>12</td>
+<td>rightUpperArm</td>
+<td>Motion_RightArm</td>
+</tr>
+<tr>
+<td>13</td>
+<td>rightLowerArm</td>
+<td>Motion_RightForeArm</td>
+</tr>
+<tr>
+<td>14</td>
+<td>rightHand</td>
+<td>Motion_RightHand</td>
+</tr>
+<tr>
+<td>15</td>
+<td>rightUpperLeg</td>
+<td>Motion_RightUpLeg</td>
+</tr>
+<tr>
+<td>16</td>
+<td>rightLowerLeg</td>
+<td>Motion_RightLeg</td>
+</tr>
+<tr>
+<td>17</td>
+<td>rightFoot</td>
+<td>Motion_RightFoot</td>
+</tr>
+<tr>
+<td>18</td>
+<td>waistOne</td>
+<td>Motion_Spine</td>
+</tr>
+<tr>
+<td>19</td>
+<td>waistTwo</td>
+<td>Motion_Spine1</td>
+</tr>
+<tr>
+<td>20</td>
+<td>leftToe</td>
+<td>/</td>
+</tr>
+<tr>
+<td>21</td>
+<td>rightToe</td>
+<td>/</td>
+</tr>
+<tr>
+<td>22</td>
+<td>leftThumbUnder</td>
+<td>Motion_LeftHandThumb1</td>
+</tr>
+<tr>
+<td>23</td>
+<td>leftThumbMid</td>
+<td>Motion_LeftHandThumb2</td>
+</tr>
+<tr>
+<td>24</td>
+<td>leftThumbUp</td>
+<td>Motion_LeftHandThumb3</td>
+</tr>
+<tr>
+<td>25</td>
+<td>leftForeFingerUnder</td>
+<td>Motion_LeftHandIndex1</td>
+</tr>
+<tr>
+<td>26</td>
+<td>leftForeFingerMid</td>
+<td>Motion_LeftHandIndex2</td>
+</tr>
+<tr>
+<td>27</td>
+<td>leftForeFingerUp</td>
+<td>Motion_LeftHandIndex3</td>
+</tr>
+<tr>
+<td>28</td>
+<td>leftMiddleFingerUnder</td>
+<td>Motion_LeftHandMiddle1</td>
+</tr>
+<tr>
+<td>29</td>
+<td>leftMiddleFingerMid</td>
+<td>Motion_LeftHandMiddle2</td>
+</tr>
+<tr>
+<td>30</td>
+<td>leftMiddleFingerUp</td>
+<td>Motion_LeftHandMiddle3</td>
+</tr>
+<tr>
+<td>31</td>
+<td>leftRingFingerUnder</td>
+<td>Motion_LeftHandRing1</td>
+</tr>
+<tr>
+<td>32</td>
+<td>leftRingFingerMid</td>
+<td>Motion_LeftHandRing2</td>
+</tr>
+<tr>
+<td>33</td>
+<td>leftRingFingerUp</td>
+<td>Motion_LeftHandRing3</td>
+</tr>
+<tr>
+<td>34</td>
+<td>leftLittleFingerUnder</td>
+<td>Motion_LeftHandPinky1</td>
+</tr>
+<tr>
+<td>35</td>
+<td>leftLittleFingerMid</td>
+<td>Motion_LeftHandPinky2</td>
+</tr>
+<tr>
+<td>36</td>
+<td>leftLittleFingerUp</td>
+<td>Motion_LeftHandPinky3</td>
+</tr>
+<tr>
+<td>37</td>
+<td>rightThumbUnder</td>
+<td>Motion_RightHandThumb1</td>
+</tr>
+<tr>
+<td>38</td>
+<td>rightThumbMid</td>
+<td>Motion_RightHandThumb2</td>
+</tr>
+<tr>
+<td>39</td>
+<td>rightThumbUp</td>
+<td>Motion_RightHandThumb3</td>
+</tr>
+<tr>
+<td>40</td>
+<td>rightForeFingerUnder</td>
+<td>Motion_RightHandIndex1</td>
+</tr>
+<tr>
+<td>41</td>
+<td>rightForeFingerMid</td>
+<td>Motion_RightHandIndex2</td>
+</tr>
+<tr>
+<td>42</td>
+<td>rightForeFingerUp</td>
+<td>Motion_RightHandIndex3</td>
+</tr>
+<tr>
+<td>43</td>
+<td>rightMiddleFingerUnder</td>
+<td>Motion_RightHandMiddle1</td>
+</tr>
+<tr>
+<td>44</td>
+<td>rightMiddleFingerMid</td>
+<td>Motion_RightHandMiddle2</td>
+</tr>
+<tr>
+<td>45</td>
+<td>rightMiddleFingerUp</td>
+<td>Motion_RightHandMiddle3</td>
+</tr>
+<tr>
+<td>46</td>
+<td>rightRingFingerUnder</td>
+<td>Motion_RightHandRing1</td>
+</tr>
+<tr>
+<td>47</td>
+<td>rightRingFingerMid</td>
+<td>Motion_RightHandRing2</td>
+</tr>
+<tr>
+<td>48</td>
+<td>rightRingFingerUp</td>
+<td>Motion_RightHandRing3</td>
+</tr>
+<tr>
+<td>49</td>
+<td>rightLittleFingerUnder</td>
+<td>Motion_RightHandPinky1</td>
+</tr>
+<tr>
+<td>50</td>
+<td>rightLittleFingerMid</td>
+<td>Motion_RightHandPinky2</td>
+</tr>
+<tr>
+<td>51</td>
+<td>rightLittleFingerUp</td>
+<td>Motion_RightHandPinky3</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
