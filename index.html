@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>魔迅科技文档中心</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -16,22 +18,37 @@
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
         
         header {
             text-align: center;
             padding: 40px 0;
-            background: linear-gradient(135deg, #1a73e8, #6c8ef5);
+            background: rgba(26, 115, 232, 0.85);
             color: white;
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         h1 {
@@ -52,16 +69,19 @@
         }
         
         .category-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             padding: 25px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
         
         .category-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
         }
         
         .category-title {
@@ -91,10 +111,13 @@
             transition: color 0.2s;
             display: flex;
             align-items: center;
+            font-weight: 500;
         }
         
         .item-list li a:hover {
             color: #1a73e8;
+            transform: translateX(5px);
+            transition: all 0.3s ease;
         }
         
         .item-list li a::before {
@@ -102,6 +125,7 @@
             color: #1a73e8;
             margin-right: 8px;
             font-weight: bold;
+            font-size: 1.2rem;
         }
         
         footer {
@@ -111,6 +135,9 @@
             color: #666;
             font-size: 0.9rem;
             border-top: 1px solid #eaeaea;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
         }
         
         @media (max-width: 768px) {
@@ -125,6 +152,8 @@
     </style>
 </head>
 <body>
+    <div id="vanta-bg"></div>
+    
     <div class="container">
         <header>
             <h1>魔迅科技文档中心</h1>
@@ -188,5 +217,41 @@
             <p>Copyright © 魔迅科技 版权所有</p>
         </footer>
     </div>
+
+    <script>
+        // 初始化Vanta.js背景动画
+        VANTA.BIRDS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            backgroundColor: 0xf5f7fa,  // 匹配文档页面的浅灰背景
+            color1: 0x1a73e8,           // 使用魔迅科技品牌蓝色
+            color2: 0x6c8ef5,           // 使用渐变紫色作为第二色调
+            colorMode: "lerp",
+            birdSize: 1.20,
+            wingSpan: 25.00,
+            speedLimit: 4.00,
+            separation: 20.00,
+            alignment: 20.00,
+            cohesion: 20.00,
+            quantity: 3.00
+        });
+
+        // 保持原有的键盘导航功能
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('go-next', '*');
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                window.parent.postMessage('go-prev', '*');
+            }
+        });
+    </script>
 </body>
 </html>
