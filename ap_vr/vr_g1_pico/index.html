@@ -1,0 +1,445 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../vr_g1_focus3/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>手套结合PICO - VR应用</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="VR应用" class="md-header__button md-logo" aria-label="VR应用" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VR应用
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              手套结合PICO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="VR应用" class="md-nav__button md-logo" aria-label="VR应用" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    VR应用
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vr_g1_steam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手套结合VR Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vr_g1_focus3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手套结合Focus3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    手套结合PICO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>手套结合PICO</h1>
+
+<p><strong>手套+Pico软件使用文档</strong></p>
+<ol>
+<li><strong>下载手套软件安装包</strong></li>
+</ol>
+<p>文件下载至电脑</p>
+<p>+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+-------------------------------+
+| <strong>APP</strong>                                                                                                                                                                           | <strong>版本</strong> | 日期       | <strong>更新日志</strong>                  |
++===================================================================================================================================================================================+:========:+:==========:+===============================+
+| <a href="https://alidocs.dingtalk.com/i/nodes/dxXB52LJqwGeKYzkCqlBdZyRWqjMp697?iframeQuery=anchorId%3DX02m32s8eqz18gq3k2gz1s">请至钉钉文档查看附件《MotionCapture_Glove_Pico_1.1.0.apk》</a> | V1.1.0   | 2024-11-04 | 【新增】                      |
+|                                                                                                                                                                                   |          |            |                               |
+|                                                                                                                                                                                   |          |            | 1.支持自研手套设备            |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+-------------------------------+
+| <a href="https://alidocs.dingtalk.com/i/nodes/dxXB52LJqwGeKYzkCqlBdZyRWqjMp697?iframeQuery=anchorId%3DX02m32s8p6rv91azg27l1">请至钉钉文档查看附件《MotionCapture_Glove_Pico.apk》</a>        | V1.0.0   |            | 【新增】                      |
+|                                                                                                                                                                                   |          |            |                               |
+|                                                                                                                                                                                   |          |            | 1.采集器手套实时数据          |
+|                                                                                                                                                                                   |          |            |                               |
+|                                                                                                                                                                                   |          |            | 2.姿势校准                    |
+|                                                                                                                                                                                   |          |            |                               |
+|                                                                                                                                                                                   |          |            | 3.设备详情                    |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+-------------------------------+</p>
+<p>+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+---------------+---------------------------+
+| <strong>APP</strong>                                                                                                                                                                                      | <strong>版本</strong> | 日期          | <strong>更新日志</strong>              |
++==============================================================================================================================================================================================+:========:+:=============:+===========================+
+| <a href="https://alidocs.dingtalk.com/i/nodes/dxXB52LJqwGeKYzkCqlBdZyRWqjMp697?iframeQuery=anchorId%3DX02m7mrm00gtia4tgck8e">请至钉钉文档查看附件《MotionCapture_Glove_Pico_InSituModel_1.0.0.apk》</a> | V1.0.0   | 2025-02-27    | 【新增】                  |
+|                                                                                                                                                                                              |          |               |                           |
+|                                                                                                                                                                                              |          |               | 1.场景改为原地模式        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+---------------+---------------------------+</p>
+<ol>
+<li><strong>安装手套软件</strong></li>
+</ol>
+<p><strong>2.1安装包发送至pico</strong></p>
+<p>使用数据线使pico和电脑建立连接，选中MotionCapture_Glove_Pico.apk文件，然后鼠标右键点击</p>
+<p>\"发送到\" PICO4。</p>
+<p><img alt="" src="../images_g1_pico/media/image1.png" />{width="4.25in"
+height="3.788798118985127in"}</p>
+<p>如果找不到pico设备，需要在pico中开启开发者模式开启文件传输功能。<img alt="" src="../images_g1_pico/media/image2.png" />{width="5.625in"
+height="3.8541666666666665in"}</p>
+<p><strong>2.2安装应用</strong></p>
+<p>在文件管理&gt;安装包&gt;点击MotionCapture_Glove_Pico.apk安装</p>
+<p><img alt="" src="../images_g1_pico/media/image3.png" />{width="5.625in"
+height="4.270833333333333in"}</p>
+<ol>
+<li><strong>使用手套软件</strong></li>
+</ol>
+<p><strong>3.1连接tracker</strong></p>
+<p>使用软件前确认连接了两个追踪器。</p>
+<p>打开体感追踪器软件，连接两个追踪器。</p>
+<p><img alt="" src="../images_g1_pico/media/image4.png" />{width="5.625in"
+height="4.333333333333333in"}</p>
+<p><img alt="" src="../images_g1_pico/media/image5.jpg" />{width="5.625in"
+height="4.447916666666667in"}</p>
+<p><strong>3.2打开软件</strong></p>
+<p>在资源库&gt;未知来源&gt;打开MotionCapture_Glove_Pico软件。</p>
+<p>有可能遇到的问题</p>
+<ol>
+<li>
+<p>提示pico版本低，需要先升级pico再打开软件。</p>
+</li>
+<li>
+<p>提示需要连接网络，先连接网络再打开软件</p>
+</li>
+</ol>
+<p><img alt="" src="../images_g1_pico/media/image6.png" />{width="5.625in"
+height="4.291666666666667in"}</p>
+<p><strong>3.3软件中使用流程</strong></p>
+<p>前置条件，pico中插入了手套接收器，并且两只手套设备已开机。</p>
+<p>采集数据</p>
+<p>先点击采集数据按钮，看得包率是不是0，如果是0检查手套是否已开机。</p>
+<p>如果得包率很低，请至pc软件MotionStudio中切换频段。</p>
+<p>姿势校准(需要手朝向靶子方向)</p>
+<p>没有上述问题后，点击姿势校准按钮，姿势参考下图。</p>
+<p><img alt="" src="../images_g1_pico/media/image7.png" />{width="6.125in"
+height="4.197916666666667in"}</p>
+<p>手臂姿势</p>
+<p><img alt="" src="../images_g1_pico/media/image8.png" />{width="6.125in"
+height="6.9375in"}</p>
+<p>手部姿势</p>
+<p><img alt="" src="../images_g1_pico/media/image9.png" />{width="1.7916666666666667in"
+height="2.5416666666666665in"}<img alt="" src="../images_g1_pico/media/image10.png" />{width="1.9166666666666667in"
+height="2.5625in"}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
