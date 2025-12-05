@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../tele_ohand/">
+      
+      
+        <link rel="next" href="../tele_g1_ohand/">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>具身智能应用</title>
+        <title>恒卓Z1+宇树G1 - 具身智能应用</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -42,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#demo" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="具身智能应用" class="md-header__button md-logo" aria-label="具身智能应用" data-md-component="logo">
+    <a href=".." title="具身智能应用" class="md-header__button md-logo" aria-label="具身智能应用" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              恒卓Z1+宇树G1
             
           </span>
         </div>
@@ -169,7 +178,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="具身智能应用" class="md-nav__button md-logo" aria-label="具身智能应用" data-md-component="logo">
+    <a href=".." title="具身智能应用" class="md-nav__button md-logo" aria-label="具身智能应用" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -187,7 +196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tele_ohand/" class="md-nav__link">
+      <a href="../tele_ohand/" class="md-nav__link">
         
   
   
@@ -211,10 +220,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/tele_z1_g1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -230,6 +248,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -241,7 +260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tele_g1_ohand/" class="md-nav__link">
+      <a href="../tele_g1_ohand/" class="md-nav__link">
         
   
   
@@ -278,6 +297,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -290,8 +311,67 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="demo">宇树遥操Demo部署</h1>
+<h1 id="miniconda3">miniconda3安装</h1>
+<p>避免各种版本冲突问题，建议用conda。参照下面脚本安装：</p>
+<pre><code class="language-shell">mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+
+refresh terminal：
+source ~/miniconda3/bin/activate
+
+ initialize conda on all available shells：
+conda init --all
+</code></pre>
+<h1 id="_1">解决依赖</h1>
+<p>需要的依赖有：mujoco 、meshcat、pinocchio</p>
+<p>注意：系统用22版Ubuntu，不容易出现版本冲突，数据处理帧率近20fps，24版只有10fps。如出现冲突，看numpy是不是2.0以下。</p>
+<p>加速安装可以使用清华源：</p>
+<pre><code class="language-shell">pip qinghua source: -i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<p>具体步骤：</p>
+<pre><code class="language-shell">conda create -n mt python=3.10 pinocchio=3.1.0 numpy=1.26.4 -c conda-forge
+conda activate mt
+
+//解决依赖
+pip install mujoco 
+pip install meshcat
+conda install pinocchio -c conda-forge 
+</code></pre>
+<h1 id="_2">启动应用</h1>
+<pre><code class="language-shell">conda activate mt
+cd Desktop/motionCapture_teleoperate/
+python moxun_robot.py
+</code></pre>
+<h1 id="_3">注意事项</h1>
+<p>1. 宇树机器人使用DDS</p>
+<p>2. 局域网网段需设置为：192.168.123.X    </p>
+<p>3. 使用unitree仿真环境验证后真机基本一致</p>
+<p>4. ！惯性设备校准时，物理机器人要停机</p>
+<p>5. 使用Linux笔记，不建议使用虚拟机</p>
+<p>6. 官方提供AR要操作开源范例</p>
+<p>7. 注意安装unitree_sdk2_python</p>
+<h1 id="_4">源代码</h1>
+<p>联系市场同事。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -328,10 +408,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": [], "search": "/assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
