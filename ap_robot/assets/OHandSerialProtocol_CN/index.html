@@ -1,0 +1,1150 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>OHand 通信协议 V3.0 - 具身智能应用</title>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ohand-v30" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="具身智能应用" class="md-header__button md-logo" aria-label="具身智能应用" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            具身智能应用
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OHand 通信协议 V3.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="具身智能应用" class="md-nav__button md-logo" aria-label="具身智能应用" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    具身智能应用
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tele_ohand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    傲意灵巧手
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tele_z1_g1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    恒卓Z1+宇树G1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tele_g1_ohand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    宇树G1+傲意
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 通信协议概要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 通讯参数
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 灵巧手串口指令帧格式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-lrc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LRC 校验码计算方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 灵巧手指令
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 灵巧手错误代码
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 手指角度
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ohand-v30">OHand 通信协议 V3.0</h1>
+<h2 id="1">1. 通信协议概要</h2>
+<p>用户主控单元通过发送命令数据实现对灵巧手的状态获取和控制。
+上位系统向 ROH 灵巧手发送读指令，ROH 灵巧手收到指令数据并校验成功后，将相应的结果返回给上位系统。</p>
+<p><em>注：</em> CAN协议和串口协议指令格式相同，CAN协议使用CAN报文的形式，一帧8个字节，CAN ID和灵巧手ID保持一致</p>
+<h2 id="2">2. 通讯参数</h2>
+<p>RS232、RS485 通讯参数都是 115200bps、8 数据位、1 停止位、无奇偶校验。</p>
+<p>CAN 通讯参数是 1000000bps。</p>
+<h2 id="3">3. 灵巧手串口指令帧格式</h2>
+<p>操作 ROH 灵巧手的指令帧格式如下：</p>
+<table>
+<thead>
+<tr>
+<th>字节</th>
+<th>数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte[0]</td>
+<td>0x55</td>
+<td>包头</td>
+</tr>
+<tr>
+<td>byte[1]</td>
+<td>0xAA</td>
+<td>包头</td>
+</tr>
+<tr>
+<td>byte[2]</td>
+<td>HandID</td>
+<td>ROH 灵巧手 ID 号</td>
+</tr>
+<tr>
+<td>byte[3]</td>
+<td>MasterID</td>
+<td>主机 ID 号</td>
+</tr>
+<tr>
+<td>byte[4]</td>
+<td>Command</td>
+<td>操作命令</td>
+</tr>
+<tr>
+<td>byte[5]</td>
+<td>DataLen</td>
+<td>该帧数据部分长度，即 byte[6]..byte[6 + DataLen - 1]</td>
+</tr>
+<tr>
+<td>byte[6]..byte[6 + DataLen - 1]</td>
+<td>Data[0]..Data[DataLen-1]</td>
+<td>命令数据</td>
+</tr>
+<tr>
+<td>byte[6 + DataLen]</td>
+<td>Checksum</td>
+<td>校验码（参见 4. LRC 校验码计算方式）</td>
+</tr>
+</tbody>
+</table>
+<p>ROH 灵巧手对指令的回复帧如下：</p>
+<table>
+<thead>
+<tr>
+<th>字节</th>
+<th>数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte[0]</td>
+<td>0x55</td>
+<td>包头</td>
+</tr>
+<tr>
+<td>byte[1]</td>
+<td>0xAA</td>
+<td>包头</td>
+</tr>
+<tr>
+<td>byte[2]</td>
+<td>MasterID</td>
+<td>主机 ID 号</td>
+</tr>
+<tr>
+<td>byte[3]</td>
+<td>HandID</td>
+<td>ROH 灵巧手 ID 号</td>
+</tr>
+<tr>
+<td>byte[4]</td>
+<td>Command</td>
+<td>操作命令，如果指令执行错误，那么最高位为 1，低七位为操作命令，Data[0]为错误代码（参见 6. 灵巧手错误代码）</td>
+</tr>
+<tr>
+<td>byte[5]</td>
+<td>DataLen</td>
+<td>该帧数据部分长度，即 byte[6]..byte[6 + DataLen - 1]</td>
+</tr>
+<tr>
+<td>byte[6]..byte[6 + DataLen - 1]</td>
+<td>Data[0]..Data[DataLen - 1]</td>
+<td>返回数据</td>
+</tr>
+<tr>
+<td>byte[6 + DataLen]</td>
+<td>Checksum</td>
+<td>校验码（参见 4. LRC 校验码计算方式）</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<p>指令帧（HEX）：</p>
+<table>
+<thead>
+<tr>
+<th>包头</th>
+<th>灵巧手 ID</th>
+<th>主机 ID</th>
+<th>操作命令</th>
+<th>数据长度</th>
+<th>数据</th>
+<th>校验码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>55 AA</td>
+<td>02</td>
+<td>01</td>
+<td>50</td>
+<td>12</td>
+<td>10 27 FF 10 27 FF 10 27 FF 10 27 FF 10 27 FF 10 27 FF</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>正确回复帧（HEX）：</p>
+<table>
+<thead>
+<tr>
+<th>包头</th>
+<th>主机 ID</th>
+<th>灵巧手 ID</th>
+<th>操作命令</th>
+<th>数据长度</th>
+<th>数据</th>
+<th>校验码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>55 AA</td>
+<td>01</td>
+<td>02</td>
+<td>50</td>
+<td>00</td>
+<td>NULL</td>
+<td>53</td>
+</tr>
+</tbody>
+</table>
+<p>错误回复帧（HEX）：</p>
+<table>
+<thead>
+<tr>
+<th>包头</th>
+<th>主机 ID</th>
+<th>灵巧手 ID</th>
+<th>操作命令</th>
+<th>数据长度</th>
+<th>数据</th>
+<th>校验码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>55 AA</td>
+<td>01</td>
+<td>02</td>
+<td>D0</td>
+<td>01</td>
+<td>01</td>
+<td>D3</td>
+</tr>
+</tbody>
+</table>
+<p><em>注：</em> 操作命令为指令帧的操作码与0x80或后的值，数据位为错误代码</p>
+<h2 id="4-lrc">4. LRC 校验码计算方式</h2>
+<p>灵巧手串口指令帧中 byte[2]..byte[6 + DataLen - 1]的各字节异或值:</p>
+<pre><code class="language-c">uint8_t buf[...];
+uint8_t lrc = 0;
+uint8_t cmd_data_len = 4/* sizeof(MasterID) + sizeof(HandID) + sizeof(Command) + sizeof(DataLen) */ + DataLen;
+
+/* Fill buf */
+buf[0] = 0x55;
+buf[1] = 0xAA;
+...
+
+for (int i=0; i&lt;cmd_data_len; i++)
+    lrc ^= buf[2 + i];
+
+buf[2 + cmd_data_len] = lrc;
+</code></pre>
+<h2 id="5">5. 灵巧手指令</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指令名称</th>
+<th style="text-align: right;">值</th>
+<th style="text-align: left;">说明</th>
+<th style="text-align: left;">数据字节</th>
+<th style="text-align: left;">回复数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_PROTOCOL_VERSION</td>
+<td style="text-align: right;">0x00</td>
+<td style="text-align: left;">获取协议版本</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[PROTOCOL_MINOR_VERSION, PROTOCOL_MAJOR_VERSION]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FW_VERSION</td>
+<td style="text-align: right;">0x01</td>
+<td style="text-align: left;">获取固件版本</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[FW_REVISION_L, FW_REVISION_H, FW_MINOR_VERSION, FW_MAJOR_VERSION]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_HW_VERSION</td>
+<td style="text-align: right;">0x02</td>
+<td style="text-align: left;">获取硬件版本</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[HW_TYPE, HW_VER, BOOT_VER_MAJOR, BOOT_VER_MINOR]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_CALI_DATA</td>
+<td style="text-align: right;">0x03</td>
+<td style="text-align: left;">获取校正数据</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F0_RANGE_END_L, F0_RANGE_END_H, ..., Fn_RANGE_END_L, Fn_RANGE_END_H, F0_RANGE_START_L, F0_RANGE_START_H, ..., Fn_RANGE_START_L, Fn_RANGE_START_H, THUMB_ROOT_POS1_L, THUMB_ROOT_POS1_H, ..., THUMB_ROOT_POSn_L, THUMB_ROOT_POSn_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_PID</td>
+<td style="text-align: right;">0x04</td>
+<td style="text-align: left;">获取手指PID值，数据类型 float32</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, P_BYTE0, P_BYTE1, P_BYTE2, P_BYTE3, I_BYTE0, I_BYTE1, I_BYTE2, I_BYTE3, D_BYTE0, D_BYTE1, D_BYTE2, D_BYTE3, G_BYTE0, G_BYTE1, G_BYTE2, G_BYTE3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_CURRENT_LIMIT</td>
+<td style="text-align: right;">0x05</td>
+<td style="text-align: left;">获取手指电流限制值，单位mA</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, CURRENT_LIMIT_L, CURRENT_LIMIT_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_CURRENT</td>
+<td style="text-align: right;">0x06</td>
+<td style="text-align: left;">获取手指电流值，单位mA</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, CURRENT_L, CURRENT_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_FORCE_TARGET</td>
+<td style="text-align: right;">0x07</td>
+<td style="text-align: left;">获取手指力量目标值，单位mN, 开机时恢复为默认值0</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, FORCE_TARGET_L, FORCE_TARGET_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_FORCE</td>
+<td style="text-align: right;">0x08</td>
+<td style="text-align: left;">获取手指当前力量值，单位 mN</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, FORCE_ENTRY_CNT, FORCE0_L, FORCE0_H, ..., FORCEn_L, FORCEn_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS_LIMIT</td>
+<td style="text-align: right;">0x09</td>
+<td style="text-align: left;">获取手指绝对位置限制值</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, POS_LIMIT_L, POS_LIMIT_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS_ABS</td>
+<td style="text-align: right;">0x0A</td>
+<td style="text-align: left;">获取手指当前绝对位置值</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, ABS_TARGET_POS_L, ABS_TARGET_POS_H, ABSOLUTE_POS_L, ABSOLUTE_POS_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS</td>
+<td style="text-align: right;">0x0B</td>
+<td style="text-align: left;">获取手指当前逻辑位置值</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, LOGICAL_TARGET_POS_L, LOGICAL_TARGET_POS_H, LOGICAL_POS_L, LOGICAL_POS_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_ANGLE</td>
+<td style="text-align: right;">0x0C</td>
+<td style="text-align: left;">获取手指第一关节角度，等于实际值 * 100</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, TARGET_ANGLE_L, TARGET_ANGLE_H, CURRENT_ANGLE_L, CURRENT_ANGLE_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_THUMB_ROOT_POS</td>
+<td style="text-align: right;">0x0D</td>
+<td style="text-align: left;">获取大拇指旋转预设位置, {0, 1, 2, 255}, 255 为未知</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[PRESET_POS]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS_ABS_ALL</td>
+<td style="text-align: right;">0x0E</td>
+<td style="text-align: left;">获取所有手指当前的绝对位置</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F0_TARGET_ABS_POS_L, F0_TARGET_ABS_POS_H, ..., Fn_TARGET_ABS_POS_L, Fn_TARGET_ABS_POS_H, F0_CURRENT_ABS_POS_L, F0_CURRENT_ABS_POS_H, ..., Fn_CURRENT_ABS_POS_L, Fn_CURRENT_ABS_POS_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS_ALL</td>
+<td style="text-align: right;">0x0F</td>
+<td style="text-align: left;">获取所有手指当前的逻辑位置</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F0_TARGET_LOGICAL_POS_L, F0_TARGET_LOGICAL_POS_H, ..., Fn_TARGET_LOGICAL_POS_L, Fn_TARGET_LOGICAL_POS_H, F0_CURRENT_LOGICAL_POS_L, F0_CURRENT_LOGICAL_POS_H, ..., Fn_CURRENT_LOGICAL_POS_L, Fn_CURRENT_LOGICAL_POS_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_ANGLE_ALL</td>
+<td style="text-align: right;">0x10</td>
+<td style="text-align: left;">获取所有手指第一关节角度，等于实际值 * 100</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F0_TARGET_ANGLE_L, F0_TARGET_ANGLE_H, ..., Fn_TARGET_ANGLE_L, Fn_TARGET_ANGLE_H, F0_CURRENT_ANGLE_L, F0_CURRENT_ANGLE_H, ..., Fn_CURRENT_ANGLE_L, Fn_CURRENT_ANGLE_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_STOP_PARAMS</td>
+<td style="text-align: right;">0x11</td>
+<td style="text-align: left;">获取手指停机保护参数：速度（逻辑位置/s）、电流（mA）、持续时间（ms）、重试时间（ms）</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, SPEED_L, SPEED_H, STOP_CURRENT_L, STOP_CURRENT_H, STOP_AFTER_PERIOD_L, STOP_AFTER_PERIOD_H, RETRY_INTERVAL_L, RETRY_INTERVAL_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_FORCE_PID</td>
+<td style="text-align: right;">0x12</td>
+<td style="text-align: left;">获取手指力量PID值，数据类型 float32</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, P_BYTE0, P_BYTE1, P_BYTE2, P_BYTE3, I_BYTE0, I_BYTE1, I_BYTE2, I_BYTE3, D_BYTE0, D_BYTE1, D_BYTE2, D_BYTE3, G_BYTE0, G_BYTE1, G_BYTE2, G_BYTE3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_SELF_TEST_SWITCH</td>
+<td style="text-align: right;">0x20</td>
+<td style="text-align: left;">获取自检开关状态，0：关，1：开</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[ON_OFF]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_BEEP_SWITCH</td>
+<td style="text-align: right;">0x21</td>
+<td style="text-align: left;">获取蜂鸣器开关状态，0：关，1：开</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[ON_OFF]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_BUTTON_PRESSED_CNT</td>
+<td style="text-align: right;">0x22</td>
+<td style="text-align: left;">获取按钮按下次数，ROHand请忽略</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[BTN_PRESSED_CNT]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_UID</td>
+<td style="text-align: right;">0x23</td>
+<td style="text-align: left;">获取手UID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[UID0_BYTE0, UID0_BYTE1, UID0_BYTE2, UID0_BYTE3, UID1_BYTE0, UID1_BYTE1, UID1_BYTE2, UID1_BYTE3, UID2_BYTE0, UID2_BYTE1, UID2_BYTE2, UID2_BYTE3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_BATTERY_VOLTAGE</td>
+<td style="text-align: right;">0x24</td>
+<td style="text-align: left;">获取电池电压，单位mV，ROHand请忽略</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[BATTERY_VOLTAGE_L, BATTERY_VOLTAGE_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_USAGE_STAT</td>
+<td style="text-align: right;">0x25</td>
+<td style="text-align: left;">获取使用数据，ROHand请忽略</td>
+<td style="text-align: left;">[MOTOR_CNT]</td>
+<td style="text-align: left;">[USE_TIME_BYTE0, USE_TIME_BYTE1, USE_TIME_BYTE2, USE_TIME_BYTE3, F0_OPEN_CNT_BYTE0, F0_OPEN_CNT_BYTE1, F0_OPEN_CNT_BYTE2, F0_OPEN_CNT_BYTE3, ..., Fn_OPEN_CNT_BYTE0, Fn_OPEN_CNT_BYTE1, Fn_OPEN_CNT_BYTE2, Fn_OPEN_CNT_BYTE3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_MANUFACTURE_DATA</td>
+<td style="text-align: right;">0x3E</td>
+<td style="text-align: left;">获取厂方数据</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[BYTE0, ..., BYTEn]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_VENDOR_ID</td>
+<td style="text-align: right;">0x3F</td>
+<td style="text-align: left;">获取供应商ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">['O', 'Y']</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_RESET</td>
+<td style="text-align: right;">0x40</td>
+<td style="text-align: left;">重启，MODE=0：重启进入工作状态；MODE=1：重启进入DFU模式</td>
+<td style="text-align: left;">[MODE]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_POWER_OFF</td>
+<td style="text-align: right;">0x41</td>
+<td style="text-align: left;">关机，ROHand请忽略</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_NODE_ID</td>
+<td style="text-align: right;">0x42</td>
+<td style="text-align: left;">设置手节点ID</td>
+<td style="text-align: left;">[NODE_ID]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_CALIBRATE</td>
+<td style="text-align: right;">0x43</td>
+<td style="text-align: left;">校正手，仅限出厂使用</td>
+<td style="text-align: left;">[KEY_L, KEY_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_CALI_DATA</td>
+<td style="text-align: right;">0x44</td>
+<td style="text-align: left;">设置校正数据</td>
+<td style="text-align: left;">[MOTOR_CNT, F0_RANGE_END_L, F0_RANGE_END_H, ..., Fn_RANGE_END_L, Fn_RANGE_END_H, F0_RANGE_START_L, F0_RANGE_START_H, ..., Fn_RANGE_START_L, Fn_RANGE_START_H, THUMB_ROOT_POS_CNT, THUMB_ROOT_POS1_L, THUMB_ROOT_POS1_H, ..., THUMB_ROOT_POSn_L, THUMB_ROOT_POSn_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_PID</td>
+<td style="text-align: right;">0x45</td>
+<td style="text-align: left;">设置手指PID值，数据类型 float32</td>
+<td style="text-align: left;">[FINGER_ID, P_BYTE0, P_BYTE1, P_BYTE2, P_BYTE3, I_BYTE0, I_BYTE1, I_BYTE2, I_BYTE3, D_BYTE0, D_BYTE1, D_BYTE2, D_BYTE3, G_BYTE0, G_BYTE1, G_BYTE2, G_BYTE3]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_CURRENT_LIMIT</td>
+<td style="text-align: right;">0x46</td>
+<td style="text-align: left;">设置手指电流限制，[0, 65535]</td>
+<td style="text-align: left;">[FINGER_ID, CURRENT_LIMIT_L, CURRENT_LIMIT_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_FORCE_TARGET</td>
+<td style="text-align: right;">0x47</td>
+<td style="text-align: left;">设置手指目标力量，[0, 65535]，单位mN， 置零退出力控模式， 开机时恢复为默认值0</td>
+<td style="text-align: left;">[FINGER_ID, FORCE_TARGET_L, FORCE_TARGET_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS_LIMIT</td>
+<td style="text-align: right;">0x48</td>
+<td style="text-align: left;">设置手指绝对位置限制，[0, 65535]</td>
+<td style="text-align: left;">[FINGER_ID, POS_LIMIT_L, POS_LIMIT_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_FINGER_START</td>
+<td style="text-align: right;">0x49</td>
+<td style="text-align: left;">开始移动手指</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_FINGER_STOP</td>
+<td style="text-align: right;">0x4A</td>
+<td style="text-align: left;">停止移动手指</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS_ABS</td>
+<td style="text-align: right;">0x4B</td>
+<td style="text-align: left;">移动手指到绝对位置，[0, 65535]</td>
+<td style="text-align: left;">[FINGER_ID, ABSOLUTE_POS_L, ABSOLUTE_POS_H, SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS</td>
+<td style="text-align: right;">0x4C</td>
+<td style="text-align: left;">移动手指到逻辑位置，[0, 65535]</td>
+<td style="text-align: left;">[FINGER_ID, LOGICAL_POS_L, LOGICAL_POS_H, SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_ANGLE</td>
+<td style="text-align: right;">0x4D</td>
+<td style="text-align: left;">设置手指角度，[0, 65535]，等于实际值 * 100</td>
+<td style="text-align: left;">[FINGER_ID, TARGET_ANGLE_L, TARGET_ANGLE_H, SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_THUMB_ROOT_POS</td>
+<td style="text-align: right;">0x4E</td>
+<td style="text-align: left;">旋转大拇指到预设位置，{0,1,2}</td>
+<td style="text-align: left;">[PRESET_POS]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS_ABS_ALL</td>
+<td style="text-align: right;">0x4F</td>
+<td style="text-align: left;">设置所有手指的绝对位置</td>
+<td style="text-align: left;">[F0_ABS_POS_L, F0_ABS_POS_H, F0_SPEED, ..., Fn_ABS_POS_L, Fn_ABS_POS_H, Fn_SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS_ALL</td>
+<td style="text-align: right;">0x50</td>
+<td style="text-align: left;">设置所有手指的逻辑位置</td>
+<td style="text-align: left;">[F0_POS_L, F0_POS_H, F0_SPEED, ..., Fn_POS_L, Fn_POS_H, Fn_SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_ANGLE_ALL</td>
+<td style="text-align: right;">0x51</td>
+<td style="text-align: left;">设置所有手指第一关节角度，[0, 65535]，等于实际值 * 100</td>
+<td style="text-align: left;">[F0_ANGLE_L, F0_ANGLE_H, F0_SPEED, ..., Fn_ANGLE_L, Fn_ANGLE_H, Fn_SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_STOP_PARAMS</td>
+<td style="text-align: right;">0x52</td>
+<td style="text-align: left;">设置手指停机参数：速度（逻辑位置/s）、电流（mA）、持续时间（ms）、重试时间（ms）</td>
+<td style="text-align: left;">[FINGER_ID, SPEED_L, SPEED_H, STOP_CURRENT_L, STOP_CURRENT_H, STOP_AFTER_PERIOD_L, STOP_AFTER_PERIOD_H, RETRY_INTERVAL_L, RETRY_INTERVAL_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_FORCE_PID</td>
+<td style="text-align: right;">0x53</td>
+<td style="text-align: left;">设置手指力量PID值，数据类型 float32</td>
+<td style="text-align: left;">[FINGER_ID, P_BYTE0, P_BYTE1, P_BYTE2, P_BYTE3, I_BYTE0, I_BYTE1, I_BYTE2, I_BYTE3, D_BYTE0, D_BYTE1, D_BYTE2, D_BYTE3, G_BYTE0, G_BYTE1, G_BYTE2, G_BYTE3]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_RESET_FORCE</td>
+<td style="text-align: right;">0x54</td>
+<td style="text-align: left;">重置力量值</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_CUSTOM</td>
+<td style="text-align: right;">0x5F</td>
+<td style="text-align: left;">自定义指令</td>
+<td style="text-align: left;">[MOTOR_CNT, DATA_FLAG, ...]</td>
+<td style="text-align: left;">[...]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_SELF_TEST_LEVEL</td>
+<td style="text-align: right;">0x60</td>
+<td style="text-align: left;">设置自检等级，0：等待指令，1：半自检，2：完整自检</td>
+<td style="text-align: left;">[SELF_TEST_LEVEL]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_BEEP_SWITCH</td>
+<td style="text-align: right;">0x61</td>
+<td style="text-align: left;">设置蜂鸣器状态，0：关，1：开</td>
+<td style="text-align: left;">[ON_OFF]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_BEEP</td>
+<td style="text-align: right;">0x62</td>
+<td style="text-align: left;">蜂鸣一段时间，单位ms，[0, 65535]</td>
+<td style="text-align: left;">[BEEP_PERIOD_L, BEEP_PERIOD_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_BUTTON_PRESSED_CNT</td>
+<td style="text-align: right;">0x63</td>
+<td style="text-align: left;">设置按钮按下次数，仅限校正</td>
+<td style="text-align: left;">[BTN_PRESSED_CNT]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_START_INIT</td>
+<td style="text-align: right;">0x64</td>
+<td style="text-align: left;">开始初始化为了使 SELF_TEST_LEVEL=0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_MANUFACTURE_DATA</td>
+<td style="text-align: right;">0x65</td>
+<td style="text-align: left;">设置厂方数据</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ol>
+<li>如果不加说明，单字节数据为 uint8 类型，XXX_L, XXX_H 表示 uint16 类型的低字节和高字节；XXX_BYTE0, XXX_BYTE1, XXX_BYTE2, XXX_BYTE3 表示 uint32 类型自低到高 4 个字节；</li>
+<li>若指定为 float32 类型，XXX_BYTE0, XXX_BYTE1, XXX_BYTE2, XXX_BYTE3 表示 float32 类型自低到高 4 个字节。</li>
+</ol>
+<h2 id="6">6. 灵巧手错误代码</h2>
+<table>
+<thead>
+<tr>
+<th>错误名</th>
+<th>代码</th>
+<th>说明</th>
+<th>分组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERR_PROTOCOL_WRONG_CRC</td>
+<td>0x01</td>
+<td>校验码错误</td>
+<td>协议</td>
+</tr>
+<tr>
+<td>ERR_COMMAND_INVALID</td>
+<td>0x11</td>
+<td>无效的命令</td>
+<td>命令</td>
+</tr>
+<tr>
+<td>ERR_COMMAND_INVALID_BYTE_COUNT</td>
+<td>0x12</td>
+<td>字节数不正确</td>
+<td>命令</td>
+</tr>
+<tr>
+<td>ERR_COMMAND_INVALID_DATA</td>
+<td>0x13</td>
+<td>无效的值</td>
+<td>命令</td>
+</tr>
+<tr>
+<td>ERR_STATUS_INIT</td>
+<td>0x21</td>
+<td>正在等待初始化命令或者正在初始化</td>
+<td>状态</td>
+</tr>
+<tr>
+<td>ERR_STATUS_CALI</td>
+<td>0x22</td>
+<td>等待校正</td>
+<td>状态</td>
+</tr>
+<tr>
+<td>ERR_STATUS_STUCK</td>
+<td>0x23</td>
+<td>电机堵转</td>
+<td>状态</td>
+</tr>
+<tr>
+<td>ERR_OP_FAILED</td>
+<td>0x31</td>
+<td>操作失败</td>
+<td>操作</td>
+</tr>
+<tr>
+<td>ERR_SAVE_FAILED</td>
+<td>0x32</td>
+<td>保存失败</td>
+<td>操作</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7">7. 手指角度</h2>
+<p>角度定义及运动范围说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">角度</th>
+<th style="text-align: center;">图例说明</th>
+<th style="text-align: center;">角度范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">食指 </br></br> 中指 </br></br> 无名指 </br></br> 小拇指</td>
+<td style="text-align: center;"><img alt="Finger Screen" src="res/FingerBending.png" /></td>
+<td style="text-align: center;">100.22°~178.37° </br></br> 97.81° ~ 176.06° </br></br> 101.38° ~ 176.54° </br></br> 98.84° ~ 174.86°</td>
+</tr>
+<tr>
+<td style="text-align: center;">大拇指弯曲</td>
+<td style="text-align: center;"><img alt="Finger Screen" src="res/ThumbBending.png" /></td>
+<td style="text-align: center;">2.26° ~ 36.76°</td>
+</tr>
+<tr>
+<td style="text-align: center;">大拇指旋转</td>
+<td style="text-align: center;"><img alt="Finger Screen" src="res/ThumbRotation.png" /></td>
+<td style="text-align: center;">0° ~ 90°</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
