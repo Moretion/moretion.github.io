@@ -232,6 +232,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    恒卓Z1+宇树G1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -248,6 +266,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#miniconda3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        miniconda3安装
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解决依赖
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启动应用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        源代码
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -300,6 +392,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#miniconda3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        miniconda3安装
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        解决依赖
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        启动应用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事项
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        源代码
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -316,7 +471,7 @@
 
 
 <h1 id="demo">宇树遥操Demo部署</h1>
-<h1 id="miniconda3">miniconda3安装</h1>
+<h2 id="miniconda3">miniconda3安装</h2>
 <p>避免各种版本冲突问题，建议用conda。参照下面脚本安装：</p>
 <pre><code class="language-shell">mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
@@ -329,7 +484,7 @@ source ~/miniconda3/bin/activate
  initialize conda on all available shells：
 conda init --all
 </code></pre>
-<h1 id="_1">解决依赖</h1>
+<h2 id="_1">解决依赖</h2>
 <p>需要的依赖有：mujoco 、meshcat、pinocchio</p>
 <p>注意：系统用22版Ubuntu，不容易出现版本冲突，数据处理帧率近20fps，24版只有10fps。如出现冲突，看numpy是不是2.0以下。</p>
 <p>加速安装可以使用清华源：</p>
@@ -344,12 +499,12 @@ pip install mujoco
 pip install meshcat
 conda install pinocchio -c conda-forge 
 </code></pre>
-<h1 id="_2">启动应用</h1>
+<h2 id="_2">启动应用</h2>
 <pre><code class="language-shell">conda activate mt
 cd Desktop/motionCapture_teleoperate/
 python moxun_robot.py
 </code></pre>
-<h1 id="_3">注意事项</h1>
+<h2 id="_3">注意事项</h2>
 <p>1. 宇树机器人使用DDS</p>
 <p>2. 局域网网段需设置为：192.168.123.X    </p>
 <p>3. 使用unitree仿真环境验证后真机基本一致</p>
@@ -357,7 +512,7 @@ python moxun_robot.py
 <p>5. 使用Linux笔记，不建议使用虚拟机</p>
 <p>6. 官方提供AR要操作开源范例</p>
 <p>7. 注意安装unitree_sdk2_python</p>
-<h1 id="_4">源代码</h1>
+<h2 id="_4">源代码</h2>
 <p>联系市场同事。</p>
 
 
