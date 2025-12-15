@@ -9,8 +9,8 @@
       
       
       
-        <link rel="prev" href="../unity/">
       
+        <link rel="next" href="../unity_android_glove/">
       
       
         
@@ -21,7 +21,7 @@
     
     
       
-        <title>Android Glove - Unity Plugins Documentation</title>
+        <title>Unity Plugins - Unity Plugins Documentation</title>
       
     
     
@@ -61,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#unity" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Android Glove
+              Unity Plugins
             
           </span>
         </div>
@@ -191,10 +186,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../unity/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -210,6 +212,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -218,19 +221,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../unity_android_glove/" class="md-nav__link">
         
   
   
@@ -246,7 +240,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -268,8 +261,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -286,111 +277,131 @@
 
 
 
-<h1 id="unity">unity动捕插件(手套+安卓)使用文档</h1>
-<h1 id="_1">简介</h1>
-<p>本文档将帮助你如何使用游戏引擎 Unity 3D 通过此sdk拿到数据手套数据，并正确驱动手模型。</p>
-<h1 id="unity_1">Unity动捕插件包导入项目</h1>
-<p>动捕手套插件包</p>
-<p><a href="https://alidocs.dingtalk.com/i/nodes/mweZ92PV6OrygkwoH21laopvJxEKBD6p?iframeQuery=anchorId%3DX02m5ao5x2popor2bf7naq">请至钉钉文档查看附件《mostechPlugin_Android_V1.1.0.unitypackage》</a></p>
-<table>
-<thead>
-<tr>
-<th><strong>插件文件</strong></th>
-<th><strong>版本</strong></th>
-<th>日期</th>
-<th><strong>更新日志</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://alidocs.dingtalk.com/i/nodes/mweZ92PV6OrygkwoH21laopvJxEKBD6p?iframeQuery=anchorId%3DX02m32fqxifuxjmtjmohi">请至钉钉文档查看附件《mostechPlugin_Android_V1.1.0.unitypackage》</a></td>
-<td>V1.1.0</td>
-<td>2024-11-04</td>
-<td>【新增】<br> 1.支持手套自研设备</td>
-</tr>
-<tr>
-<td><a href="https://alidocs.dingtalk.com/i/nodes/mweZ92PV6OrygkwoH21laopvJxEKBD6p?iframeQuery=anchorId%3DX02m32fxh0k8lj12mur83p">请至钉钉文档查看附件《mostechPlugin_Android_V1.0.0.unitypackage》</a></td>
-<td>V1.0.0</td>
-<td>2024-10-17</td>
-<td>【新增】<br> 1.采集器手套实时数据<br> 2.姿势校准<br> 3.设备详情</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>打开unity工程后点击Asset&gt;Import Package&gt;CustomPackage&gt;mostechPlugin_Android.unitypackage添加到unity工程即可</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/748bda20-2003-4bcb-8985-3fedae71da4b.png" /></p>
-<h1 id="_2">插件包介绍</h1>
-<p><strong>接口调用流程</strong></p>
-<p><img alt="image" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/a/KarAD7e3iQge1Lm5/1ae2f146f2114d54a1f693165f51c66f0711.png" /></p>
-<p><strong>注解：</strong></p>
-<ul>
-<li>
-<p>采集数据过程中，调用类似查询电量的接口拿到结果后，需要重新调用采集数据接口</p>
-</li>
-<li>
-<p>需要打包进安卓设备才可运行调试</p>
-</li>
-</ul>
-<h3 id="21">2.1场景介绍</h3>
-<p>在 Assets &gt;Mostech &gt; MotionCapture_Android&gt;Scenes 可以看到示例场景</p>
-<ol>
-<li>GloveMotionCaptureDemo ,获取手套数据驱动手模型</li>
-</ol>
-<p>安装包</p>
-<p><a href="https://alidocs.dingtalk.com/i/nodes/mweZ92PV6OrygkwoH21laopvJxEKBD6p?iframeQuery=anchorId%3DX02m0ruimu8vn51xsfvjg8">请至钉钉文档查看附件《GloveMotionCapture.apk》</a></p>
-<h3 id="22">2.2脚本介绍</h3>
-<ol>
-<li>
-<p>在Assets&gt;Mostech&gt;MotionCapture_Android&gt;Scripts&gt;Mostech_AndroidSerialPort.cs</p>
-<p>所有和串口相关，例如:手套数据、电量等</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;MotionCapture_Android&gt;Scripts&gt;Mostech_MotionDriver.cs</p>
-<p>驱动手模型相关</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;MotionCapture_Android&gt;Scripts&gt;Mostech_UIManager.cs</p>
-<p>界面相关</p>
-</li>
-<li>
-<p>在Assets&gt;Mostech&gt;MotionCapture_Android&gt;Scripts&gt; Loom.cs</p>
-</li>
-</ol>
-<p>子线程向主线程中添加事件,避免子线程直接调用unity主线程中方法报错。每个场景中必须要</p>
-<p>添加Loom.cs脚本。</p>
-<h3 id="23mostech_androidserialportcs">2.3脚本Mostech_AndroidSerialPort.cs详细说明</h3>
-<p>通过此脚本和安卓串口通信sdk交互，安卓sdk中使用流程为：获取实例&gt;初始化资源&gt;销毁实例。</p>
-<p>手套设备的连接由安卓sdk控制</p>
-<h3 id="24mostech_motiondrivercs">2.4脚本Mostech_MotionDriver.cs详细说明</h3>
-<p>通过此脚本驱动手模型，需要绑定左右手各16个骨骼。暂时只支持固定骨骼的手模型(后续版本中会支持任意骨骼)。</p>
-<h1 id="_3">模型要求</h1>
-<ol>
-<li>
-<p>模型所有骨骼自身坐标系为左手坐标系，x轴向右，y向上，z向前</p>
-</li>
-<li>
-<p>左右手各个手指由三部分组成，手指近端、中端、末端组成</p>
-</li>
-<li>
-<p>手指各个骨骼初始姿态欧拉角为(0,0,0)</p>
-</li>
-</ol>
-<p>俯视图</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/508ed60a-983d-49cc-b841-b0a6629630df.png" /></p>
-<p>侧视图</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MeYVOL5zYA0Rlpz2/img/eae05399-01a2-415f-9799-4dfc0e9207c1.png" /></p>
-<h1 id="_4">打包安卓时特殊配置</h1>
-<h3 id="41minimun-api-level">4.1设置minimun API Level</h3>
-<p>在Edit&gt;Player&gt;OtherSttings下minimun API Level设置为&gt;=level 29的版本</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/mPdnp8r019wenw98/img/6a44dbb3-f0b5-4ed0-9ace-e799bf9ce5ab.png" /></p>
-<h3 id="42arm64">4.2打包为ARM64</h3>
-<p>在Edit&gt;Player&gt;OtherSttings下先将Scripting Backend设置为IL2CPP，然后勾选ARM64</p>
-<p><img alt="image.png" src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/mPdnp8r019wenw98/img/0591a88b-6fea-4094-8bcb-d6cecb4aa15d.png" /></p>
+  <h1>Unity Plugins</h1>
+
+<p><strong>unity插件使用教程</strong></p>
+<p><strong>一.unity软件使用</strong></p>
+<p><strong>1.打开Unity Hub软件(若未下载可官网下载：</strong><a href="https://unity.cn/releases">https://unity.cn/releases</a><strong>)</strong>
+<img alt="" src="../images/media/image1.png" /></p>
+<p><strong>2.检查是否安装编辑器（</strong>最低可用版本2019.1.0<strong>）</strong>
+<img alt="" src="../images/media/image2.png" /></p>
+<p>若未下载可点击安装unit编辑器按钮，按照unity编辑器或者官网下载（地址：<a href="https://unity.cn/releases/full/2019">https://unity.cn/releases/full/2019</a>）</p>
+<p><img alt="" src="../images/media/image3.png" /></p>
+<p><strong>3.新建项目或打开已有项目</strong>
+<img alt="" src="../images/media/image4.png" /></p>
+<p>新建项目
+<img alt="" src="../images/media/image5.png" /></p>
+<p>创建项目后自动打开新建的项目
+<img alt="" src="../images/media/image6.png" /></p>
+<p><strong>4.打开后如果存在警告(无警告可跳过此步骤)</strong>
+<img alt="" src="../images/media/image7.png" /></p>
+<p>点击window-package Manager
+<img alt="" src="../images/media/image8.png" /></p>
+<p>点击Visual Studio Editor--Update to 2.0.22
+<img alt="" src="../images/media/image9.png" /></p>
+<p>更新完成后关闭弹窗
+<img alt="" src="../images/media/image10.png" /></p>
+<p><strong>5.导入unity插件</strong></p>
+<p>unity插件2.3.0版本下载</p>
+<p><a href="../assets/mostechPlugin2.3.0.unitypackage">mostechPlugin2.3.0.unitypackage</a></p>
+<p>将motionPlugin2.1.0插件文件拖拽至Project-Assets里面
+<img alt="" src="../images/media/image11.png" /></p>
+<p>点击import按钮
+<img alt="" src="../images/media/image12.png" /></p>
+<p><strong>6.驱动全身设备</strong></p>
+<p>点击assets---mostech---scenes
+<img alt="" src="../images/media/image13.png" /></p>
+<p>点击Motion Animator Scene或Motion Transforms Scene
+<img alt="" src="../images/media/image14.png" /></p>
+<p>在Hierarchy点击MotionDriver
+<img alt="" src="../images/media/image15.png" /></p>
+<p>点击inspector---Motion Source Manager(script)输入motion中对应的ip和端口
+<img alt="" src="../images/media/image16.png" /></p>
+<p>连接设备后，并做好姿势校准
+<img alt="" src="../images/media/image17.png" /></p>
+<p>点击运行，可传输实时数据
+<img alt="" src="../images/media/image18.png" /></p>
+<p><strong>7.驱动手套设备运行</strong></p>
+<p>点击assets---mostech---scenes
+<img alt="" src="../images/media/image19.png" /></p>
+<p>点击Motion Hand Scene
+<img alt="" src="../images/media/image20.png" /></p>
+<p>点击inspector---Motion Source Manager(script)输入motion中对应的ip和端口
+<img alt="" src="../images/media/image21.png" /></p>
+<p>连接设备后，并做好姿势校准
+<img alt="" src="../images/media/image22.png" /></p>
+<p>点击运行，可传输实时数据
+<img alt="" src="../images/media/image23.png" /></p>
+<p><strong>8.驱动组合设备运行</strong></p>
+<p>选择的模特与全身设备一样
+<img alt="" src="../images/media/image24.png" /></p>
+<p>点击inspector---Motion Source Manager(script)输入motion中对应的ip和端口
+<img alt="" src="../images/media/image25.png" /></p>
+<p>motion上将设备组合起来，并做好姿势校准
+<img alt="" src="../images/media/image26.png" /></p>
+<p>点击运行，可传输实时数据
+<img alt="" src="../images/media/image27.png" /></p>
+<p><strong>9.驱动多设备运行</strong></p>
+<p>在Hierarchy选中Mostech-Robot进行粘贴复制
+<img alt="" src="../images/media/image28.png" /></p>
+<p>点击inspector---Motion Instances输入对应的模特数
+<img alt="" src="../images/media/image29.png" /></p>
+<p>点击motionDriver再点击inspector---Motion Instances---Element0、Element1选择相对应的Mostech-Robot
+<img alt="" src="../images/media/image30.png" /></p>
+<p>点击Mostech-Robot再点击inspector---Actor ID输入不同的数字
+<img alt="" src="../images/media/image31.png" /></p>
+<p>点击Mostech-Robot再点击inspector---模特位置调整，修改x,y,z
+<img alt="" src="../images/media/image32.png" />
+<img alt="" src="../images/media/image33.png" /></p>
+<p>motion上做好姿势校准后，untiy上点击运行按钮
+<img alt="" src="../images/media/image34.png" /></p>
+<p><strong>10.一套设备驱动多个模特</strong></p>
+<p>在Hierarchy选中Mostech-Robot进行粘贴复制
+<img alt="" src="../images/media/image28.png" /></p>
+<p>点击inspector---Motion Instances输入对应的模特数
+<img alt="" src="../images/media/image29.png" /></p>
+<p>点击motionDriver再点击inspector---Motion Instances---Element0、Element1选择相对应的Mostech-Robot
+<img alt="" src="../images/media/image30.png" /></p>
+<p>点击Mostech-Robot再点击inspector---Actor ID输入相同的数字
+<img alt="" src="../images/media/image31.png" /></p>
+<p>点击Mostech-Robot再点击inspector---模特位置调整，修改x,y,z
+<img alt="" src="../images/media/image32.png" />
+<img alt="" src="../images/media/image33.png" /></p>
+<p>motion上做好姿势校准后，untiy上点击运行按钮
+<img alt="" src="../images/media/image35.png" /></p>
+<p><strong>二.motion studio软件数据广播使用</strong></p>
+<p><strong>1.打开Motion Studio软件</strong>
+<img alt="" src="../images/media/image36.png" /></p>
+<p>2.进入主页界面，可新建项目或者打开已新建好的项目
+<img alt="" src="../images/media/image37.png" />
+<img alt="" src="../images/media/image38.png" /></p>
+<p><strong>3.选中项目后，进入捕捉页面</strong>
+<img alt="" src="../images/media/image39.png" /></p>
+<p><strong>4.开启数据广播</strong></p>
+<p>点击左上角功能-数据广播按钮
+<img alt="" src="../images/media/image40.png" /></p>
+<p>开启bvh广播（端口号可随意输入）
+<img alt="" src="../images/media/image41.png" />
+<img alt="" src="../images/media/image42.png" /></p>
+<p><strong>5.数据广播开启后，未连接设备可播放离线数据</strong></p>
+<p>查看文件列表，双击选择数据文件播放
+<img alt="" src="../images/media/image43.png" /></p>
+<p>播放文件
+<img alt="" src="../images/media/image44.png" /></p>
+<p>unity IP和端口配置完成后，点击播放按钮，可播放离线数据
+<img alt="" src="../images/media/image45.png" /></p>
+<p><strong>6.数据广播开启后，连接设备可播放实时数据</strong></p>
+<p>接收器连接电脑，当设备列表有设备显示时，点击连接按钮进行设备连接
+<img alt="" src="../images/media/image46.png" /></p>
+<p>连接成功后，可将绑带和设备按照提示依次穿戴在身上
+<img alt="" src="../images/media/image47.png" /></p>
+<p>穿戴完成，点击姿势校准，根据提示进行T-Pose、A-Pose、OK-Pose(有手套设备组合时)姿势校准
+<img alt="" src="../images/media/image48.png" />
+<img alt="" src="../images/media/image49.png" />
+<img alt="" src="../images/media/image50.png" /></p>
+<p>unity IP和端口配置完成后，点击播放按钮，可播放实时数据
+<img alt="" src="../images/media/image51.png" />
+<img alt="" src="../images/media/image52.png" /></p>
 
 
 
