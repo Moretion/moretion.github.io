@@ -10,7 +10,6 @@ theme:
     - content.code.copy
   logo: assets/logo.png
 plugins:
-  - search
   - mkdocs-video
 markdown_extensions:
   - pymdownx.highlight:

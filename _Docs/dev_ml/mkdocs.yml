@@ -3,3 +3,6 @@ nav:
   - ML020W: ml_manual.md
 theme: 
   name: material
+
+plugins:
+    - mkdocs-video

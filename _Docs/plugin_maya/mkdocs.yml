@@ -3,3 +3,5 @@ nav:
   - Maya文档: maya.md
 theme: 
   name: material
+plugins:
+    - mkdocs-video

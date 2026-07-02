@@ -4,3 +4,6 @@ nav:
   - 数据导入: dimport.md
 theme: 
   name: material
+
+plugins:
+    - mkdocs-video

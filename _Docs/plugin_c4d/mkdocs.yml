@@ -3,3 +3,5 @@ nav:
   - c4d文档: c4d.md
 theme: 
   name: material
+plugins:
+    - mkdocs-video

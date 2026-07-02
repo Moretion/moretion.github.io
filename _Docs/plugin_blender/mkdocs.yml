@@ -3,3 +3,5 @@ nav:
   - Blender文档: blender.md
 theme: 
   name: material
+plugins:
+    - mkdocs-video

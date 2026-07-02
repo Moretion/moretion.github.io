@@ -4,3 +4,6 @@ nav:
 theme: 
   name: material
 
+
+plugins:
+    - mkdocs-video

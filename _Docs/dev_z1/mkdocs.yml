@@ -3,3 +3,5 @@ nav:
   - Z1/Z1 Pro: dev_z1.md
 theme: 
   name: material
+plugins:
+    - mkdocs-video

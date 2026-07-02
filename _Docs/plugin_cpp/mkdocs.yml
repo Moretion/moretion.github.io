@@ -16,3 +16,5 @@ markdown_extensions:
   - pymdownx.superfences
 extra:
   homepage: https://moretion.github.io/
+plugins:
+    - mkdocs-video
