@@ -6,60 +6,77 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 The GitHub Pages site for **魔迅科技 (Moretion)** — a motion-capture / data-glove / VR product company.
 Served raw as static HTML from `main` at `https://moretion.github.io/`. There is **no build CI and no
-package manager** — GitHub Pages serves the committed files directly. The doc content and all commit
-messages are in **Chinese**; match that when writing docs or commits.
+package manager** — GitHub Pages serves the committed files directly. The site is **bilingual**:
+Chinese docs under `<section>/` and English docs under `en/<section>/`, each section an independent
+MkDocs site. Commit messages are in **Chinese**; Chinese source lives in `_Docs/`, English source
+(translated from Chinese) in `_Docs_en/`.
 
 ## Architecture: source vs. built output (read this first)
 
-The repo holds two parallel trees that must stay in sync:
+The repo holds **two parallel source→built pairs**, one per language, that must stay in sync:
 
-1. **`_Docs/`** — the **source**. One subdirectory per product section, each an independent MkDocs project:
-   `_Docs/<section>/mkdocs.yml` + `_Docs/<section>/docs/` (the `.md` sources, images, and binary
-   downloads like `.apk`, `.unitypackage`, `.step`/`.fbx`, `.docx`, `.exe`). Also contains `_Docs/cmds.md`
-   (the canonical build/deploy workflow), `_Docs/URLs.txt` (MkDocs reference links), and a draft
-   `index.html`. **`_Docs/` is currently untracked in git** — check `git status` before assuming it is
-   committed. The original/canonical copy also lives on a company NAS at `\\MoretionNAS\共享资料\MoretionDocs`.
+| Language | Source tree | Built output (served) |
+|----------|-------------|-----------------------|
+| Chinese | `_Docs/<section>/`    | `<section>/`     |
+| English | `_Docs_en/<section>/` | `en/<section>/`  |
 
-2. **Top-level section dirs** (`dev_z1/`, `plugin_unity/`, `ap_vr/`, `softw_ms/`, …) — the **built
-   output** served by GitHub Pages. Each is an MkDocs `site/` directory renamed to the section name:
-   `404.html`, `sitemap.xml(.gz)`, `assets/` (Material theme JS/CSS + `logo.png`), `search/search_index.json`,
-   and one `<page-slug>/index.html` per nav page. Generator string: `mkdocs-1.6.1, mkdocs-material-9.7.0`.
+Each `<section>` is an independent MkDocs project: `<src>/<section>/mkdocs.yml` +
+`<src>/<section>/docs/` (the `.md` sources, images, and binary downloads like `.apk`, `.unitypackage`,
+`.step`/`.fbx`, `.docx`, `.exe`). `_Docs_en/` mirrors `_Docs/` section-for-section; the English `.md` are
+translations, images/assets are shared (copied). `_Docs/cmds.md` holds the canonical build/deploy workflow
+and `_Docs/URLs.txt` has MkDocs reference links. The original Chinese source also lives on a company NAS
+at `\\MoretionNAS\共享资料\MoretionDocs`. Generator string: `mkdocs-1.6.1, mkdocs-material-9.7.0`.
 
-**Do not hand-edit the built `index.html` files under top-level section dirs.** Edit the `.md` source in
-`_Docs/<section>/docs/` and rebuild. The only hand-written HTML is the **root `index.html`** landing page
-(three.js + Vanta.js "birds" animated background) — it is NOT part of any MkDocs site; it just links into
-each section.
+The built dirs are MkDocs `site/` output renamed to the section name: `404.html`, `sitemap.xml(.gz)`,
+`assets/` (Material theme JS/CSS + `logo.png`), and one `<page-slug>/index.html` per nav page. **Search is
+disabled** — there is no `search/search_index.json` and no search box.
 
-Each section is its **own** MkDocs site with its own `mkdocs.yml` — there is no unified nav. The root
-`index.html` is the manual hub that links them together.
+**Do not hand-edit the built `index.html` files under section dirs.** Edit the `.md` source in
+`_Docs/<section>/docs/` (Chinese) or `_Docs_en/<section>/docs/` (English) and rebuild. The only hand-written
+HTML is the **landing pages**: root `index.html` (Chinese) and `en/index.html` (English) — both three.js +
+Vanta.js "birds" animated backgrounds, NOT part of any MkDocs site. A toggle button in each header
+(EN ↔ 中文) navigates between them; each landing's section links point to that language's built sites.
+
+Each section is its **own** MkDocs site with its own `mkdocs.yml` — there is no unified nav. The two
+landing pages are the manual hub linking them together.
 
 ## Build & deploy workflow
 
 Documented in `_Docs/cmds.md`. Tools needed: `mkdocs`, `mkdocs-material`, `mkdocs-video`, `pandoc`
-(`pip install mkdocs mkdocs-material mkdocs-video`).
+(`pip install mkdocs mkdocs-material mkdocs-video`). A pinned set is installed in the repo-local `.venv`
+(mkdocs 1.6.1, mkdocs-material 9.7.0, mkdocs-video 1.5.0) — `build_docs.sh` auto-detects it; `.venv/` is
+gitignored.
 
-**Rebuilding all sections is automated by `build_docs.sh`** (repo root). For each `_Docs/<section>/`
-with a `mkdocs.yml`, it runs `mkdocs build` into a temp dir, then backup → replace → rollback the
-matching deploy dir at the repo root. It encodes the 3 source→deploy name exceptions
-(`plugin_blender→blender`, `plugin_c4d→c4d`, `plugin_maya→maya`); every other section deploys to a dir
-named the same as its source.
+**Rebuilding is automated by `build_docs.sh`** (repo root). It builds **both languages**: Chinese
+(`_Docs` → `<section>/`) and English (`_Docs_en` → `en/<section>/`). For each section it runs
+`mkdocs build` into a temp dir, then backup → replace → rollback the matching deploy dir. It encodes the
+3 source→deploy name exceptions (`plugin_blender→blender`, `plugin_c4d→c4d`, `plugin_maya→maya`), applied
+to both languages.
 
 ```bash
-bash build_docs.sh --dry-run                 # preview (no mkdocs needed)
-bash build_docs.sh                           # rebuild & replace all already-deployed sections
-bash build_docs.sh --all                     # also create sections not yet deployed (e.g. ap_holo)
-bash build_docs.sh --only dev_z1,softw_sp    # just these source sections
+bash build_docs.sh --dry-run                  # preview (no mkdocs needed)
+bash build_docs.sh                            # rebuild & replace all already-deployed zh+en sections
+bash build_docs.sh --lang zh                  # Chinese only
+bash build_docs.sh --lang en --all            # build all English (first build needs --all or --only)
+bash build_docs.sh --lang en --only softw_sp  # just these English source sections
+bash build_docs.sh --only dev_z1,softw_sp     # both languages, just these sections
 ```
 
-By default it only replaces dirs that already exist at the repo root (so half-baked sections like
-`ap_holo` aren't accidentally published). It does **not** auto-commit — review `git status`/`git diff`
-after, then commit and push; GitHub Pages deploys from `main` automatically. The script builds strictly
-from `_Docs`, so any file that exists only in a deployed dir (not in source) is lost on replace.
+On Windows, `build_docs.cmd` is a wrapper that locates `bash.exe` (Git for Windows does **not** put `bash`
+on PATH by default, only `git`) and forwards args to `build_docs.sh` — run it as `.\build_docs.cmd --dry-run`
+from PowerShell or cmd (note the `.\` prefix).
+
+By default it only replaces dirs that already exist (so half-baked sections like `ap_holo` aren't
+accidentally published). It does **not** auto-commit — review `git status`/`git diff` after, then commit
+and push; GitHub Pages deploys from `main` automatically. The script builds strictly from source, so any
+file that exists only in a deployed dir (not in `_Docs`/`_Docs_en`) is lost on replace. The `rm`/`mv`
+replace retries with backoff to work around Windows AV/indexer file-locking.
 
 Manual one-off workflow (from `_Docs/cmds.md`): convert Word→MD with
 `pandoc input.docx --extract-media=./images -o output.md`, scaffold with `mkdocs new`, edit
 `mkdocs.yml` (`site_name`, `theme: material`, `nav:` for pagination), `mkdocs build` → `site/`,
-`mkdocs serve` to preview, then rename `site/` to the section dir and copy into the repo root.
+`mkdocs serve` to preview, then rename `site/` to the section dir and copy into the repo root (or
+`en/<section>/` for English).
 
 ## Output URL mapping (important when editing links)
 
@@ -67,18 +84,26 @@ MkDocs runs with `use_directory_urls: true`, so a nav page `foo.md` builds to `f
 the section dir*. Because section dirs are often named the same as their first page, paths double up —
 e.g. `dev_z1.md` in section `dev_z1/` builds to **`dev_z1/dev_z1/index.html`** (there is no
 `dev_z1/index.html`). Single-page sections whose page is the index build to `<section>/index.html`
-(e.g. `softw_sp/index.html`). The root `index.html` deep-links the exact built path for each section, so
-**when you add/rename/reorder nav pages, update both the section's `mkdocs.yml` nav and the root
-`index.html` link.**
+(e.g. `softw_sp/index.html`). English pages mirror this under `en/`: `en/dev_z1/dev_z1/index.html`,
+`en/softw_sp/index.html`, etc. The root `index.html` and `en/index.html` each deep-link the exact built
+path for their language's sections, so **when you add/rename/reorder nav pages, update the `mkdocs.yml`
+nav in both `_Docs` and `_Docs_en`, and the link in both landing pages.**
 
 ## MkDocs conventions (shared by all section configs)
 
-- Theme: `material` with `content.code.copy`; `logo: assets/logo.png`.
-- Plugin: `mkdocs-video` — embed video with `![type:video](./assets/v0.mp4)`.
+- Theme: `material` with `content.code.copy`; `logo: assets/logo.png` (the same logo is shared across all sections).
+- Plugins: **`mkdocs-video` only** — search is intentionally **disabled** (no `search` plugin, no search
+  box, no `search_index.json`). Embed video with `![type:video](./assets/v0.mp4)`.
 - Markdown extensions: `pymdownx.highlight` (line numbers), `inlinehilite`, `snippets`, `superfences`.
-- `extra.homepage: https://moretion.github.io/`.
-- Section `mkdocs.yml` files in `_Docs/` vary slightly (some have minimal nav); prefer the fuller config
-  pattern above when creating new sections.
+- `extra.homepage`: `https://moretion.github.io/` for Chinese configs, `https://moretion.github.io/en/`
+  for English configs.
+- English configs in `_Docs_en/` are standardized to the full pattern above. Chinese configs in `_Docs/`
+  vary (some minimal); when creating a new section, mirror the `_Docs_en` pattern in both trees and
+  translate the `site_name` + `nav` labels.
+- Brand/product names stay as-is in both languages (Moretion, Motion Studio, Z1/G1/ML020W, Unity, Unreal,
+  Maya, Blender, C4D, MotionBuilder, SteamVR, …). Keep Chinese→English terminology consistent — a shared
+  glossary was used when the English docs were translated (e.g. 动捕→motion capture, 串流→streaming,
+  数据手套→data glove, 宇树→Unitree, 傲意→AOYI/OHand).
 
 ## Conventions
 
