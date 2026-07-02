@@ -1,0 +1,23 @@
+site_name: Virtual Live Streaming
+nav:
+  - Virtual Live Streaming Software Tutorial: vls_software_manual.md
+  - Quickly Create a Virtual Live Streaming Model: vls_creat_model.md
+  - WeChat Channels Live Streaming: ms_setting.md
+theme:
+  name: material
+  features:
+    - content.code.copy
+  logo: assets/logo.png
+plugins:
+  - search
+  - mkdocs-video
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  homepage: https://moretion.github.io/en/

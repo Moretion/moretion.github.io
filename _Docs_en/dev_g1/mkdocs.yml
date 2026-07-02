@@ -1,0 +1,22 @@
+site_name: G1/G1 Pro Development Guide
+nav:
+  - G1 User Manual: g1_manual.md
+  - G1 Video Tutorials: g1_setup.md
+theme:
+  name: material
+  features:
+    - content.code.copy
+  logo: assets/logo.png
+plugins:
+  - search
+  - mkdocs-video
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  homepage: https://moretion.github.io/en/

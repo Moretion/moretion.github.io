@@ -1,0 +1,21 @@
+site_name: 3D Printing Parts
+nav:
+  - Product Accessories: 3d_printing.md
+theme:
+  name: material
+  features:
+    - content.code.copy
+  logo: assets/logo.png
+plugins:
+  - search
+  - mkdocs-video
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  homepage: https://moretion.github.io/en/

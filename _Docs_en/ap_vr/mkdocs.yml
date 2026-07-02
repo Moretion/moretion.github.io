@@ -1,0 +1,24 @@
+site_name: VR Applications
+nav:
+  - VR Device Support Notes: app_vr_intro.md
+  - G1 + VIVE Pro 2 + Tracker: vr_g1_steam.md
+  - G1 + HTC Focus3: vr_g1_focus3.md
+  - G1 + PICO: vr_g1_pico.md
+theme:
+  name: material
+  features:
+    - content.code.copy
+  logo: assets/logo.png
+plugins:
+  - search
+  - mkdocs-video
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  homepage: https://moretion.github.io/en/

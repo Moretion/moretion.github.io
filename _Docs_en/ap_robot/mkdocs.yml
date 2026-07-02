@@ -1,0 +1,23 @@
+site_name: Embodied Intelligence Applications
+nav:
+  - OHand Dexterous Hand: tele_ohand.md
+  - Hengzhuo Z1 + Unitree G1: tele_z1_g1.md
+  - Unitree G1 + OHand: tele_g1_ohand.md
+theme:
+  name: material
+  features:
+    - content.code.copy
+  logo: assets/logo.png
+plugins:
+  - search
+  - mkdocs-video
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  homepage: https://moretion.github.io/en/
