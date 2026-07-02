@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moretion Documentation Center</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.birds.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(26, 115, 232, 0.85);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a73e8;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+
+        .item-list {
+            list-style-type: none;
+        }
+
+        .item-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .item-list li:last-child {
+            border-bottom: none;
+        }
+
+        .item-list li a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .item-list li a:hover {
+            color: #1a73e8;
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+
+        .item-list li a::before {
+            content: "•";
+            color: #1a73e8;
+            margin-right: 8px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eaeaea;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+        }
+
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(26, 115, 232, 0.9);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background 0.2s;
+        }
+        .lang-toggle:hover {
+            background: rgba(26, 115, 232, 1);
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="vanta-bg"></div>
+    <a href="../index.html" class="lang-toggle" title="中文">中文</a>
+
+    <div class="container">
+        <header>
+            <h1>Moretion Documentation Center</h1>
+            <p class="subtitle">Comprehensive technical documentation and resources for developers</p>
+        </header>
+
+        <div class="content-grid">
+            <div class="category-card">
+                <h2 class="category-title">Hardware</h2>
+                <ul class="item-list">
+                    <li><a href="dev_z1/dev_z1/index.html">Z1/Z1 Pro Development Guide</a></li>
+                    <li><a href="dev_g1/g1_manual/index.html">G1/G1 Pro Development Guide</a></li>
+                    <li><a href="dev_ml/ml_manual/index.html">ML020W Development Guide</a></li>
+                    <li><a href="#">Portable Gateway</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h2 class="category-title">Motion Capture Software</h2>
+                <ul class="item-list">
+                    <li><a href="softw_ms/ms_manual/index.html">Motion Studio</a></li>
+                    <li><a href="softw_sp/index.html">Streaming Port Protocol</a></li>
+                    <li><a href="#">Mobile Beta</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h2 class="category-title">Plugins</h2>
+                <ul class="item-list">
+                    <li><a href="plugin_cpp/cpp_sdk/index.html">C++ SDK</a></li>
+                    <li><a href="plugin_unity/unity/index.html">Unity Plugin</a></li>
+                    <li><a href="plugin_ue/ue/index.html">Unreal Engine Plugin</a></li>
+                    <li><a href="plugin_mb/mb/index.html">MotionBuilder Plugin</a></li>
+                    <li><a href="maya/maya/index.html">Maya Plugin</a></li>
+                    <li><a href="blender/blender/index.html">Blender Plugin</a></li>
+                    <li><a href="c4d/c4d/index.html">C4D Plugin</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h2 class="category-title">Industry Applications</h2>
+                <ul class="item-list">
+                    <li><a href="ap_robot/tele_ohand/index.html">Robotics</a></li>
+                    <li><a href="#">Holographic Display</a></li>
+                    <li><a href="ap_vr/app_vr_intro/index.html">Virtual Reality</a></li>
+                    <li><a href="ap_vls/vls_software_manual/index.html">Virtual Live Streaming</a></li>
+                    <li><a href="ap_er/ap_er/index.html">Motion Rehabilitation</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h2 class="category-title">Others</h2>
+                <ul class="item-list">
+                    <li><a href="others_model/others_model/index.html">Sample Models</a></li>
+                    <li><a href="others_3d_printing/3d_printing/index.html">3D Printing Parts</a></li>
+                </ul>
+            </div>
+
+            <div class="category-card">
+                <h2 class="category-title">GitHub</h2>
+                <ul class="item-list">
+                    <li><a href="https://github.com/Moretion">GitHub Home</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Copyright © Moretion. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Vanta.js background animation
+        VANTA.BIRDS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            backgroundColor: 0xf5f7fa,
+            color1: 0x1a73e8,
+            color2: 0x6c8ef5,
+            colorMode: "lerp",
+            birdSize: 1.20,
+            wingSpan: 25.00,
+            speedLimit: 4.00,
+            separation: 20.00,
+            alignment: 20.00,
+            cohesion: 20.00,
+            quantity: 3.00
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                window.parent.postMessage('go-next', '*');
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                window.parent.postMessage('go-prev', '*');
+            }
+        });
+    </script>
+</body>
+</html>

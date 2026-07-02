@@ -1,0 +1,461 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../unity_android_glove/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Unity Plugins - Unity Plugins Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://moretion.github.io/en/" title="Unity Plugins Documentation" class="md-header__button md-logo" aria-label="Unity Plugins Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unity Plugins Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unity Plugins
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://moretion.github.io/en/" title="Unity Plugins Documentation" class="md-nav__button md-logo" aria-label="Unity Plugins Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Unity Plugins Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unity Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unity_android_glove/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Glove
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Unity Plugins</h1>
+
+<div><p><strong>Unity Plugin User Guide</strong></p>
+<p><strong>I. Using Unity Software</strong></p>
+<p><strong>1. Open Unity Hub (if not installed, download it from the official website:</strong> <a href="https://unity.cn/releases">https://unity.cn/releases</a><strong>)</strong>
+<img alt="" src="../images/media/image1.png"></p>
+<p><strong>2. Check whether the editor is installed (</strong>minimum supported version: 2019.1.0<strong>)</strong>
+<img alt="" src="../images/media/image2.png"></p>
+<p>If it is not installed, click the Install Unity Editor button, and install the editor through Unity Hub or download it from the official website (URL: <a href="https://unity.cn/releases/full/2019">https://unity.cn/releases/full/2019</a>)</p>
+<p><img alt="" src="../images/media/image3.png"></p>
+<p><strong>3. Create a new project or open an existing project</strong>
+<img alt="" src="../images/media/image4.png"></p>
+<p>Create a new project
+<img alt="" src="../images/media/image5.png"></p>
+<p>After creating the project, the new project opens automatically
+<img alt="" src="../images/media/image6.png"></p>
+<p><strong>4. If warnings appear after opening, address them (skip this step if there are no warnings)</strong>
+<img alt="" src="../images/media/image7.png"></p>
+<p>Click Window &gt; Package Manager
+<img alt="" src="../images/media/image8.png"></p>
+<p>Click Visual Studio Editor &gt; Update to 2.0.22
+<img alt="" src="../images/media/image9.png"></p>
+<p>After the update completes, close the dialog
+<img alt="" src="../images/media/image10.png"></p>
+<p><strong>5. Import the Unity plugin</strong></p>
+<p>Download Unity plugin version 2.3.0</p>
+<p><a href="../assets/mostechPlugin2.3.0.unitypackage">mostechPlugin2.3.0.unitypackage</a></p>
+<p>Drag the motionPlugin2.1.0 plugin file into Project &gt; Assets
+<img alt="" src="../images/media/image11.png"></p>
+<p>Click the Import button
+<img alt="" src="../images/media/image12.png"></p>
+<p><strong>6. Drive the full-body device</strong></p>
+<p>Click Assets &gt; mostech &gt; scenes
+<img alt="" src="../images/media/image13.png"></p>
+<p>Click Motion Animator Scene or Motion Transforms Scene
+<img alt="" src="../images/media/image14.png"></p>
+<p>In the Hierarchy, click MotionDriver
+<img alt="" src="../images/media/image15.png"></p>
+<p>In Inspector &gt; Motion Source Manager (script), enter the IP and port corresponding to those in Motion
+<img alt="" src="../images/media/image16.png"></p>
+<p>Connect the device, then perform pose calibration
+<img alt="" src="../images/media/image17.png"></p>
+<p>Click Run to stream real-time data
+<img alt="" src="../images/media/image18.png"></p>
+<p><strong>7. Drive the data glove device</strong></p>
+<p>Click Assets &gt; mostech &gt; scenes
+<img alt="" src="../images/media/image19.png"></p>
+<p>Click Motion Hand Scene
+<img alt="" src="../images/media/image20.png"></p>
+<p>In Inspector &gt; Motion Source Manager (script), enter the IP and port corresponding to those in Motion
+<img alt="" src="../images/media/image21.png"></p>
+<p>Connect the device, then perform pose calibration
+<img alt="" src="../images/media/image22.png"></p>
+<p>Click Run to stream real-time data
+<img alt="" src="../images/media/image23.png"></p>
+<p><strong>8. Drive combined devices</strong></p>
+<p>Select the same model as for the full-body device
+<img alt="" src="../images/media/image24.png"></p>
+<p>In Inspector &gt; Motion Source Manager (script), enter the IP and port corresponding to those in Motion
+<img alt="" src="../images/media/image25.png"></p>
+<p>Combine the devices in Motion, then perform pose calibration
+<img alt="" src="../images/media/image26.png"></p>
+<p>Click Run to stream real-time data
+<img alt="" src="../images/media/image27.png"></p>
+<p><strong>9. Drive multiple devices</strong></p>
+<p>In the Hierarchy, select Mostech-Robot and copy it
+<img alt="" src="../images/media/image28.png"></p>
+<p>In Inspector &gt; Motion Instances, enter the corresponding number of models
+<img alt="" src="../images/media/image29.png"></p>
+<p>Click MotionDriver, then in Inspector &gt; Motion Instances &gt; Element0, Element1, select the corresponding Mostech-Robot
+<img alt="" src="../images/media/image30.png"></p>
+<p>Click Mostech-Robot, then in Inspector &gt; Actor ID, enter different numbers
+<img alt="" src="../images/media/image31.png"></p>
+<p>Click Mostech-Robot, then in Inspector, adjust the model position by modifying x, y, z
+<img alt="" src="../images/media/image32.png">
+<img alt="" src="../images/media/image33.png"></p>
+<p>After performing pose calibration in Motion, click Run in Unity
+<img alt="" src="../images/media/image34.png"></p>
+<p><strong>10. Drive multiple models with a single device set</strong></p>
+<p>In the Hierarchy, select Mostech-Robot and copy it
+<img alt="" src="../images/media/image28.png"></p>
+<p>In Inspector &gt; Motion Instances, enter the corresponding number of models
+<img alt="" src="../images/media/image29.png"></p>
+<p>Click MotionDriver, then in Inspector &gt; Motion Instances &gt; Element0, Element1, select the corresponding Mostech-Robot
+<img alt="" src="../images/media/image30.png"></p>
+<p>Click Mostech-Robot, then in Inspector &gt; Actor ID, enter the same number
+<img alt="" src="../images/media/image31.png"></p>
+<p>Click Mostech-Robot, then in Inspector, adjust the model position by modifying x, y, z
+<img alt="" src="../images/media/image32.png">
+<img alt="" src="../images/media/image33.png"></p>
+<p>After performing pose calibration in Motion, click Run in Unity
+<img alt="" src="../images/media/image35.png"></p>
+<p><strong>II. Using Data Broadcast in Motion Studio</strong></p>
+<p><strong>1. Open Motion Studio</strong>
+<img alt="" src="../images/media/image36.png"></p>
+<ol>
+<li>On the home page, you can create a new project or open an existing one
+<img alt="" src="../images/media/image37.png">
+<img alt="" src="../images/media/image38.png"></li>
+</ol>
+<p><strong>3. After selecting a project, enter the capture page</strong>
+<img alt="" src="../images/media/image39.png"></p>
+<p><strong>4. Enable data broadcast</strong></p>
+<p>Click the function button in the upper-left corner &gt; Data Broadcast
+<img alt="" src="../images/media/image40.png"></p>
+<p>Enable BVH broadcast (the port number can be any value)
+<img alt="" src="../images/media/image41.png">
+<img alt="" src="../images/media/image42.png"></p>
+<p><strong>5. After data broadcast is enabled, offline data can be played back without a device connected</strong></p>
+<p>View the file list, then double-click a data file to play it
+<img alt="" src="../images/media/image43.png"></p>
+<p>Play the file
+<img alt="" src="../images/media/image44.png"></p>
+<p>After configuring the Unity IP and port, click the Play button to play back offline data
+<img alt="" src="../images/media/image45.png"></p>
+<p><strong>6. After data broadcast is enabled, real-time data can be played back with a device connected</strong></p>
+<p>Connect the receiver to the computer. When the device appears in the device list, click the Connect button to connect the device
+<img alt="" src="../images/media/image46.png"></p>
+<p>After a successful connection, put on the straps and devices in sequence according to the prompts
+<img alt="" src="../images/media/image47.png"></p>
+<p>Once worn, click Pose Calibration and follow the prompts to perform T-Pose, A-Pose, and OK-Pose (when a data glove device combination is used) calibration
+<img alt="" src="../images/media/image48.png">
+<img alt="" src="../images/media/image49.png">
+<img alt="" src="../images/media/image50.png"></p>
+<p>After configuring the Unity IP and port, click the Play button to play back real-time data
+<img alt="" src="../images/media/image51.png">
+<img alt="" src="../images/media/image52.png"></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,613 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../vls_creat_model/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Virtual Live Streaming Software Tutorial - Virtual Live Streaming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#virtual-live-streaming-software-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://moretion.github.io/en/" title="Virtual Live Streaming" class="md-header__button md-logo" aria-label="Virtual Live Streaming" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Virtual Live Streaming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Virtual Live Streaming Software Tutorial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://moretion.github.io/en/" title="Virtual Live Streaming" class="md-nav__button md-logo" aria-label="Virtual Live Streaming" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Virtual Live Streaming
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual Live Streaming Software Tutorial
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual Live Streaming Software Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-magnetic-calibration-place-the-collectors-in-the-charging-case-not-charging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. Magnetic Calibration (Place the collectors in the charging case — not charging)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-using-the-motion-studio-software-and-wearing-the-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. Using the Motion Studio Software and Wearing the Device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-using-the-virtuallive-virtual-live-streaming-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. Using the VirtualLive Virtual Live Streaming Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vls_creat_model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickly Create a Virtual Live Streaming Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ms_setting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WeChat Channels Live Streaming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-magnetic-calibration-place-the-collectors-in-the-charging-case-not-charging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. Magnetic Calibration (Place the collectors in the charging case — not charging)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-using-the-motion-studio-software-and-wearing-the-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. Using the Motion Studio Software and Wearing the Device
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-using-the-virtuallive-virtual-live-streaming-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. Using the VirtualLive Virtual Live Streaming Software
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="virtual-live-streaming-software-tutorial"><strong>Virtual Live Streaming Software Tutorial</strong></h1>
+<h2 id="i-magnetic-calibration-place-the-collectors-in-the-charging-case-not-charging">I. Magnetic Calibration (Place the collectors in the charging case — not charging)</h2>
+<p>1.1 Connect the receiver to the computer</p>
+<p><img alt="" src="../images/media/image1.png"></p>
+<p><strong>1.2 Open the magnetic calibration tool</strong></p>
+<p><img alt="" src="../images/media/image2.png"></p>
+<p><strong>1.3 Device connection</strong></p>
+<p><img alt="" src="../images/media/image3.png"></p>
+<p>After a successful connection, the indicator lights for each node in the device details will turn on.</p>
+<p><strong>1.4 Watch the magnetic calibration tutorial video</strong></p>
+<p>During magnetic calibration, rotate 360 degrees around each of the X, Y, and Z axes of the spatial coordinate system, taking approximately 2–4 seconds to complete a full 360-degree rotation.</p>
+<p><img alt="" src="../images/media/image4.png"></p>
+<p><a href="https://alidocs.dingtalk.com/i/nodes/DnRL6jAJMN4DwEzrCP0ky90N8yMoPYe1?iframeQuery=anchorId%3DX02ls1g7cq4sznfov1vimi">Please view the attachment "video_20240126_143958.mp4" on DingTalk Docs</a></p>
+<p>1.5 Magnetic calibration operation</p>
+<p>Perform the magnetic calibration according to the tutorial video.</p>
+<p><img alt="" src="../images/media/image5.png"></p>
+<p>Before clicking Next, make sure the sensors are kept stationary so that the sensors can be calibrated successfully.</p>
+<p><img alt="" src="../images/media/image6.png"></p>
+<p>Calibration successful</p>
+<p><img alt="" src="../images/media/image7.png"></p>
+<p>Once successful, you can close the magnetic calibration tool.</p>
+<h2 id="ii-using-the-motion-studio-software-and-wearing-the-device"><strong>II. Using the Motion Studio Software and Wearing the Device</strong></h2>
+<p><strong>2.1 Open the Motion Studio software</strong></p>
+<p><img alt="" src="../images/media/image8.png"></p>
+<p><img alt="" src="../images/media/image9.png"></p>
+<p><strong>2.2 Connect the device</strong></p>
+<p>When a device appears in the device list, click the connect button to connect the device.</p>
+<p><img alt="" src="../images/media/image10.png"></p>
+<p>2.3 Wearing the device</p>
+<ol>
+<li>Wearing the straps</li>
+</ol>
+<p>Attach each strap in turn to the corresponding position shown in the figure below, following the placement instructions on each strap. Because Hengzhuo sensors measure skeletal motion, you should eliminate physical interference from muscle movement as much as possible. Choose locations with the least muscle mass for the best capture results. The pose calibration performed later will recalculate the wearing positions, so it is acceptable if your placement differs slightly from the figure.</p>
+<p><img alt="" src="../images/media/image11.png">
+<img alt="" src="../images/media/image12.png"></p>
+<ol>
+<li>Attaching the sensors</li>
+</ol>
+<p>Attach the sensors into the straps following the method shown in the figure.</p>
+<p><img alt="" src="../images/media/image13.png"></p>
+<ol>
+<li>Sensor placement instructions</li>
+</ol>
+<p><strong>Upper body:</strong></p>
+<ol>
+<li>
+<p>The head sensor is installed at the <strong>back center of the head</strong>.</p>
+</li>
+<li>
+<p>The shoulder sensor is installed <strong>directly on top of the shoulder</strong>, as far <strong>outward</strong> as possible.</p>
+</li>
+<li>
+<p>The hip sensor is installed <strong>below the waist</strong>, as far down as possible <strong>near the tailbone</strong>. When wearing this node's sensor, the <strong>charging port should face upward</strong>.</p>
+</li>
+<li>
+<p>The upper arm sensor is installed at the <strong>outer middle of the upper arm</strong>.</p>
+</li>
+<li>
+<p>The forearm sensor is installed at the <strong>outer middle of the forearm</strong>.</p>
+</li>
+<li>
+<p>The hand sensor is installed on the <strong>back of the hand</strong>.</p>
+</li>
+</ol>
+<p><strong>Lower body:</strong></p>
+<ol>
+<li>
+<p>The thigh sensor is installed at the <strong>outer middle of the thigh</strong>, 2–3 cm above the knee.</p>
+</li>
+<li>
+<p>The shin sensor is installed at the <strong>outer middle of the shin</strong>, 2–3 cm below the knee.</p>
+</li>
+<li>
+<p>The foot sensor is installed on the <strong>instep</strong>. Wrap the strap around the arch of the foot as much as possible so that it does not accidentally detach while walking.</p>
+</li>
+</ol>
+<p><strong>Notes:</strong></p>
+<p>• When installing the straps, fasten them firmly against the body to ensure that the sensor nodes do not shake violently during large movements.</p>
+<p>• When working, the motion capture performer must ensure that they are not carrying phones, watches, or other electronic devices, or strong magnets such as keys or coins. The magnetic interference generated by these electronic devices and strong magnets will seriously affect the operation of the sensors.</p>
+<p>• Hengzhuo sensors contain magnetometers, and magnetometer sensors are affected by strong magnetic field environments. Users must use the sensors in an environment with minimal magnetic interference.</p>
+<p>2.4 Pose calibration</p>
+<p>After the device is successfully connected, click pose calibration and follow the prompts to perform T-Pose and A-Pose calibration.</p>
+<p><strong>T-Pose</strong></p>
+<p>• Stand straight, extend both arms perpendicular to the upward position of the body, with palms facing down.</p>
+<p>• Straighten your fingers and keep the four fingers together.</p>
+<p><img alt="" src="../images/media/image14.png"></p>
+<p><strong>I-Pose</strong></p>
+<p>• Stand straight with your feet parallel and shoulder-width apart.</p>
+<p>• Let your arms hang naturally with palms facing inward, fingers straight, and thumbs pointing toward the outside of your legs.</p>
+<p>• Keep your head looking forward with your chin parallel to the ground.</p>
+<p>• Relax your shoulders; do not shrug them.</p>
+<p><img alt="" src="../images/media/image15.png"></p>
+<p><strong>OK-Pose</strong></p>
+<p>• Place both hands about 30 cm in front of your chest.</p>
+<p>• Make an "OK" gesture.</p>
+<p><img alt="" src="../images/media/image16.png"></p>
+<p><strong>2.5 Click Data Broadcast to enter the BVH data broadcast operation</strong></p>
+<p>The data broadcast feature can broadcast data from Motion Studio in real time across the network where the Motion Studio software is located. Any other software on that network can receive and parse the real-time data through the API interface.</p>
+<p><img alt="" src="../images/media/image17.png"></p>
+<p>When real-time connection to the motion capture device is established, turn on the "BVH" button (the button changes from gray to orange to indicate it is enabled) and enter a custom port number to start real-time data broadcasting. This feature can be applied to virtual live streaming.</p>
+<p><img alt="" src="../images/media/image18.png"></p>
+<h2 id="iii-using-the-virtuallive-virtual-live-streaming-software">III. Using the VirtualLive Virtual Live Streaming Software</h2>
+<p><strong>3.1 Open the VirtualLive package</strong></p>
+<p><img alt="" src="../images/media/image19.png"></p>
+<p><strong>3.2 Enter the virtual live streaming interface, enter the same port number as in the Motion Studio data broadcast, and connect to Motion Studio</strong></p>
+<p><img alt="" src="../images/media/image20.png"></p>
+<p>After a successful connection, the character in the virtual live streaming interface will be synchronized with the character's motion in Motion Studio.</p>
+<p><strong>3.3. In the lower right corner of the interface, you can freely switch the character camera and between landscape/portrait orientation, and you can also reset the character with one click</strong></p>
+<p><img alt="" src="../images/media/image21.png"> The software supports motion capture settings, including arm spread, orientation adjustment, and jump tolerance.</p>
+<p><img alt="" src="../images/media/image22.png"></p>
+<p>In the software, users can also freely switch between character models and scene models, with a total of 4 different character model styles and 2 scenes.</p>
+<p><img alt="" src="../images/media/image23.png"></p>
+<p><img alt="" src="../images/media/image24.png"></p>
+<p><strong>3.4 Connect the face capture device</strong></p>
+<p>Turn on the camera switch to enable the face capture feature.</p>
+<p><img alt="" src="../images/media/image25.png"></p>
+<p>Download the Face Capture software from the Apple App Store, and make sure that the phone and the computer are on the same WiFi or cellular data.</p>
+<p><img alt="" src="../images/media/image26.png"></p>
+<p>Open the Face Capture software. When a device is detected, click Connect to connect.</p>
+<p><img alt="" src="../images/media/image27.png"></p>
+<p>Once connected, mount the phone on the helmet, put on the helmet, and you can start virtual live streaming.</p>
+<p><img alt="" src="../images/media/image28.jpg"></p>
+<p><strong>3.5 Data recording</strong></p>
+<p><img alt="" src="../images/media/image29.png"></p>
+<p>Supports recording motion data and saving it to a custom file path.</p>
+<p><strong>3.6 How to set up a virtual camera on mainstream platforms?</strong></p>
+<p>On PC, the setup is the same regardless of which live streaming platform assistant (Video Account Live Assistant, etc.) or third-party tool (OBS, etc.) you use.</p>
+<p><strong>The following uses Video Account Live Assistant as an example</strong></p>
+<p>Enable the virtual camera in the virtual live streaming software.</p>
+<p><img alt="" src="../images/media/image30.png"></p>
+<p><strong>In Video Account Live Assistant, select Add scene source, choose "Camera", select the camera named "VirtualCamera" with a resolution of 1920*1080, then click OK.</strong></p>
+<p><img alt="" src="../images/media/image31.png"></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

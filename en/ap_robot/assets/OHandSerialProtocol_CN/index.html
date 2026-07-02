@@ -1,0 +1,1148 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>OHand Communication Protocol V3.0 - Embodied Intelligence Applications</title>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ohand-communication-protocol-v30" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://moretion.github.io/en/" title="Embodied Intelligence Applications" class="md-header__button md-logo" aria-label="Embodied Intelligence Applications" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Embodied Intelligence Applications
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OHand Communication Protocol V3.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://moretion.github.io/en/" title="Embodied Intelligence Applications" class="md-nav__button md-logo" aria-label="Embodied Intelligence Applications" data-md-component="logo">
+      
+  <img src="../logo.png" alt="logo">
+
+    </a>
+    Embodied Intelligence Applications
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tele_ohand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OHand Dexterous Hand
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tele_z1_g1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hengzhuo Z1 + Unitree G1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tele_g1_ohand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitree G1 + OHand
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-communication-protocol-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Communication Protocol Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-communication-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Communication Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dexterous-hand-serial-command-frame-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Dexterous Hand Serial Command Frame Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-lrc-checksum-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. LRC Checksum Calculation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-dexterous-hand-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Dexterous Hand Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-dexterous-hand-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Dexterous Hand Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-finger-angles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Finger Angles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="ohand-communication-protocol-v30">OHand Communication Protocol V3.0</h1>
+<h2 id="1-communication-protocol-overview">1. Communication Protocol Overview</h2>
+<p>The host control unit sends command data to obtain the status of, and control, the dexterous hand.
+The host system sends read commands to the ROH dexterous hand. After receiving the command data and verifying it successfully, the ROH dexterous hand returns the corresponding result to the host system.</p>
+<p><em>Note:</em> The CAN protocol and the serial port protocol share the same command format. The CAN protocol uses CAN messages, with 8 bytes per frame, and the CAN ID matches the dexterous hand ID.</p>
+<h2 id="2-communication-parameters">2. Communication Parameters</h2>
+<p>Both RS232 and RS485 use the following communication parameters: 115200bps, 8 data bits, 1 stop bit, no parity.</p>
+<p>The CAN communication parameter is 1000000bps.</p>
+<h2 id="3-dexterous-hand-serial-command-frame-format">3. Dexterous Hand Serial Command Frame Format</h2>
+<p>The command frame format for operating the ROH dexterous hand is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte[0]</td>
+<td>0x55</td>
+<td>Packet header</td>
+</tr>
+<tr>
+<td>byte[1]</td>
+<td>0xAA</td>
+<td>Packet header</td>
+</tr>
+<tr>
+<td>byte[2]</td>
+<td>HandID</td>
+<td>ROH dexterous hand ID</td>
+</tr>
+<tr>
+<td>byte[3]</td>
+<td>MasterID</td>
+<td>Master ID</td>
+</tr>
+<tr>
+<td>byte[4]</td>
+<td>Command</td>
+<td>Operation command</td>
+</tr>
+<tr>
+<td>byte[5]</td>
+<td>DataLen</td>
+<td>Length of the data portion of this frame, i.e. byte[6]..byte[6 + DataLen - 1]</td>
+</tr>
+<tr>
+<td>byte[6]..byte[6 + DataLen - 1]</td>
+<td>Data[0]..Data[DataLen-1]</td>
+<td>Command data</td>
+</tr>
+<tr>
+<td>byte[6 + DataLen]</td>
+<td>Checksum</td>
+<td>Checksum (see 4. LRC Checksum Calculation)</td>
+</tr>
+</tbody>
+</table>
+<p>The ROH dexterous hand response frame to a command is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte[0]</td>
+<td>0x55</td>
+<td>Packet header</td>
+</tr>
+<tr>
+<td>byte[1]</td>
+<td>0xAA</td>
+<td>Packet header</td>
+</tr>
+<tr>
+<td>byte[2]</td>
+<td>MasterID</td>
+<td>Master ID</td>
+</tr>
+<tr>
+<td>byte[3]</td>
+<td>HandID</td>
+<td>ROH dexterous hand ID</td>
+</tr>
+<tr>
+<td>byte[4]</td>
+<td>Command</td>
+<td>Operation command. If the command execution fails, the most significant bit is 1 and the lower seven bits are the operation command; Data[0] is the error code (see 6. Dexterous Hand Error Codes)</td>
+</tr>
+<tr>
+<td>byte[5]</td>
+<td>DataLen</td>
+<td>Length of the data portion of this frame, i.e. byte[6]..byte[6 + DataLen - 1]</td>
+</tr>
+<tr>
+<td>byte[6]..byte[6 + DataLen - 1]</td>
+<td>Data[0]..Data[DataLen - 1]</td>
+<td>Return data</td>
+</tr>
+<tr>
+<td>byte[6 + DataLen]</td>
+<td>Checksum</td>
+<td>Checksum (see 4. LRC Checksum Calculation)</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<p>Command frame (HEX):</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Dexterous Hand ID</th>
+<th>Master ID</th>
+<th>Operation Command</th>
+<th>Data Length</th>
+<th>Data</th>
+<th>Checksum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>55 AA</td>
+<td>02</td>
+<td>01</td>
+<td>50</td>
+<td>12</td>
+<td>10 27 FF 10 27 FF 10 27 FF 10 27 FF 10 27 FF 10 27 FF</td>
+<td>66</td>
+</tr>
+</tbody>
+</table>
+<p>Success response frame (HEX):</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Master ID</th>
+<th>Dexterous Hand ID</th>
+<th>Operation Command</th>
+<th>Data Length</th>
+<th>Data</th>
+<th>Checksum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>55 AA</td>
+<td>01</td>
+<td>02</td>
+<td>50</td>
+<td>00</td>
+<td>NULL</td>
+<td>53</td>
+</tr>
+</tbody>
+</table>
+<p>Error response frame (HEX):</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Master ID</th>
+<th>Dexterous Hand ID</th>
+<th>Operation Command</th>
+<th>Data Length</th>
+<th>Data</th>
+<th>Checksum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>55 AA</td>
+<td>01</td>
+<td>02</td>
+<td>D0</td>
+<td>01</td>
+<td>01</td>
+<td>D3</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note:</em> The operation command is the value of the command frame's opcode OR'd with 0x80, and the data byte is the error code.</p>
+<h2 id="4-lrc-checksum-calculation">4. LRC Checksum Calculation</h2>
+<p>The XOR of bytes byte[2]..byte[6 + DataLen - 1] in the dexterous hand serial command frame:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">buf</span><span class="p">[...];</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">lrc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">uint8_t</span><span class="w"> </span><span class="n">cmd_data_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="cm">/* sizeof(MasterID) + sizeof(HandID) + sizeof(Command) + sizeof(DataLen) */</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">DataLen</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm">/* Fill buf */</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x55</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0xAA</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">...</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">cmd_data_len</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="n">lrc</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">buf</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cmd_data_len</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lrc</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="5-dexterous-hand-commands">5. Dexterous Hand Commands</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command Name</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Data Bytes</th>
+<th style="text-align: left;">Response Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_PROTOCOL_VERSION</td>
+<td style="text-align: right;">0x00</td>
+<td style="text-align: left;">Get protocol version</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[PROTOCOL_MINOR_VERSION, PROTOCOL_MAJOR_VERSION]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FW_VERSION</td>
+<td style="text-align: right;">0x01</td>
+<td style="text-align: left;">Get firmware version</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[FW_REVISION_L, FW_REVISION_H, FW_MINOR_VERSION, FW_MAJOR_VERSION]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_HW_VERSION</td>
+<td style="text-align: right;">0x02</td>
+<td style="text-align: left;">Get hardware version</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[HW_TYPE, HW_VER, BOOT_VER_MAJOR, BOOT_VER_MINOR]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_CALI_DATA</td>
+<td style="text-align: right;">0x03</td>
+<td style="text-align: left;">Get calibration data</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F0_RANGE_END_L, F0_RANGE_END_H, ..., Fn_RANGE_END_L, Fn_RANGE_END_H, F0_RANGE_START_L, F0_RANGE_START_H, ..., Fn_RANGE_START_L, Fn_RANGE_START_H, THUMB_ROOT_POS1_L, THUMB_ROOT_POS1_H, ..., THUMB_ROOT_POSn_L, THUMB_ROOT_POSn_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_PID</td>
+<td style="text-align: right;">0x04</td>
+<td style="text-align: left;">Get finger PID values, data type float32</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, P_BYTE0, P_BYTE1, P_BYTE2, P_BYTE3, I_BYTE0, I_BYTE1, I_BYTE2, I_BYTE3, D_BYTE0, D_BYTE1, D_BYTE2, D_BYTE3, G_BYTE0, G_BYTE1, G_BYTE2, G_BYTE3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_CURRENT_LIMIT</td>
+<td style="text-align: right;">0x05</td>
+<td style="text-align: left;">Get finger current limit, in mA</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, CURRENT_LIMIT_L, CURRENT_LIMIT_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_CURRENT</td>
+<td style="text-align: right;">0x06</td>
+<td style="text-align: left;">Get finger current value, in mA</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, CURRENT_L, CURRENT_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_FORCE_TARGET</td>
+<td style="text-align: right;">0x07</td>
+<td style="text-align: left;">Get finger force target value, in mN; restored to the default value 0 on power-on</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, FORCE_TARGET_L, FORCE_TARGET_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_FORCE</td>
+<td style="text-align: right;">0x08</td>
+<td style="text-align: left;">Get the current finger force value, in mN</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, FORCE_ENTRY_CNT, FORCE0_L, FORCE0_H, ..., FORCEn_L, FORCEn_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS_LIMIT</td>
+<td style="text-align: right;">0x09</td>
+<td style="text-align: left;">Get finger absolute position limit</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, POS_LIMIT_L, POS_LIMIT_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS_ABS</td>
+<td style="text-align: right;">0x0A</td>
+<td style="text-align: left;">Get the current absolute finger position</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, ABS_TARGET_POS_L, ABS_TARGET_POS_H, ABSOLUTE_POS_L, ABSOLUTE_POS_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS</td>
+<td style="text-align: right;">0x0B</td>
+<td style="text-align: left;">Get the current logical finger position</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, LOGICAL_TARGET_POS_L, LOGICAL_TARGET_POS_H, LOGICAL_POS_L, LOGICAL_POS_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_ANGLE</td>
+<td style="text-align: right;">0x0C</td>
+<td style="text-align: left;">Get the first joint angle of the finger, equal to the actual value * 100</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, TARGET_ANGLE_L, TARGET_ANGLE_H, CURRENT_ANGLE_L, CURRENT_ANGLE_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_THUMB_ROOT_POS</td>
+<td style="text-align: right;">0x0D</td>
+<td style="text-align: left;">Get the thumb rotation preset position, {0, 1, 2, 255}, 255 means unknown</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[PRESET_POS]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS_ABS_ALL</td>
+<td style="text-align: right;">0x0E</td>
+<td style="text-align: left;">Get the current absolute positions of all fingers</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F0_TARGET_ABS_POS_L, F0_TARGET_ABS_POS_H, ..., Fn_TARGET_ABS_POS_L, Fn_TARGET_ABS_POS_H, F0_CURRENT_ABS_POS_L, F0_CURRENT_ABS_POS_H, ..., Fn_CURRENT_ABS_POS_L, Fn_CURRENT_ABS_POS_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_POS_ALL</td>
+<td style="text-align: right;">0x0F</td>
+<td style="text-align: left;">Get the current logical positions of all fingers</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F0_TARGET_LOGICAL_POS_L, F0_TARGET_LOGICAL_POS_H, ..., Fn_TARGET_LOGICAL_POS_L, Fn_TARGET_LOGICAL_POS_H, F0_CURRENT_LOGICAL_POS_L, F0_CURRENT_LOGICAL_POS_H, ..., Fn_CURRENT_LOGICAL_POS_L, Fn_CURRENT_LOGICAL_POS_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_ANGLE_ALL</td>
+<td style="text-align: right;">0x10</td>
+<td style="text-align: left;">Get the first joint angles of all fingers, equal to the actual value * 100</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[F0_TARGET_ANGLE_L, F0_TARGET_ANGLE_H, ..., Fn_TARGET_ANGLE_L, Fn_TARGET_ANGLE_H, F0_CURRENT_ANGLE_L, F0_CURRENT_ANGLE_H, ..., Fn_CURRENT_ANGLE_L, Fn_CURRENT_ANGLE_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_STOP_PARAMS</td>
+<td style="text-align: right;">0x11</td>
+<td style="text-align: left;">Get finger stall protection parameters: speed (logical position/s), current (mA), duration (ms), retry time (ms)</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, SPEED_L, SPEED_H, STOP_CURRENT_L, STOP_CURRENT_H, STOP_AFTER_PERIOD_L, STOP_AFTER_PERIOD_H, RETRY_INTERVAL_L, RETRY_INTERVAL_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_FINGER_FORCE_PID</td>
+<td style="text-align: right;">0x12</td>
+<td style="text-align: left;">Get finger force PID values, data type float32</td>
+<td style="text-align: left;">[FINGER_ID]</td>
+<td style="text-align: left;">[FINGER_ID, P_BYTE0, P_BYTE1, P_BYTE2, P_BYTE3, I_BYTE0, I_BYTE1, I_BYTE2, I_BYTE3, D_BYTE0, D_BYTE1, D_BYTE2, D_BYTE3, G_BYTE0, G_BYTE1, G_BYTE2, G_BYTE3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_SELF_TEST_SWITCH</td>
+<td style="text-align: right;">0x20</td>
+<td style="text-align: left;">Get self-test switch state, 0: off, 1: on</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[ON_OFF]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_BEEP_SWITCH</td>
+<td style="text-align: right;">0x21</td>
+<td style="text-align: left;">Get buzzer switch state, 0: off, 1: on</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[ON_OFF]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_BUTTON_PRESSED_CNT</td>
+<td style="text-align: right;">0x22</td>
+<td style="text-align: left;">Get the button press count; ignore for ROHand</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[BTN_PRESSED_CNT]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_UID</td>
+<td style="text-align: right;">0x23</td>
+<td style="text-align: left;">Get hand UID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[UID0_BYTE0, UID0_BYTE1, UID0_BYTE2, UID0_BYTE3, UID1_BYTE0, UID1_BYTE1, UID1_BYTE2, UID1_BYTE3, UID2_BYTE0, UID2_BYTE1, UID2_BYTE2, UID2_BYTE3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_BATTERY_VOLTAGE</td>
+<td style="text-align: right;">0x24</td>
+<td style="text-align: left;">Get battery voltage, in mV; ignore for ROHand</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[BATTERY_VOLTAGE_L, BATTERY_VOLTAGE_H]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_USAGE_STAT</td>
+<td style="text-align: right;">0x25</td>
+<td style="text-align: left;">Get usage data; ignore for ROHand</td>
+<td style="text-align: left;">[MOTOR_CNT]</td>
+<td style="text-align: left;">[USE_TIME_BYTE0, USE_TIME_BYTE1, USE_TIME_BYTE2, USE_TIME_BYTE3, F0_OPEN_CNT_BYTE0, F0_OPEN_CNT_BYTE1, F0_OPEN_CNT_BYTE2, F0_OPEN_CNT_BYTE3, ..., Fn_OPEN_CNT_BYTE0, Fn_OPEN_CNT_BYTE1, Fn_OPEN_CNT_BYTE2, Fn_OPEN_CNT_BYTE3]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_MANUFACTURE_DATA</td>
+<td style="text-align: right;">0x3E</td>
+<td style="text-align: left;">Get manufacturer data</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">[BYTE0, ..., BYTEn]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_GET_VENDOR_ID</td>
+<td style="text-align: right;">0x3F</td>
+<td style="text-align: left;">Get vendor ID</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">['O', 'Y']</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_RESET</td>
+<td style="text-align: right;">0x40</td>
+<td style="text-align: left;">Restart, MODE=0: restart into working state; MODE=1: restart into DFU mode</td>
+<td style="text-align: left;">[MODE]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_POWER_OFF</td>
+<td style="text-align: right;">0x41</td>
+<td style="text-align: left;">Power off; ignore for ROHand</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_NODE_ID</td>
+<td style="text-align: right;">0x42</td>
+<td style="text-align: left;">Set hand node ID</td>
+<td style="text-align: left;">[NODE_ID]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_CALIBRATE</td>
+<td style="text-align: right;">0x43</td>
+<td style="text-align: left;">Calibrate hand, for factory use only</td>
+<td style="text-align: left;">[KEY_L, KEY_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_CALI_DATA</td>
+<td style="text-align: right;">0x44</td>
+<td style="text-align: left;">Set calibration data</td>
+<td style="text-align: left;">[MOTOR_CNT, F0_RANGE_END_L, F0_RANGE_END_H, ..., Fn_RANGE_END_L, Fn_RANGE_END_H, F0_RANGE_START_L, F0_RANGE_START_H, ..., Fn_RANGE_START_L, Fn_RANGE_START_H, THUMB_ROOT_POS_CNT, THUMB_ROOT_POS1_L, THUMB_ROOT_POS1_H, ..., THUMB_ROOT_POSn_L, THUMB_ROOT_POSn_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_PID</td>
+<td style="text-align: right;">0x45</td>
+<td style="text-align: left;">Set finger PID values, data type float32</td>
+<td style="text-align: left;">[FINGER_ID, P_BYTE0, P_BYTE1, P_BYTE2, P_BYTE3, I_BYTE0, I_BYTE1, I_BYTE2, I_BYTE3, D_BYTE0, D_BYTE1, D_BYTE2, D_BYTE3, G_BYTE0, G_BYTE1, G_BYTE2, G_BYTE3]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_CURRENT_LIMIT</td>
+<td style="text-align: right;">0x46</td>
+<td style="text-align: left;">Set finger current limit, [0, 65535]</td>
+<td style="text-align: left;">[FINGER_ID, CURRENT_LIMIT_L, CURRENT_LIMIT_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_FORCE_TARGET</td>
+<td style="text-align: right;">0x47</td>
+<td style="text-align: left;">Set finger target force, [0, 65535], in mN; set to zero to exit force control mode; restored to the default value 0 on power-on</td>
+<td style="text-align: left;">[FINGER_ID, FORCE_TARGET_L, FORCE_TARGET_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS_LIMIT</td>
+<td style="text-align: right;">0x48</td>
+<td style="text-align: left;">Set finger absolute position limit, [0, 65535]</td>
+<td style="text-align: left;">[FINGER_ID, POS_LIMIT_L, POS_LIMIT_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_FINGER_START</td>
+<td style="text-align: right;">0x49</td>
+<td style="text-align: left;">Start moving the finger</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_FINGER_STOP</td>
+<td style="text-align: right;">0x4A</td>
+<td style="text-align: left;">Stop moving the finger</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS_ABS</td>
+<td style="text-align: right;">0x4B</td>
+<td style="text-align: left;">Move finger to absolute position, [0, 65535]</td>
+<td style="text-align: left;">[FINGER_ID, ABSOLUTE_POS_L, ABSOLUTE_POS_H, SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS</td>
+<td style="text-align: right;">0x4C</td>
+<td style="text-align: left;">Move finger to logical position, [0, 65535]</td>
+<td style="text-align: left;">[FINGER_ID, LOGICAL_POS_L, LOGICAL_POS_H, SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_ANGLE</td>
+<td style="text-align: right;">0x4D</td>
+<td style="text-align: left;">Set finger angle, [0, 65535], equal to the actual value * 100</td>
+<td style="text-align: left;">[FINGER_ID, TARGET_ANGLE_L, TARGET_ANGLE_H, SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_THUMB_ROOT_POS</td>
+<td style="text-align: right;">0x4E</td>
+<td style="text-align: left;">Rotate thumb to preset position, {0,1,2}</td>
+<td style="text-align: left;">[PRESET_POS]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS_ABS_ALL</td>
+<td style="text-align: right;">0x4F</td>
+<td style="text-align: left;">Set absolute positions of all fingers</td>
+<td style="text-align: left;">[F0_ABS_POS_L, F0_ABS_POS_H, F0_SPEED, ..., Fn_ABS_POS_L, Fn_ABS_POS_H, Fn_SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_POS_ALL</td>
+<td style="text-align: right;">0x50</td>
+<td style="text-align: left;">Set logical positions of all fingers</td>
+<td style="text-align: left;">[F0_POS_L, F0_POS_H, F0_SPEED, ..., Fn_POS_L, Fn_POS_H, Fn_SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_ANGLE_ALL</td>
+<td style="text-align: right;">0x51</td>
+<td style="text-align: left;">Set the first joint angles of all fingers, [0, 65535], equal to the actual value * 100</td>
+<td style="text-align: left;">[F0_ANGLE_L, F0_ANGLE_H, F0_SPEED, ..., Fn_ANGLE_L, Fn_ANGLE_H, Fn_SPEED]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_STOP_PARAMS</td>
+<td style="text-align: right;">0x52</td>
+<td style="text-align: left;">Set finger stall parameters: speed (logical position/s), current (mA), duration (ms), retry time (ms)</td>
+<td style="text-align: left;">[FINGER_ID, SPEED_L, SPEED_H, STOP_CURRENT_L, STOP_CURRENT_H, STOP_AFTER_PERIOD_L, STOP_AFTER_PERIOD_H, RETRY_INTERVAL_L, RETRY_INTERVAL_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_FINGER_FORCE_PID</td>
+<td style="text-align: right;">0x53</td>
+<td style="text-align: left;">Set finger force PID values, data type float32</td>
+<td style="text-align: left;">[FINGER_ID, P_BYTE0, P_BYTE1, P_BYTE2, P_BYTE3, I_BYTE0, I_BYTE1, I_BYTE2, I_BYTE3, D_BYTE0, D_BYTE1, D_BYTE2, D_BYTE3, G_BYTE0, G_BYTE1, G_BYTE2, G_BYTE3]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_RESET_FORCE</td>
+<td style="text-align: right;">0x54</td>
+<td style="text-align: left;">Reset force value</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_CUSTOM</td>
+<td style="text-align: right;">0x5F</td>
+<td style="text-align: left;">Custom command</td>
+<td style="text-align: left;">[MOTOR_CNT, DATA_FLAG, ...]</td>
+<td style="text-align: left;">[...]</td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_SELF_TEST_LEVEL</td>
+<td style="text-align: right;">0x60</td>
+<td style="text-align: left;">Set self-test level, 0: wait for command, 1: semi self-test, 2: full self-test</td>
+<td style="text-align: left;">[SELF_TEST_LEVEL]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_BEEP_SWITCH</td>
+<td style="text-align: right;">0x61</td>
+<td style="text-align: left;">Set buzzer state, 0: off, 1: on</td>
+<td style="text-align: left;">[ON_OFF]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_BEEP</td>
+<td style="text-align: right;">0x62</td>
+<td style="text-align: left;">Beep for a period, in ms, [0, 65535]</td>
+<td style="text-align: left;">[BEEP_PERIOD_L, BEEP_PERIOD_H]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_BUTTON_PRESSED_CNT</td>
+<td style="text-align: right;">0x63</td>
+<td style="text-align: left;">Set button press count, for calibration only</td>
+<td style="text-align: left;">[BTN_PRESSED_CNT]</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_START_INIT</td>
+<td style="text-align: right;">0x64</td>
+<td style="text-align: left;">Start initialization to set SELF_TEST_LEVEL=0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HAND_CMD_SET_MANUFACTURE_DATA</td>
+<td style="text-align: right;">0x65</td>
+<td style="text-align: left;">Set manufacturer data</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ol>
+<li>Unless otherwise specified, single-byte data is of type uint8; XXX_L, XXX_H denote the low and high bytes of a uint16; XXX_BYTE0, XXX_BYTE1, XXX_BYTE2, XXX_BYTE3 denote the four bytes of a uint32 from low to high;</li>
+<li>If specified as float32, XXX_BYTE0, XXX_BYTE1, XXX_BYTE2, XXX_BYTE3 denote the four bytes of a float32 from low to high.</li>
+</ol>
+<h2 id="6-dexterous-hand-error-codes">6. Dexterous Hand Error Codes</h2>
+<table>
+<thead>
+<tr>
+<th>Error Name</th>
+<th>Code</th>
+<th>Description</th>
+<th>Group</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERR_PROTOCOL_WRONG_CRC</td>
+<td>0x01</td>
+<td>Checksum error</td>
+<td>Protocol</td>
+</tr>
+<tr>
+<td>ERR_COMMAND_INVALID</td>
+<td>0x11</td>
+<td>Invalid command</td>
+<td>Command</td>
+</tr>
+<tr>
+<td>ERR_COMMAND_INVALID_BYTE_COUNT</td>
+<td>0x12</td>
+<td>Incorrect byte count</td>
+<td>Command</td>
+</tr>
+<tr>
+<td>ERR_COMMAND_INVALID_DATA</td>
+<td>0x13</td>
+<td>Invalid value</td>
+<td>Command</td>
+</tr>
+<tr>
+<td>ERR_STATUS_INIT</td>
+<td>0x21</td>
+<td>Waiting for initialization command or initializing</td>
+<td>Status</td>
+</tr>
+<tr>
+<td>ERR_STATUS_CALI</td>
+<td>0x22</td>
+<td>Waiting for calibration</td>
+<td>Status</td>
+</tr>
+<tr>
+<td>ERR_STATUS_STUCK</td>
+<td>0x23</td>
+<td>Motor stalled</td>
+<td>Status</td>
+</tr>
+<tr>
+<td>ERR_OP_FAILED</td>
+<td>0x31</td>
+<td>Operation failed</td>
+<td>Operation</td>
+</tr>
+<tr>
+<td>ERR_SAVE_FAILED</td>
+<td>0x32</td>
+<td>Save failed</td>
+<td>Operation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-finger-angles">7. Finger Angles</h2>
+<p>Angle definition and range of motion:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Angle</th>
+<th style="text-align: center;">Illustration</th>
+<th style="text-align: center;">Angle Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Index finger  Middle finger  Ring finger  Little finger</td>
+<td style="text-align: center;"><img alt="Finger Screen" src="res/FingerBending.png"></td>
+<td style="text-align: center;">100.22°~178.37°  97.81° ~ 176.06°  101.38° ~ 176.54°  98.84° ~ 174.86°</td>
+</tr>
+<tr>
+<td style="text-align: center;">Thumb bending</td>
+<td style="text-align: center;"><img alt="Finger Screen" src="res/ThumbBending.png"></td>
+<td style="text-align: center;">2.26° ~ 36.76°</td>
+</tr>
+<tr>
+<td style="text-align: center;">Thumb rotation</td>
+<td style="text-align: center;"><img alt="Finger Screen" src="res/ThumbRotation.png"></td>
+<td style="text-align: center;">0° ~ 90°</td>
+</tr>
+</tbody>
+</table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

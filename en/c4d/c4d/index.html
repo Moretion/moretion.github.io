@@ -1,0 +1,499 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>C4D Documentation - C4D Plugin</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://moretion.github.io/en/" title="C4D Plugin" class="md-header__button md-logo" aria-label="C4D Plugin" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            C4D Plugin
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C4D Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://moretion.github.io/en/" title="C4D Plugin" class="md-nav__button md-logo" aria-label="C4D Plugin" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    C4D Plugin
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4D Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>C4D Documentation</h1>
+
+<div><p><strong>Cinema4D Plugin User Guide</strong></p>
+<ol>
+<li><strong>Download Cinema4D</strong></li>
+</ol>
+<p>You can download it from the official Cinema4D website. Download link: <a href="https://www.maxon.net/en/downloads/cinema-4d-2024-downloads">https://www.maxon.net/en/downloads/cinema-4d-2024-downloads</a></p>
+<ol>
+<li><strong>Install the Cinema4D Plugin (the software must be installed first)</strong></li>
+</ol>
+<p><strong>1. Download link:</strong></p>
+<p><a href="https://alidocs.dingtalk.com/i/nodes/1zknDm0WRzMk4ElBhZj2yNgrWBQEx5rG?iframeQuery=anchorId%3DX02mev1vo2oqefkl28951">Please refer to the DingTalk document for the attachment "MSC4DSetup24-25_v0.8.28.msi"</a></p>
+<p><strong>2. Follow the installation steps:</strong></p>
+<ol>
+<li>Double-click to open the installer.</li>
+</ol>
+<p><img alt="" src="../images/media/image1.png">{width="2.5208333333333335in"
+height="0.3333333333333333in"}</p>
+<ol>
+<li>Click Next.</li>
+</ol>
+<p><img alt="" src="../images/media/image2.png">{width="5.25in"
+height="4.291666666666667in"}</p>
+<ol>
+<li>Select the Cinema4D version in which you want to install the plugin. Currently, Cinema4D 2024 and 2025 are supported. Then click Next. You only need to check the installed Cinema4D version. For example, if you have installed Cinema4D 2024, simply check C4D 2024.</li>
+</ol>
+<p><img alt="" src="../images/media/image3.png">{width="5.25in" height="4.28125in"}</p>
+<ol>
+<li>Choose the plugin installation location and install it in the default directory. By default, the Maxon folder under the user's AppData\Roaming directory is selected (i.e., C:\Users\\&lt;username&gt;\AppData\Roaming\Maxon). Then click Next.</li>
+</ol>
+<p><img alt="" src="../images/media/image4.png">{width="5.25in" height="4.3125in"}</p>
+<ol>
+<li>Click Next to begin the installation, and select Continue in the confirmation dialog that appears.</li>
+</ol>
+<p><img alt="" src="../images/media/image5.png">{width="5.25in" height="4.28125in"}</p>
+<ol>
+<li>As shown below, the plugin installation is complete.</li>
+</ol>
+<p><img alt="" src="../images/media/image6.png">{width="5.25in"
+height="4.291666666666667in"}</p>
+<ol>
+<li>Open Cinema4D, press Ctrl+E to open the Settings window, click Plugins on the right side, and check whether the search path already contains the directory where the plugin was installed, i.e., AppData\Roaming\Maxon\MotionStudioPlugin.</li>
+</ol>
+<p><img alt="" src="../images/media/image7.png">{width="7.791666666666667in"
+height="4.430775371828521in"}</p>
+<ol>
+<li><strong>Cinema4D Plugin Usage Instructions</strong></li>
+</ol>
+<p><strong>1. Open the MS plugin in Cinema4D</strong></p>
+<p><strong>1) Open Cinema4D (either version 2024 or 2025 is supported; the version demonstrated in this document is 2024)</strong></p>
+<p><strong>2) Open the MS plugin</strong></p>
+<p>On the C4D menu bar, choose Extensions &gt; Motion Studio Mocap to open the MS plugin.</p>
+<p><img alt="" src="../images/media/image8.png">{width="7.791666666666667in"
+height="4.713182414698163in"}</p>
+<p>After clicking, the plugin connection settings dialog will appear.</p>
+<p><img alt="" src="../images/media/image9.png">{width="7.572916666666667in"
+height="4.40625in"}</p>
+<p><strong>3) Connection interface description and feature introduction</strong></p>
+<p>As shown below, the plugin interface is divided into 4 tabs: Connection Settings, Character List, and About Plugin.</p>
+<p><img alt="" src="../images/media/image10.png">{width="4.375in"
+height="1.3020833333333333in"}</p>
+<ol>
+<li>Connection Settings: This is the main control page.</li>
+</ol>
+<blockquote>
+<p>From left to right at the bottom are: Connect, Sync, and Record buttons.</p>
+</blockquote>
+<p>Connect: Used to connect to the MS server. Data broadcasting must be enabled in MS first.</p>
+<p>Sync: After clicking Show Skeleton/Model in the character list, you can enable motion synchronization. When disabled, the character's skeleton will no longer be driven for movement and rotation.</p>
+<p>Record: Records the received motion data.</p>
+<blockquote>
+<p>Network Settings area: You can switch between TCP/UDP network connections and configure the connection address and port.</p>
+</blockquote>
+<p><img alt="" src="../images/media/image11.png">{width="6.416666666666667in"
+height="4.0in"}</p>
+<ol>
+<li>Character List area:</li>
+</ol>
+<p>Character Name/ID: Click the Character Name/Character ID button to switch the content displayed in the character list (character name or character ID).</p>
+<p>Show/Hide Character: Click the Show/Hide button on the right side of a character to toggle its display state (the Show/Hide button in the title bar can set the show/hide state for all characters at once, and each character can also be set individually).</p>
+<p>Character Sync/T-Pose: Click the character pose button on the far right to switch all or a specific character's pose to T-Pose, or to sync the current MS pose.</p>
+<p>Keep Characters: Choose whether to retain the characters in the scene after disconnecting.</p>
+<p><img alt="" src="../images/media/image12.png">{width="7.604166666666667in"
+height="4.166666666666667in"}</p>
+<ol>
+<li>About Plugin: Here you can visit the official website, view the plugin version, open this plugin guide, and check for plugin updates.</li>
+</ol>
+<p><img alt="" src="../images/media/image13.png">{width="7.791666666666667in"
+height="4.0004472878390205in"}</p>
+<p><strong>2. Connect to Motion Studio and drive the character model in Cinema4D</strong></p>
+<p><strong>1) Connect to Motion Studio (choose either TCP or UDP)</strong></p>
+<p>Select a TCP or UDP connection according to the IP address and port number configured in the corresponding data broadcasting settings in MotionStudio.</p>
+<p><strong>1.1 TCP Connection</strong></p>
+<p>When using a TCP connection, click the TCP button on the far left (it highlights when selected). Then enter the IP address and the corresponding port number (default is 9999) configured in MotionStudio in the Cinema4D address fields.</p>
+<p><img alt="" src="../images/media/image14.png">{width="5.864583333333333in"
+height="3.9895833333333335in"}</p>
+<p><img alt="" src="../images/media/image15.png">{width="5.864583333333333in"
+height="5.77705271216098in"}</p>
+<p><strong>1.2 UDP Connection</strong></p>
+<p>In MotionStudio, set the data broadcasting to a UDP connection and configure the port number. In the Target IP field, enter the IP address of the computer where the plugin is installed, and set the port number.</p>
+<p><img alt="" src="../images/media/image16.png">{width="5.729166666666667in"
+height="5.645833333333333in"}</p>
+<p>When using a UDP connection in Cinema4D, in addition to the steps above, you also need to fill in the port number of the target IP from Motion Studio.</p>
+<p><img alt="" src="../images/media/image17.png">{width="5.75in" height="3.65625in"}</p>
+<p><strong>2) Enable the connection in the Cinema4D plugin</strong></p>
+<p>After confirming that the IP settings are correct in the first step, click the <strong>Connect</strong> button in the upper-left corner of the plugin to connect to the MotionStudio data broadcast.</p>
+<p><img alt="" src="../images/media/image18.png">{width="7.791666666666667in"
+height="4.096521216097988in"}</p>
+<p><strong>3) Toggle the character display state</strong></p>
+<p>Click the character display icon to toggle the character's display state.</p>
+<p><img alt="" src="../images/media/image19.png">{width="7.791666666666667in"
+height="3.7977985564304464in"}</p>
+<p><strong>4) Switch the data source or connection protocol</strong></p>
+<p>When you need to switch the data source in MS (e.g., Live → Recording, between different recorded data, TCP → UDP, etc.), first disable the current plugin's sync state, then click the Disconnect button in the Connection Settings area. Once the new data source has been switched in Motion Studio, click the Connect button again to drive the character model.</p>
+<p><img alt="" src="../images/media/image20.png">{width="7.791666666666667in"
+height="4.19747375328084in"}</p>
+<p>Note: If "Keep characters on disconnect" is checked in the plugin settings, the characters will remain in the scene.</p>
+<p><strong>3. Recording Motion and Saving</strong></p>
+<p><strong>1) Record animation</strong></p>
+<p>After completing the steps to connect to MotionStudio and synchronously drive the character, click the Record button in the Connection Settings area.</p>
+<p><img alt="" src="../images/media/image21.png">{width="7.791666666666667in"
+height="4.736251093613299in"}</p>
+<p>Click again to stop recording; this will pause motion synchronization. Click the Play button in the animation track at the bottom of C4D to play back the motion you just recorded.</p>
+<p><img alt="" src="../images/media/image22.png">{width="7.791666666666667in"
+height="4.635836614173228in"}</p>
+<p>Note: After recording one take, you must export the current file. If you do not export it before recording a second take, the first recording will be overwritten.</p>
+<p><strong>2) Export the recorded animation</strong></p>
+<p>When exporting the recorded animation, you can save the scene and animation as a C4D file, or export to other file formats (such as FBX).</p>
+<p>If you choose to save as C4D, you can use File &gt; Save Project / Save Project As... or Ctrl+S / Ctrl+Shift+S. If you need to export as an FBX file, use File &gt; Export &gt; FBX, then select the destination location in the dialog that appears.</p>
+<p><img alt="" src="../images/media/image23.png">{width="4.177083333333333in"
+height="9.729166666666666in"}</p>
+<p><strong>3) Play back the recorded motion</strong></p>
+<p>Once the export is complete, under the Objects window, choose File &gt; Merge Objects... to select the FBX or C4D file you just exported.</p>
+<p><img alt="" src="../images/media/image24.png">{width="7.791666666666667in"
+height="4.090827865266841in"}</p>
+<p><strong>4. Live Retargeted Driving or Recorded-and-Exported Retargeting</strong></p>
+<p><strong>1) Add a model for live retargeted driving</strong></p>
+<p><strong>①. Connect the C4D plugin to Motion Studio</strong></p>
+<p>In MotionStudio - Data Broadcasting, set the corresponding IP address and port number.</p>
+<p><img alt="" src="../images/media/image25.png">{width="7.791666666666667in"
+height="4.188020559930009in"}</p>
+<p>After setting the IP and port in C4D to match MS, click the Connect button and the Show Model button to enable motion synchronization (when performing retargeting operations, pause data synchronization first).</p>
+<p><img alt="" src="../images/media/image18.png">{width="7.791666666666667in"
+height="4.096521216097988in"}</p>
+<p><strong>②. Import the retargeting model (using an FBX file as an example)</strong></p>
+<p>Under the Objects window, choose File &gt; Merge Objects... to select and import the corresponding FBX file.</p>
+<p><img alt="" src="../images/media/image26.png">{width="7.791666666666667in"
+height="4.593128827646544in"}</p>
+<p><img alt="" src="../images/media/image27.png">{width="7.791666666666667in"
+height="3.786958661417323in"}</p>
+<p><strong>③. Add a character definition</strong></p>
+<p>In the Objects window, select the Hips bone of the imported character, right-click and choose Rig Tags &gt; Character Definition to create a character definition on the Hips bone.</p>
+<p><img alt="" src="../images/media/image28.png">{width="7.791666666666667in"
+height="4.572241907261592in"}</p>
+<p>As shown below, a Character Definition icon appears to the right of the Hips bone.</p>
+<p><img alt="" src="../images/media/image29.png">{width="3.9375in"
+height="1.4791666666666667in"}</p>
+<p><strong>④. Skeleton mapping</strong></p>
+<p>Click the Character Definition icon. In the Attributes window below, you can view the basic properties of the character definition, then click Open Manager.</p>
+<p><img alt="" src="../images/media/image30.png">{width="7.791666666666667in"
+height="3.6789162292213473in"}</p>
+<p>In the Character Definition window, click Extract Skeleton to automatically map the character's bones to the generic skeleton.</p>
+<p><img alt="" src="../images/media/image31.png">{width="6.5625in"
+height="5.135416666666667in"}</p>
+<p>Note: Because the model's skeleton naming may not follow the standard, you need to check one by one whether any bones are missing or incorrectly mapped in the skeleton. (As shown below, the bone was not correctly obtained for the left thigh joint, because the left thigh in the character's skeleton is named LeftThigh instead of leftupleg. You can manually drag LeftThigh from the character's skeleton into the joint list; the same applies to other bone joints.)</p>
+<p><img alt="" src="../images/media/image32.png">{width="7.5in"
+height="6.114583333333333in"}</p>
+<p><strong>⑤. Set the retargeting source</strong></p>
+<p>After completing the mapping of all bone joints, click the Create Solver button in the Character Definition properties.</p>
+<p><img alt="" src="../images/media/image33.png">{width="7.395833333333333in"
+height="7.59375in"}</p>
+<p>A Solver icon is added to the right of the Hips bone.</p>
+<p><img alt="" src="../images/media/image34.png">{width="6.3125in" height="8.34375in"}</p>
+<p>The Source Character must be the synchronously driven source character. Under the Objects window, locate the MS character you want to sync, then drag its character definition into the Source Character field of the target character's solver. (When retargeting, the source character does not need to be in T-Pose.)</p>
+<p><img alt="" src="../images/media/image35.png">{width="7.791666666666667in"
+height="4.150535870516186in"}</p>
+<p><strong>2) Record the retargeted animation driving</strong></p>
+<p><strong>①. Record the animation</strong></p>
+<p>After the model's skeleton rigging is complete, click the Record button.</p>
+<p><img alt="" src="../images/media/image36.png">{width="7.791666666666667in"
+height="4.225988626421698in"}</p>
+<p>Click again to stop recording; this will pause motion synchronization. Click the Play button in the animation track at the bottom of C4D to play back the motion you just recorded.</p>
+<p><img alt="" src="../images/media/image37.png">{width="7.791666666666667in"
+height="4.613739063867016in"}</p>
+<p>Note: After recording one take, you must export the current file. If you do not export it before recording a second take, the first recording will be overwritten.</p>
+<p><strong>②. Export the recorded animation</strong></p>
+<p>When exporting the recorded animation, you can save the scene and animation as a C4D file, or export to other file formats (such as FBX).</p>
+<p>If you choose to save as C4D, you can use File &gt; Save Project / Save Project As... or Ctrl+S / Ctrl+Shift+S. If you need to export as an FBX file, use File &gt; Export &gt; FBX, then select the destination location in the dialog that appears.</p>
+<p><img alt="" src="../images/media/image23.png">{width="4.177083333333333in"
+height="9.729166666666666in"}</p>
+<p><strong>③. Play back the recorded motion</strong></p>
+<p>Once the export is complete, under the Objects window, choose File &gt; Merge Objects... to select the FBX or C4D file you just exported.</p>
+<p><img alt="" src="../images/media/image24.png">{width="7.791666666666667in"
+height="4.090827865266841in"}</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

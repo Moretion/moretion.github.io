@@ -1,0 +1,783 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>MotionBuilder Documentation - MotionBuilder Plugin</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#motion-builder-plugin-tutorial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://moretion.github.io/en/" title="MotionBuilder Plugin" class="md-header__button md-logo" aria-label="MotionBuilder Plugin" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MotionBuilder Plugin
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MotionBuilder Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://moretion.github.io/en/" title="MotionBuilder Plugin" class="md-nav__button md-logo" aria-label="MotionBuilder Plugin" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    MotionBuilder Plugin
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MotionBuilder Documentation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MotionBuilder Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-motion-builder-software-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Motion Builder Software Download
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-installing-the-motion-builder-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installing the Motion Builder Plugin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installing the Motion Builder Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Download link:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installation steps:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-motion-builder-plugin-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Motion Builder Plugin Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Motion Builder Plugin Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-driving-data-with-the-plugins-built-in-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Driving Data with the Plugin's Built-in Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-adding-a-model-and-retargeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Adding a Model and Retargeting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-recording-and-saving-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Recording and Saving Animation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-motion-builder-software-download" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Motion Builder Software Download
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-installing-the-motion-builder-plugin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installing the Motion Builder Plugin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installing the Motion Builder Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Download link:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Installation steps:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-motion-builder-plugin-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Motion Builder Plugin Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Motion Builder Plugin Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-driving-data-with-the-plugins-built-in-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Driving Data with the Plugin's Built-in Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-adding-a-model-and-retargeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Adding a Model and Retargeting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-recording-and-saving-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Recording and Saving Animation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="motion-builder-plugin-tutorial"><strong>Motion Builder Plugin Tutorial</strong></h1>
+<h2 id="1-motion-builder-software-download"><strong>1. Motion Builder Software Download</strong></h2>
+<p>Software installer: Win64 version</p>
+<p><a href="../assets/MotionBuilder_2025_en-US_setup_webinstall.exe">MotionBuilder_2025_en-US_setup_webinstall.exe</a></p>
+<h2 id="2-installing-the-motion-builder-plugin"><strong>2. Installing the Motion Builder Plugin</strong></h2>
+<h3 id="1-download-link"><strong>1. Download link:</strong></h3>
+<p><a href="../assets/MotionStudio_MoBu_22-25_Win64_v0.10.09_MSv1.8.59_Setup.msi">MotionStudio_MoBu_22-25_Win64_v0.10.09_MSv1.8.59_Setup.msi</a></p>
+<h3 id="2-installation-steps"><strong>2. Installation steps:</strong></h3>
+<ol>
+<li>After extracting, double-click to open the MotionStudio_MoBu_22-25_Win64_v0.10.09_MSv1.8.59_Setup.msi
+    installer.</li>
+</ol>
+<p><img alt="" src="../images/media/image1.png"></p>
+<ol>
+<li>Click Next.</li>
+</ol>
+<p><img alt="" src="../images/media/image2.png"></p>
+<p>3. Select the MotionBuilder version to install the plugin for. Currently, MotionBuilder
+2022, 2023, 2024, and 2025 are supported. Then click Next.</p>
+<p><img alt="" src="../images/media/image3.png"></p>
+<ol>
+<li>Select the plugin installation location. Choose the directory where MotionBuilder is installed. The default Autodesk installation directory is selected by default. Then click Next (the plugin and the software must be installed in the same directory).</li>
+</ol>
+<p><img alt="" src="../images/media/image4.png"></p>
+<ol>
+<li>Click Next to start the installation, and select Continue in the confirmation dialog that appears.</li>
+</ol>
+<p><img alt="" src="../images/media/image5.png"></p>
+<ol>
+<li>The plugin installation is complete. Click Close.</li>
+</ol>
+<p><img alt="" src="../images/media/image6.png"></p>
+<h2 id="3-motion-builder-plugin-usage"><strong>3. Motion Builder Plugin Usage</strong></h2>
+<h3 id="1-driving-data-with-the-plugins-built-in-model"><strong>1. Driving Data with the Plugin's Built-in Model</strong></h3>
+<p><strong>1). Open Motion
+Builder (versions 2022--2025 are all supported; this document demonstrates version 2025)</strong></p>
+<p><img alt="" src="../images/media/image7.png"></p>
+<p><strong>2). Import the MS plugin</strong></p>
+<p>In the Asset Browser
+tab in the lower-right corner, select Templates → Devices on the left side, and find the Motion Studio
+Plug plugin in the list on the right. Drag and drop the plugin into the main scene to import it.</p>
+<p><img alt="" src="../images/media/image8.png"></p>
+<p>Drag the Motion
+Studio plugin into the main scene to complete the import. Click Navigator --- Devices to see the plugin interface.</p>
+<p><img alt="" src="../images/media/image9.png"></p>
+<p><strong>Note</strong>: If you cannot find the Motion Studio
+Plug plugin under Devices, the installation path may have been selected incorrectly during setup. In this case, you need to locate the actual plugin installation path first.</p>
+<p>For example, if the plugin installation path is D:\Program\MotionBuilder 2025\
+then you will see the following contents in that directory. Right-click an empty area in the left sidebar of the Asset
+Browser and select Add favourite
+path, then select the D:\Program\MotionBuilder 2025\MotionBuilder
+2025\bin\x64\plugins directory (make sure that MotionStudioPlug2025.dll exists in this directory;
+the version number depends on the required version, such as 2022, 2023, 2024, etc.)</p>
+<p><strong>3). Connect to Motion Studio</strong></p>
+<p>Check whether Use Network
+Stream is selected (if not, select it manually). According to the corresponding data broadcast settings in Motion Studio, choose a TCP or UDP connection.</p>
+<p><img alt="" src="../images/media/image10.png"></p>
+<p><strong>TCP connection:</strong></p>
+<p>When using a TCP connection, simply enter the local IP from Motion Studio in the Host
+IP field (the default is the local machine IP; if MotionBuilder and Motion Studio are not running on the same computer, modify this accordingly based on Motion Studio's local IP) and the corresponding port number.</p>
+<p><img alt="" src="../images/media/image11.png"></p>
+<p><img alt="" src="../images/media/image12.png"></p>
+<p><strong>UDP connection:</strong></p>
+<p>When using a UDP connection, select UDP. In addition to the above operations, you also need to enter the IP address and port number of the computer running the plugin.</p>
+<p><img alt="" src="../images/media/image13.png"></p>
+<p>In Motion
+Studio, set the data broadcast to a UDP connection, and enter the same port number as the plugin (7788). In the Target IP field, enter the IP address from the plugin, and set the port to match the plugin (default is 8899).</p>
+<p><img alt="" src="../images/media/image14.png"></p>
+<p>After <strong>completing pose calibration</strong> or <strong>playing a recording file</strong> in MS, and confirming that the IP settings in the plugin are correct, click Online in the upper-left corner of the plugin to connect to the Motion
+Studio data broadcast (if Motion Builder crashes, please restart Motion Builder and try again). When the Online button turns green, the connection is successful.</p>
+<p><img alt="" src="../images/media/image15.png"></p>
+<p>After a successful connection, click the Live button. The following interface is displayed.</p>
+<p><img alt="" src="../images/media/image16.png"></p>
+<p><strong>4). Bind the model skeleton and create a character definition</strong></p>
+<p>Click Model binding and select Create... from the drop-down list.</p>
+<p><img alt="" src="../images/media/image17.png"></p>
+<p>The selection box automatically displays Motion Studio
+Reference, and the character skeleton is shown in the scene (multiple devices: MS displays one character skeleton for each set of connected devices).</p>
+<p><img alt="" src="../images/media/image18.png"></p>
+<p><strong>5). Bind and directly drive the character model</strong></p>
+<p>The plugin already includes one sample model. You can find the MS_Robot model in AssetBrowser → Tutorials.</p>
+<p><img alt="" src="../images/media/image19.png"></p>
+<p>Next, using these two models as examples, select the MS_Robot.fbx file and drag it into the scene. During the drag-in process, you will be prompted with the FBX
+Open or FBX Merge option (selecting FBX Open creates a brand-new scene, while FBX
+Merge merges the newly dragged-in model into the scene).</p>
+<p>Therefore, after importing MS_Robot.fbx, select FBX Merge → \&lt;All
+Takes&gt; (if there are multiple characters in the motion capture scene, you typically need to import multiple character models).</p>
+<p><img alt="" src="../images/media/image20.png"></p>
+<p>At this point, enable the plugin's network connection, select Live, and after creating the Model
+Binding, you can see the list of newly imported character models in the scene under the Model column of the character list. Select the corresponding character model (note that different characters must select different models). After selection, the model and skeleton are bound together.</p>
+<p><img alt="" src="../images/media/image21.png"></p>
+<p><strong>6). Directly drive the hand model</strong></p>
+<p>Motion Studio streams glove data or recorded data in real time. After filling in the correct MB IP and port, click Online, re-select Live, and click Model
+binding, then select Create... from the drop-down list to display the hand skeleton.</p>
+<p><img alt="" src="../images/media/image22.png"></p>
+<p><strong>7) Disconnect (switch data source)</strong></p>
+<ol>
+<li>When you need to switch between different data sources in Motion Studio, click the Online button to disconnect from Motion Studio.</li>
+</ol>
+<p><img alt="" src="../images/media/image23.png"></p>
+<p>2) Switch the data source in Motion Studio (add or remove devices, or switch recording files).</p>
+<p>3) Return to Motion Builder, click Online to enable real-time data, select the Live option, and select Create... from the Model
+binding drop-down list to switch to the new data source in Motion Builder (you need to rebind the model).</p>
+<p><img alt="" src="../images/media/image24.png"></p>
+<p><strong>8) Feature overview</strong></p>
+<p><img alt="" src="../images/media/image25.png"></p>
+<p>Area 1 in the interface is the connection settings, including the connect/disconnect button (Online), the real-time data button (Live), the Recording button, and the model binding drop-down list (Model
+binding).</p>
+<p>Area 2 is the plugin info. Click the Logo icon to open the official website.</p>
+<p>Area 3 is the network settings, including whether to enable the network data stream (Use Network
+Stream), the network protocol (TCP or UDP), the stream type (not configurable at this time), the Motion Studio host IP and port (required for both TCP and UDP), and the local IP address and port (required only for UDP, used to receive UDP data from Motion Studio).</p>
+<p>Area 4 is the character settings, including the Pause/Resume button, the Clear
+All Actors button, the body part display drop-down list (All/Body/Hand), and the character list below.</p>
+<p>Area 5 is the data area, including the raw data for each joint.</p>
+<h3 id="2-adding-a-model-and-retargeting"><strong>2. Adding a Model and Retargeting</strong></h3>
+<p><strong>1) Import a character model</strong></p>
+<p>Import any model with a standard humanoid skeleton. You can use the character model included with MB, for example by finding any motion in AssetBrowser → PrevisMoves (Dance is used here as an example). When importing, select FBX
+Merge → \&lt;No Animation&gt; to skip importing the animation.</p>
+<p>Select any motion from the PrevisMoves preset motion file list in MB, using Dance as an example.</p>
+<p><img alt="" src="../images/media/image26.png"></p>
+<p><strong>2) Set the character model to T-Pose</strong></p>
+<p>In the scene, press Ctrl+W to display the skeleton outline view, then box-select all bones under the Hips root bone. Then right-click on Hips and select Zero → Rotation to reset the model to the T-Pose pose. (This only applies to models whose initial skeleton pose is T-Pose.)</p>
+<p><img alt="" src="../images/media/image27.png"></p>
+<p><img alt="" src="../images/media/image28.png"></p>
+<p><img alt="" src="../images/media/image29.png"></p>
+<blockquote>
+<p>Press Ctrl+W again to return to the scene view. You can see that the character model is now in the T-pose.</p>
+</blockquote>
+<p><strong>3) Add a character definition (Characterize) to the character model</strong></p>
+<p>In most cases, the character you just imported already contains the corresponding character definition. You can check whether a character definition already exists under Characters in the left list of Navigator. If it does, the creation was successful. You can also verify in Character
+Controls whether the correct corresponding character definition has been created.</p>
+<p><img alt="" src="../images/media/image30.png"></p>
+<p><strong>Creating a character definition for an externally imported model, or fixing an incorrect character definition</strong></p>
+<p>You can follow these steps to create a new character definition and map it to the character model.</p>
+<ol>
+<li>Import any FBX model with a standard humanoid skeleton. Drag the external file in, and select FBX Open → \&lt;No
+Animation&gt; to skip importing the animation.</li>
+</ol>
+<p><img alt="" src="../images/media/image31.png"></p>
+<ol>
+<li>In the Asset
+Browser panel, select Templates → Characters on the left side, and select Character on the right.</li>
+</ol>
+<p><img alt="" src="../images/media/image32.png"></p>
+<ol>
+<li>In the scene, press Ctrl+W to switch to the skeleton outline view. Use the left mouse button to drag the Character selected in the previous step onto the Hips root bone of the character model.</li>
+</ol>
+<p><img alt="" src="../images/media/image33.png"></p>
+<ol>
+<li>After releasing the left mouse button, a Characterize button appears. Click that button, and then click the Biped button in the dialog that pops up.</li>
+</ol>
+<p><img alt="" src="../images/media/image34.png"></p>
+<p><strong>4) Import the plugin and connect to Motion Studio</strong></p>
+<p>In the Asset Browser
+tab in the lower-right corner, select Templates → Devices on the left side, and find the Motion Studio
+Plug plugin in the list on the right. Drag and drop the plugin into the main scene to import it.</p>
+<p><img alt="" src="../images/media/image8.png"></p>
+<p>Drag the Motion
+Studio plugin into the main scene to complete the import. Click Navigator --- Devices to see the plugin interface.</p>
+<p><img alt="" src="../images/media/image10.png"></p>
+<p>Check whether Use Network
+Stream is selected (if not, select it manually). According to the corresponding data broadcast settings in Motion Studio, choose a TCP or UDP connection.</p>
+<p><img alt="" src="../images/media/image10.png"></p>
+<p><strong>TCP connection:</strong></p>
+<p>When using a TCP connection, simply enter the local IP from Motion Studio in the Host
+IP field (the default is the local machine IP; if MotionBuilder and Motion Studio are not running on the same computer, modify this accordingly based on Motion Studio's local IP) and the corresponding port number.</p>
+<p><img alt="" src="../images/media/image11.png"></p>
+<p><img alt="" src="../images/media/image12.png"></p>
+<p><strong>UDP connection:</strong></p>
+<p>When using a UDP connection, select UDP. In addition to the above operations, you also need to enter the IP address and port number of the computer running the plugin.</p>
+<p><img alt="" src="../images/media/image13.png"></p>
+<p>In Motion
+Studio, set the data broadcast to a UDP connection, and enter the same port number as the plugin (7788). In the Target IP field, enter the IP address from the plugin, and set the port to match the plugin (default is 8899).</p>
+<p><img alt="" src="../images/media/image14.png"></p>
+<p>After <strong>completing pose calibration</strong> or <strong>playing a recording file</strong> in MS, and confirming that the IP settings in the plugin are correct, click Online in the upper-left corner of the plugin to connect to the Motion
+Studio data broadcast (if MotionBuilder crashes, please restart MotionBuilder and try again). When the Online button turns green, the connection is successful.</p>
+<p><img alt="" src="../images/media/image15.png"></p>
+<p>After a successful connection, click the Live button.</p>
+<p><img alt="" src="../images/media/image16.png"></p>
+<p><strong>5). Bind the model skeleton and create a character definition</strong></p>
+<p>Click Model binding and select Create... from the drop-down list.</p>
+<p><img alt="" src="../images/media/image17.png"></p>
+<p>The selection box automatically displays Motion Studio Reference, and the character skeleton is shown in the scene.</p>
+<p><img alt="" src="../images/media/image18.png"></p>
+<p><strong>6) Set the characterization definition for the character skeleton</strong></p>
+<ol>
+<li>In Area 4, click the Pause button in the upper-left corner to pause skeleton position updates, and click the button in the Pose column of the corresponding character to switch the skeleton to the TPose pose.</li>
+</ol>
+<p><img alt="" src="../images/media/image35.png"></p>
+<ol>
+<li>In the character list of Area 4, you can click the character's CHAR button to create a characterization definition instance (MSCharacter).</li>
+</ol>
+<p><img alt="" src="../images/media/image36.png"></p>
+<ol>
+<li>Reset the characterization. In the Character
+Control panel, select the newly created character definition MSCharacter in turn, click the lock button below to unlock it, then click that button again, and select Biped in the dialog that pops up. Do the same for the imported character model (Character). Check whether all the bone mappings under each character definition are displayed in green. If any are not green, you need to reset the bone rotation to zero again (Zero → Rotation).</li>
+</ol>
+<p><img alt="" src="../images/media/image37.png"></p>
+<p><img alt="" src="../images/media/image38.png"></p>
+<p><strong>7) Set the retargeting source</strong></p>
+<p>At this point, in the Character
+Control panel, click the character drop-down list, select the Character character definition, then click the Source drop-down list, and select MSCharacter.</p>
+<p><img alt="" src="../images/media/image39.png"></p>
+<p>Now that we have completed the mapping and binding between the plugin-bound skeleton and the model's skeleton, cancel the T-pose display and click the Pause button. When you play recording data or stream real-time data in MS, the model will display the streamed data in real time.</p>
+<p><img alt="" src="../images/media/image40.png"></p>
+<p><img alt="" src="../images/media/image41.png"></p>
+<p><img alt="" src="../images/media/image42.png"></p>
+<h3 id="3-recording-and-saving-animation"><strong>3. Recording and Saving Animation</strong></h3>
+<p><strong>1) Record animation</strong></p>
+<p>While Online and connected to the data broadcast, select the Recording button to prepare for recording animation.</p>
+<p><img alt="" src="../images/media/image43.png"></p>
+<p>Click the record button on the left. As needed, you can overwrite the current animation sequence or create a new animation sequence.</p>
+<p><img alt="" src="../images/media/image44.png"></p>
+<p>Then click the play button in the middle to start recording the animation. Click the play button again to end the animation recording.</p>
+<p><img alt="" src="../images/media/image45.png"></p>
+<p><strong>2) Play back the recorded animation</strong></p>
+<p>Disconnect the Online connection and click the play button to play back the data you just recorded. (After disconnecting, the model will be unbound from the skeleton, and you will need to repeat the above operations.)</p>
+<p><img alt="" src="../images/media/image46.png"></p>
+<p><strong>3) Save the animation</strong></p>
+<p>In the MotionBuilder menu bar, select File → Motion File
+Export..., then select the target directory and file name, and click the Save button.</p>
+<p><img alt="" src="../images/media/image47.png"></p>
+<p>In the export options that appear, set the animation frame rate (FrameRate) as needed, and select the animation Takes you want to save. Then click the Export button to save the recorded animation to the specified file. After saving is complete, you can import the file back into MotionBuilder to review it.</p>
+<p><img alt="" src="../images/media/image48.png"></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

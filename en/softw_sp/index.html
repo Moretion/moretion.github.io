@@ -1,0 +1,1074 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Streaming Port Protocol</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#streaming-port-protocol" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://moretion.github.io/en/" title="Streaming Port Protocol" class="md-header__button md-logo" aria-label="Streaming Port Protocol" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Streaming Port Protocol
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Streaming Port Protocol
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://moretion.github.io/en/" title="Streaming Port Protocol" class="md-nav__button md-logo" aria-label="Streaming Port Protocol" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    Streaming Port Protocol
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming Port Protocol
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Streaming Port Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-data-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streaming Data Description
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Streaming Data Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specific-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#streaming-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Streaming] API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-device-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Device List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-data-glove-motor-vibration-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wired Data Glove Motor Vibration Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#streaming-data-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Streaming Data Description
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Streaming Data Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Parsing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specific-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specific Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#streaming-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [Streaming] API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-device-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query Device List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wired-data-glove-motor-vibration-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wired Data Glove Motor Vibration Protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div><h1 id="streaming-port-protocol">Streaming Port Protocol</h1>
+<p>The following is the documentation based on this JSON data:</p>
+<h2 id="streaming-data-description">Streaming Data Description</h2>
+<p>This document describes a JSON-formatted streaming data payload that contains the pose information of each joint of the human body and the position of the root node. A client connects to the ServerSocket via a Socket connection and receives the data in JSON format.</p>
+<h3 id="data-format">Data Format</h3>
+<p>The data format is JSON, as shown below:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">"deviceList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="nt">"leftLittleFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">"leftLowerLeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5283327317267245</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9699280975299531</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05361260659299393</span><span class="p">],</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">"leftThumbMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">"actorName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36895272192031866103"</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">"rightMiddleFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36895272192031866103"</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">"leftToe"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nt">"crotch"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">167.57347163011366</span><span class="p">,</span><span class="w"> </span><span class="mf">-83.40422843226828</span><span class="p">,</span><span class="w"> </span><span class="mf">168.32318812755344</span><span class="p">],</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">"rightForeFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">"leftThumbUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="nt">"rightLowerLeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.14184703756515651</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.3411541341866196</span><span class="p">,</span><span class="w"> </span><span class="mf">0.11966295623743685</span><span class="p">],</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="nt">"rightMiddleFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">"rightThumbMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">"rightForeFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">"rightMiddleFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nt">"coordinate"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.701085451990366</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9399006068706512</span><span class="p">,</span><span class="w"> </span><span class="mf">1.7706798166036606</span><span class="p">],</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="nt">"rightThumbUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="nt">"leftForeFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="nt">"leftLowerArm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-4.275193053831556</span><span class="p">,</span><span class="w"> </span><span class="mf">6.029475112014665</span><span class="p">,</span><span class="w"> </span><span class="mf">0.16694912669166465</span><span class="p">],</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="nt">"rightRingFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">"waistTwo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.29568526455187555</span><span class="p">,</span><span class="w"> </span><span class="mf">35.644963830923615</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5573244587306913</span><span class="p">],</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="nt">"leftMiddleFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="nt">"leftMiddleFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="nt">"rightLittleFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="nt">"rightUpperLeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">176.6885544428917</span><span class="p">,</span><span class="w"> </span><span class="mf">72.91872796381254</span><span class="p">,</span><span class="w"> </span><span class="mf">-177.95669928739395</span><span class="p">],</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="nt">"leftForeFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="nt">"leftRingFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">        </span><span class="nt">"leftLittleFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="nt">"leftForeFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="nt">"bvhRotationOrder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ"</span><span class="p">,</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span><span class="nt">"rightLowerArm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-121.27302739968908</span><span class="p">,</span><span class="w"> </span><span class="mf">-53.80513365787473</span><span class="p">,</span><span class="w"> </span><span class="mf">-79.57055095508167</span><span class="p">],</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="nt">"leftRingFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="nt">"rightForeFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="nt">"back"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.29551572530026504</span><span class="p">,</span><span class="w"> </span><span class="mf">35.6342730205439</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5570915211338497</span><span class="p">],</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">        </span><span class="nt">"rightLittleFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="nt">"rightRingFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">        </span><span class="nt">"leftShoulder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.18589438315193915</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.9052612384769648</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5738650285131836</span><span class="p">],</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="nt">"head"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.03851023463838937</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7913068784451655</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.7062768447186851</span><span class="p">],</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">        </span><span class="nt">"leftUpperArm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-2.2109214884746184</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7886943442852772</span><span class="p">,</span><span class="w"> </span><span class="mf">-33.677680182697486</span><span class="p">],</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">        </span><span class="nt">"leftMiddleFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">        </span><span class="nt">"rightHand"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">116.29463249250328</span><span class="p">,</span><span class="w"> </span><span class="mf">50.96926853262847</span><span class="p">,</span><span class="w"> </span><span class="mf">-78.59930404908181</span><span class="p">],</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">        </span><span class="nt">"rightFoot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.2060584982674821</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8379528867935927</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.09795635155078423</span><span class="p">],</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">        </span><span class="nt">"waistOne"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.29551572530026504</span><span class="p">,</span><span class="w"> </span><span class="mf">35.63427302054393</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.5570915211338499</span><span class="p">],</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">        </span><span class="nt">"leftUpperLeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">178.28257488310416</span><span class="p">,</span><span class="w"> </span><span class="mf">73.86704919190285</span><span class="p">,</span><span class="w"> </span><span class="mf">-179.49772684666087</span><span class="p">],</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">        </span><span class="nt">"leftThumbUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">        </span><span class="nt">"rightUpperArm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.7153986036959346</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.9532830770749268</span><span class="p">,</span><span class="w"> </span><span class="mf">33.639901563359864</span><span class="p">],</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">        </span><span class="nt">"rightRingFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">        </span><span class="nt">"rightToe"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">        </span><span class="nt">"leftLittleFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">        </span><span class="nt">"leftRingFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a><span class="w">        </span><span class="nt">"leftHand"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">34.30087801348577</span><span class="p">,</span><span class="w"> </span><span class="mf">-36.18378054306241</span><span class="p">,</span><span class="w"> </span><span class="mf">10.29834646689235</span><span class="p">],</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="w">        </span><span class="nt">"leftFoot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.3257049210066964</span><span class="p">,</span><span class="w"> </span><span class="mf">1.284396122923064</span><span class="p">,</span><span class="w"> </span><span class="mf">0.34588575015733</span><span class="p">],</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="w">        </span><span class="nt">"rightShoulder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.1527352626370245</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7979215521202965</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.6612408963735164</span><span class="p">],</span>
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="w">        </span><span class="nt">"rightLittleFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="w">        </span><span class="nt">"rightThumbUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">]</span>
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="w">    </span><span class="p">},</span><span class="w"> </span>
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">      </span><span class="p">{</span>
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a><span class="w">        </span><span class="nt">"leftLittleFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a><span class="w">        </span><span class="nt">"leftLowerLeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.40573345247257264</span><span class="p">,</span><span class="w"> </span><span class="mf">-18.4634204946525</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2511509567285266</span><span class="p">],</span>
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a><span class="w">        </span><span class="nt">"leftThumbMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a><span class="w">        </span><span class="nt">"actorName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8780442582114229391"</span><span class="p">,</span>
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a><span class="w">        </span><span class="nt">"rightMiddleFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="w">        </span><span class="nt">"deviceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8780442582114229391"</span><span class="p">,</span>
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a><span class="w">        </span><span class="nt">"leftToe"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="w">        </span><span class="nt">"crotch"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.2044930858509223</span><span class="p">,</span><span class="w"> </span><span class="mf">-39.26269365322497</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.037041743724933796</span><span class="p">],</span>
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a><span class="w">        </span><span class="nt">"rightForeFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="w">        </span><span class="nt">"leftThumbUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a><span class="w">        </span><span class="nt">"rightLowerLeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.1767339587597831</span><span class="p">,</span><span class="w"> </span><span class="mf">3.9021207519650063</span><span class="p">,</span><span class="w"> </span><span class="mf">0.49314465550116343</span><span class="p">],</span>
+</span><span id="__span-0-72"><a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a><span class="w">        </span><span class="nt">"rightMiddleFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-73"><a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a><span class="w">        </span><span class="nt">"rightThumbMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="w">        </span><span class="nt">"rightForeFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-75"><a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a><span class="w">        </span><span class="nt">"rightMiddleFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-76"><a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a><span class="w">        </span><span class="nt">"coordinate"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.06738789379596713</span><span class="p">,</span><span class="w"> </span><span class="mf">0.9254053207114338</span><span class="p">,</span><span class="w"> </span><span class="mf">0.06742429733276367</span><span class="p">],</span>
+</span><span id="__span-0-77"><a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a><span class="w">        </span><span class="nt">"rightThumbUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-78"><a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a><span class="w">        </span><span class="nt">"leftForeFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-79"><a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a><span class="w">        </span><span class="nt">"leftLowerArm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.08699000572472954</span><span class="p">,</span><span class="w"> </span><span class="mf">0.6863571788756292</span><span class="p">,</span><span class="w"> </span><span class="mf">0.11855827980903816</span><span class="p">],</span>
+</span><span id="__span-0-80"><a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a><span class="w">        </span><span class="nt">"rightRingFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-81"><a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="w">        </span><span class="nt">"waistTwo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.015424130073108227</span><span class="p">,</span><span class="w"> </span><span class="mf">0.055886741439810775</span><span class="p">,</span><span class="w"> </span><span class="mf">0.026696603642111863</span><span class="p">],</span>
+</span><span id="__span-0-82"><a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a><span class="w">        </span><span class="nt">"leftMiddleFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-83"><a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="w">        </span><span class="nt">"leftMiddleFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-84"><a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="w">        </span><span class="nt">"rightLittleFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-85"><a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="w">        </span><span class="nt">"rightUpperLeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.42060291176478676</span><span class="p">,</span><span class="w"> </span><span class="mf">-2.1037899016837187</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.1868693436966618</span><span class="p">],</span>
+</span><span id="__span-0-86"><a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="w">        </span><span class="nt">"leftForeFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-87"><a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">        </span><span class="nt">"leftRingFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-88"><a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="w">        </span><span class="nt">"leftLittleFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-89"><a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="w">        </span><span class="nt">"leftForeFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-90"><a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">        </span><span class="nt">"bvhRotationOrder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ"</span><span class="p">,</span>
+</span><span id="__span-0-91"><a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="w">        </span><span class="nt">"rightLowerArm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.16399108361481987</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.11848358762031388</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.03239584056380892</span><span class="p">],</span>
+</span><span id="__span-0-92"><a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">        </span><span class="nt">"leftRingFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-93"><a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a><span class="w">        </span><span class="nt">"rightForeFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-94"><a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">        </span><span class="nt">"back"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.015419499853539614</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05586997984781864</span><span class="p">,</span><span class="w"> </span><span class="mf">0.02668859400377571</span><span class="p">],</span>
+</span><span id="__span-0-95"><a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">        </span><span class="nt">"rightLittleFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-96"><a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">        </span><span class="nt">"rightRingFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-97"><a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">        </span><span class="nt">"leftShoulder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5305371373965916</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.4449699181562023</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.9358010480478481</span><span class="p">],</span>
+</span><span id="__span-0-98"><a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="w">        </span><span class="nt">"head"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.11915716369841646</span><span class="p">,</span><span class="w"> </span><span class="mf">0.10442513581288657</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.11235430434039644</span><span class="p">],</span>
+</span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a><span class="w">        </span><span class="nt">"leftUpperArm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.5747730532023467</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4200904612748533</span><span class="p">,</span><span class="w"> </span><span class="mf">-32.76454790349389</span><span class="p">],</span>
+</span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a><span class="w">        </span><span class="nt">"leftMiddleFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-101"><a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="w">        </span><span class="nt">"rightHand"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-5.839335306133827</span><span class="p">,</span><span class="w"> </span><span class="mf">-7.834890734098407</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25703843613984406</span><span class="p">],</span>
+</span><span id="__span-0-102"><a id="__codelineno-0-102" name="__codelineno-0-102" href="#__codelineno-0-102"></a><span class="w">        </span><span class="nt">"rightFoot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.37335566172713364</span><span class="p">,</span><span class="w"> </span><span class="mf">-2.4396810057529454</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.12317384133139211</span><span class="p">],</span>
+</span><span id="__span-0-103"><a id="__codelineno-0-103" name="__codelineno-0-103" href="#__codelineno-0-103"></a><span class="w">        </span><span class="nt">"waistOne"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.01541949985353954</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05586997984781229</span><span class="p">,</span><span class="w"> </span><span class="mf">0.02668859400377569</span><span class="p">],</span>
+</span><span id="__span-0-104"><a id="__codelineno-0-104" name="__codelineno-0-104" href="#__codelineno-0-104"></a><span class="w">        </span><span class="nt">"leftUpperLeg"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.07023596070865984</span><span class="p">,</span><span class="w"> </span><span class="mf">17.845656318012665</span><span class="p">,</span><span class="w"> </span><span class="mf">0.11397519757537351</span><span class="p">],</span>
+</span><span id="__span-0-105"><a id="__codelineno-0-105" name="__codelineno-0-105" href="#__codelineno-0-105"></a><span class="w">        </span><span class="nt">"leftThumbUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-106"><a id="__codelineno-0-106" name="__codelineno-0-106" href="#__codelineno-0-106"></a><span class="w">        </span><span class="nt">"rightUpperArm"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.6870520821370538</span><span class="p">,</span><span class="w"> </span><span class="mf">-2.0975935038200126</span><span class="p">,</span><span class="w"> </span><span class="mf">31.78050481691975</span><span class="p">],</span>
+</span><span id="__span-0-107"><a id="__codelineno-0-107" name="__codelineno-0-107" href="#__codelineno-0-107"></a><span class="w">        </span><span class="nt">"rightRingFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-108"><a id="__codelineno-0-108" name="__codelineno-0-108" href="#__codelineno-0-108"></a><span class="w">        </span><span class="nt">"rightToe"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-109"><a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a><span class="w">        </span><span class="nt">"leftLittleFingerMid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-110"><a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a><span class="w">        </span><span class="nt">"leftRingFingerUp"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-111"><a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="w">        </span><span class="nt">"leftHand"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.3254735259841174</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.9885952909200776</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.1923420038814004</span><span class="p">],</span>
+</span><span id="__span-0-112"><a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="w">        </span><span class="nt">"leftFoot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.329059431216289</span><span class="p">,</span><span class="w"> </span><span class="mf">24.35541948578364</span><span class="p">,</span><span class="w"> </span><span class="mf">0.029652081491475666</span><span class="p">],</span>
+</span><span id="__span-0-113"><a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a><span class="w">        </span><span class="nt">"rightShoulder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-0.5753150002783762</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0401497415649117</span><span class="p">,</span><span class="w"> </span><span class="mf">1.9198983633224964</span><span class="p">],</span>
+</span><span id="__span-0-114"><a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="w">        </span><span class="nt">"rightLittleFingerUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+</span><span id="__span-0-115"><a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a><span class="w">        </span><span class="nt">"rightThumbUnder"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">]</span>
+</span><span id="__span-0-116"><a id="__codelineno-0-116" name="__codelineno-0-116" href="#__codelineno-0-116"></a><span class="w">    </span><span class="p">}]</span>
+</span><span id="__span-0-117"><a id="__codelineno-0-117" name="__codelineno-0-117" href="#__codelineno-0-117"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="data-content">Data Content</h3>
+<p>The data contains the position information of each joint of the human body (expressed as three-dimensional coordinates). The following are the joint names and their corresponding coordinates:</p>
+<ul>
+<li>
+<p><code>deviceId</code>: Device ID</p>
+</li>
+<li>
+<p><code>actorName</code>: Actor name</p>
+</li>
+<li>
+<p><code>leftLittleFingerUnder</code>: Left little finger, lower</p>
+</li>
+<li>
+<p><code>leftLittleFingerUnder</code>: Left little finger, lower</p>
+</li>
+<li>
+<p><code>leftLowerLeg</code>: Left lower leg</p>
+</li>
+<li>
+<p><code>leftThumbMid</code>: Left thumb, middle</p>
+</li>
+<li>
+<p><code>rightMiddleFingerMid</code>: Right middle finger, middle</p>
+</li>
+<li>
+<p><code>leftToe</code>: Left toe</p>
+</li>
+<li>
+<p><code>crotch</code>: Crotch</p>
+</li>
+<li>
+<p><code>rightForeFingerUnder</code>: Right index finger, lower</p>
+</li>
+<li>
+<p><code>leftThumbUnder</code>: Left thumb, lower</p>
+</li>
+<li>
+<p><code>rightLowerLeg</code>: Right lower leg</p>
+</li>
+<li>
+<p><code>rightMiddleFingerUnder</code>: Right middle finger, lower</p>
+</li>
+<li>
+<p><code>rightThumbMid</code>: Right thumb, middle</p>
+</li>
+<li>
+<p><code>rightForeFingerMid</code>: Right index finger, middle</p>
+</li>
+<li>
+<p><code>rightMiddleFingerUp</code>: Right middle finger, upper</p>
+</li>
+<li>
+<p><code>coordinate</code>: Coordinate</p>
+</li>
+<li>
+<p><code>rightThumbUp</code>: Right thumb, upper</p>
+</li>
+<li>
+<p><code>leftForeFingerMid</code>: Left index finger, middle</p>
+</li>
+<li>
+<p><code>leftLowerArm</code>: Left lower arm</p>
+</li>
+<li>
+<p><code>rightRingFingerMid</code>: Right ring finger, middle</p>
+</li>
+<li>
+<p><code>waistTwo</code>: Waist two</p>
+</li>
+<li>
+<p><code>leftMiddleFingerUnder</code>: Left middle finger, lower</p>
+</li>
+<li>
+<p><code>leftMiddleFingerMid</code>: Left middle finger, middle</p>
+</li>
+<li>
+<p><code>rightLittleFingerMid</code>: Right little finger, middle</p>
+</li>
+<li>
+<p><code>rightUpperLeg</code>: Right upper leg</p>
+</li>
+<li>
+<p><code>leftForeFingerUnder</code>: Left index finger, lower</p>
+</li>
+<li>
+<p><code>rightToe</code>: Right toe</p>
+</li>
+<li>
+<p><code>rightLowerArm</code>: Right lower arm</p>
+</li>
+<li>
+<p><code>rightRingFingerUnder</code>: Right ring finger, lower</p>
+</li>
+<li>
+<p><code>leftRingFingerUnder</code>: Left ring finger, lower</p>
+</li>
+<li>
+<p><code>leftRingFingerMid</code>: Left ring finger, middle</p>
+</li>
+<li>
+<p><code>rightMiddleFingerDown</code>: Right middle finger, down</p>
+</li>
+<li>
+<p><code>rightForeFingerUp</code>: Right index finger, upper</p>
+</li>
+<li>
+<p><code>rightRingFingerUp</code>: Right ring finger, upper</p>
+</li>
+<li>
+<p><code>leftMiddleFingerDown</code>: Left middle finger, down</p>
+</li>
+<li>
+<p><code>leftUpperLeg</code>: Left upper leg</p>
+</li>
+<li>
+<p><code>leftLittleFingerMid</code>: Left little finger, middle</p>
+</li>
+<li>
+<p><code>head</code>: Head</p>
+</li>
+<li>
+<p><code>leftForeFingerUp</code>: Left index finger, upper</p>
+</li>
+<li>
+<p><code>rightLittleFingerUp</code>: Right little finger, upper</p>
+</li>
+<li>
+<p><code>rightThumbUnder</code>: Right thumb, lower</p>
+</li>
+</ul>
+<p>Among these, <code>coordinate</code> represents the three-dimensional coordinate of the entire human body, and <code>bvhRotationOrder</code> indicates the rotation order.</p>
+<p>The model uses a right-handed coordinate system with the X axis pointing right, the Y axis pointing up, and the Z axis pointing backward. The Euler angles are intrinsic rotation data.</p>
+<p>Note that the data in this document is for example purposes only; the actual data in a real application may differ.</p>
+<p>Note: When the <code>bvhRotationOrder</code> convention is XYZ, the element order in the array corresponding to each joint is also XYZ. Likewise, when the convention is ZXY, the element order in the array is also ZXY.</p>
+<h3 id="data-parsing">Data Parsing</h3>
+<p>To parse the data, parse it according to the JSON format, then extract the corresponding coordinates based on the joint names.</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://www.json.org/json-en.html">Introduction to JSON</a></li>
+</ul>
+<h2 id="specific-requirements">Specific Requirements</h2>
+<h3 id="streaming-api">[Streaming] API</h3>
+<h3 id="common-error-codes">Common Error Codes</h3>
+<table>
+<thead>
+<tr>
+<th><strong>code value</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1001</td>
+<td>Parameter error; in this case, check <code>msg</code> for the specific error description</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-device-list">Query Device List</h3>
+<p>Request parameters:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.control</td>
+<td>Yes</td>
+<td>string</td>
+<td>deviceList</td>
+</tr>
+<tr>
+<td>$.nodeList</td>
+<td>Yes</td>
+<td>array</td>
+<td>Integer array, e.g. <code>[1,2]</code>; the list of collectors numbered from 1, where <code>1</code> = left data glove, <code>2</code> = right data glove</td>
+</tr>
+</tbody>
+</table>
+<p>Return parameters:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.control</td>
+<td>Yes</td>
+<td>string</td>
+<td>onDeviceList</td>
+</tr>
+<tr>
+<td>$.code</td>
+<td>Yes</td>
+<td>int</td>
+<td>Common error code; a return value of 1000 indicates success;</td>
+</tr>
+<tr>
+<td>$.msg</td>
+<td>Yes</td>
+<td>string</td>
+<td>Common error message, corresponding to the explanation of the <code>code</code> field; for example, when <code>code</code> returns <code>1000</code>, msg is <code>ok</code></td>
+</tr>
+<tr>
+<td>$.deviceList</td>
+<td>Yes</td>
+<td>array</td>
+<td>Device list</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].productID</td>
+<td>Yes</td>
+<td>string</td>
+<td>Device ID</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].name</td>
+<td>Yes</td>
+<td>string</td>
+<td>Device name; currently formatted as "Device" + idex</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].channel</td>
+<td>Yes</td>
+<td>string</td>
+<td>Device channel</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].modeName</td>
+<td>Yes</td>
+<td>string</td>
+<td>Mode name, e.g. <code>Full-body mode</code></td>
+</tr>
+<tr>
+<td>$.deviceList.[i].actorName</td>
+<td>Yes</td>
+<td>string</td>
+<td>Actor name; if not set or no project is open, the default is <code>Motion Robot</code>; when a project is open, this is the actor name corresponding to the project;</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].isConnected</td>
+<td>Yes</td>
+<td>boolean</td>
+<td>Whether the device is connected; <code>true</code> means connected, <code>false</code> means not connected (e.g. powered off, in sleep mode, etc.);</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].createTime</td>
+<td>Yes</td>
+<td>string</td>
+<td>Device creation timestamp, used for sorting and display; uses the string type to avoid loss of precision;</td>
+</tr>
+<tr>
+<td>$.deviceList.[i].boneTemplateName</td>
+<td>Yes</td>
+<td>string</td>
+<td>Bone template name, used to pass back when recording via the interface;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wired-data-glove-motor-vibration-protocol">Wired Data Glove Motor Vibration Protocol</h3>
+<p>Request parameters:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.control</td>
+<td>Yes</td>
+<td>string</td>
+<td>motorShake</td>
+</tr>
+<tr>
+<td>$.deviceId</td>
+<td>No</td>
+<td>string</td>
+<td>Device ID; in the first version, if the device list has not been obtained, this can be left empty; once the device list is available, it becomes required;</td>
+</tr>
+<tr>
+<td>$.shakePattern</td>
+<td>Yes</td>
+<td>int</td>
+<td>shakePattern - motor vibration pattern<br>                    shakePattern=0  vibrate 0.5s<br>                    shakePattern=1  vibrate 1s<br>                    shakePattern=2  vibrate 1.5s<br>                    shakePattern=3  vibrate 2s<br>                    shakePattern=4  vibrate 2.5s<br>and so on, up to 5 seconds supported</td>
+</tr>
+<tr>
+<td>$.nodeList</td>
+<td>Yes</td>
+<td>array</td>
+<td>Integer array, e.g. <code>[1,2]</code>; the list of collectors numbered from 1, where <code>1</code> = left data glove, <code>2</code> = right data glove</td>
+</tr>
+</tbody>
+</table>
+<p>Return parameters:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$.control</td>
+<td>Yes</td>
+<td>string</td>
+<td>onMotorShake</td>
+</tr>
+<tr>
+<td>$.code</td>
+<td>Yes</td>
+<td>int</td>
+<td>Common error code; a return value of 1000 indicates success</td>
+</tr>
+<tr>
+<td>$.msg</td>
+<td>Yes</td>
+<td>string</td>
+<td>Common error message, corresponding to the explanation of the <code>code</code> field; for example, when <code>code</code> returns <code>1000</code>, msg is <code>ok</code></td>
+</tr>
+<tr>
+<td>$.data</td>
+<td>Yes</td>
+<td>boolean</td>
+<td>Operation result; <code>true</code> when <code>code=1000</code></td>
+</tr>
+</tbody>
+</table></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
