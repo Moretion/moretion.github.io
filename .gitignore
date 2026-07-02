@@ -1,0 +1,5 @@
+# 本地 mkdocs 虚拟环境（build_docs.sh 构建用）
+.venv/
+
+# build_docs.sh 临时构建目录
+.~mkdocs_build*

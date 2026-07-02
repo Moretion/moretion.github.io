@@ -1,0 +1,5 @@
+site_name: 魔迅文档中心
+nav:
+  - Blender文档: blender.md
+theme: 
+  name: material

@@ -1,0 +1,22 @@
+site_name: 具身智能应用
+nav:
+  - 傲意灵巧手: tele_ohand.md
+  - 恒卓Z1+宇树G1: tele_z1_g1.md
+  - 宇树G1+傲意: tele_g1_ohand.md
+theme: 
+  name: material
+  features:
+    - content.code.copy
+  logo: assets/logo.png
+plugins:
+    - mkdocs-video
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  homepage: https://moretion.github.io/

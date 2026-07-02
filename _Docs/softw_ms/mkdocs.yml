@@ -1,0 +1,6 @@
+site_name: 动捕软件
+nav:
+  - 软件操作说明: ms_manual.md
+  - 数据导入: dimport.md
+theme: 
+  name: material

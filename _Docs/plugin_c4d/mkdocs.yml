@@ -1,0 +1,5 @@
+site_name: 魔迅文档中心
+nav:
+  - c4d文档: c4d.md
+theme: 
+  name: material

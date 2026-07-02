@@ -1,0 +1,22 @@
+site_name: 虚拟直播
+nav:
+  - 虚拟直播软件使用教程: vls_software_manual.md
+  - 快速创建虚拟直播模型: vls_creat_model.md
+  - 微信视频号直播: ms_setting.md
+theme: 
+  name: material
+  features:
+    - content.code.copy
+  logo: assets/logo.png
+plugins:
+    - mkdocs-video
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  homepage: https://moretion.github.io/

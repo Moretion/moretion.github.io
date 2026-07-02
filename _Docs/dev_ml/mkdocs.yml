@@ -1,0 +1,5 @@
+site_name: 使用手册
+nav:
+  - ML020W: ml_manual.md
+theme: 
+  name: material

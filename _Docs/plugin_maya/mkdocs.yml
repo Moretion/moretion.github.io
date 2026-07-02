@@ -1,0 +1,5 @@
+site_name: 魔迅文档中心
+nav:
+  - Maya文档: maya.md
+theme: 
+  name: material

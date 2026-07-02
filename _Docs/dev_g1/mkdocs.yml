@@ -1,0 +1,21 @@
+site_name: 魔迅科技文档中心
+nav:
+  - G1使用手册: g1_manual.md
+  - G1视频教程: g1_setup.md
+theme: 
+  name: material
+  features:
+    - content.code.copy
+  logo: assets/logo.png
+plugins:
+    - mkdocs-video
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+extra:
+  homepage: https://moretion.github.io/

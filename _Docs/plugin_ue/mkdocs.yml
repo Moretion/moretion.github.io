@@ -1,0 +1,7 @@
+site_name: Unreal Engine 5 Plugins
+nav:
+  - Unreal Plugins: ue.md
+theme: 
+  name: material
+plugins:
+    - mkdocs-video

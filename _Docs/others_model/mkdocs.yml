@@ -1,0 +1,7 @@
+site_name: 示例模型
+nav:
+  - 模型需求: others_model.md
+theme: 
+  name: material
+plugins:
+    - mkdocs-video

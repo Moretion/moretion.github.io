@@ -1,0 +1,7 @@
+site_name: 3D打印件
+nav:
+  - 产品配件: 3d_printing.md
+theme: 
+  name: material
+plugins:
+    - mkdocs-video

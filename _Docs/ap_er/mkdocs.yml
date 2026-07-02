@@ -1,0 +1,6 @@
+site_name: 运动康复应用
+nav:
+  - 运动康复软件功能介绍: ap_er.md
+theme: 
+  name: material
+
