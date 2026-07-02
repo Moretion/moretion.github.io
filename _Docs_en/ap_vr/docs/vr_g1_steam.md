@@ -42,7 +42,7 @@ Import the plugins and follow the prompts to apply the default configuration.
 
 Plugin note: This plugin is developed on top of the motion capture plugin. For how to drive the hand model and for model requirements, refer to the documentation below.
 
-[《Unity3D Plugin Usage Documentation》](https://alidocs.dingtalk.com/i/nodes/3xRN9bGQyw4JbxqgjqE5WzXPADKnorv6?utm_scene=team_space)
+[Unity3D Plugin Usage Documentation](https://alidocs.dingtalk.com/i/nodes/3xRN9bGQyw4JbxqgjqE5WzXPADKnorv6?utm_scene=team_space)
 
 Import the plugin via Assets -> Import Package -> Custom Package.
 

@@ -11,8 +11,8 @@ This software receives glove motion capture data from MotionStudio over a networ
 
 | Resource Type    | Link                                                                        |
 |:-------:|:-------------------------------------------------------------------------:|
-| Product Documentation    | [《OHandSetting使用手册-V1.4.pdf》](./assets/OHandSetting使用手册-V1.4.pdf)         |
-| Protocol Documentation    | [《OHandSerialProtocol_CN.md》](./assets/OHandSerialProtocol_CN.md)         |
+| Product Documentation    | [OHandSetting使用手册-V1.4.pdf](./assets/OHandSetting使用手册-V1.4.pdf)         |
+| Protocol Documentation    | [OHandSerialProtocol_CN.md](./assets/OHandSerialProtocol_CN.md)         |
 | CH340 Driver | [CH34x_Install_Windows_v3_4.zip](./assets/CH34x_Install_Windows_v3_4.zip) |
 | Graphical Software   | [Windows.rar](./assets/Windows.rar)                                       |
 
